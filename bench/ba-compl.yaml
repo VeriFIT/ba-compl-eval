@@ -1,0 +1,3 @@
+seminator:
+  bin/seminator --complement=best $1
+
