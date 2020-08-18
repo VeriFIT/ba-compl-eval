@@ -82,12 +82,32 @@ Serializes an automaton as the Hanoi Omega Automata file.
         return str(state_transl_dict[state])
     ###########################################
 
-    # count states
+    symb_cnt = 0
+    symb_transl_dict = dict()
+
+    ###########################################
+    def symb_transl(symb):
+        """symb_transl(symb) -> int
+
+    Translates symbol names into numbers.
+    """
+        nonlocal symb_cnt
+        nonlocal symb_transl_dict
+
+        if symb not in symb_transl_dict.keys():
+            symb_transl_dict[symb] = symb_cnt
+            symb_cnt += 1
+
+        return str(symb_transl_dict[symb])
+    ###########################################
+
+    # count states and transitions
     for st in aut["initial"]:
         state_transl(st)
     for trans in aut["transitions"]:
-        src, _, tgt = trans
+        src, symb, tgt = trans
         state_transl(src)
+        symb_transl(symb)
         state_transl(tgt)
     for st in aut["final"]:
         state_transl(st)
@@ -105,9 +125,17 @@ Serializes an automaton as the Hanoi Omega Automata file.
     res += "acc-name: Buchi\n"
     res += "Acceptance: 1 Inf(0)\n"
 
+    # atomic propositions
+    res += "AP: {}".format(symb_cnt)
+    for i in range(symb_cnt):
+        for key in symb_transl_dict:
+            if symb_transl_dict[key] == i:
+                res += " \"{}\"".format(key)
+    res += "\n"
+
     res += "--BODY--\n"
     for (name, num) in state_transl_dict.items():
-        res += "State {}:".format(num)
+        res += "State: {}".format(num)
         if name in aut["final"]:
             res += " { 0 }"
         res += "\n"
@@ -115,7 +143,15 @@ Serializes an automaton as the Hanoi Omega Automata file.
         for trans in aut["transitions"]:
             src, symb, tgt = trans
             if src == name:
-                res += "[{}] {}\n".format(symb, state_transl(tgt))
+                res += "  ["
+                for i in range(symb_cnt):
+                    if i != 0:
+                        res += " & "
+                    if symb_transl_dict[symb] != i:
+                        res += "!"
+                    res += str(i)
+
+                res += "] {}\n".format(state_transl(tgt))
     res += "--END--\n"
 
     return res
