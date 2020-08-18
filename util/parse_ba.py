@@ -61,7 +61,7 @@ Serializes an automaton as Rabit's BA file.
 def aut2HOA(aut):
     """aut2HOA(aut) -> string
 
-Serializes an automaton as the Hanoi Omega Automata file.
+Serializes an automaton as the Hanoi Omega Automata file format.
 """
     state_cnt = 0
     state_transl_dict = dict()
@@ -153,5 +153,61 @@ Serializes an automaton as the Hanoi Omega Automata file.
 
                 res += "] {}\n".format(state_transl(tgt))
     res += "--END--\n"
+
+    return res
+
+
+###########################################
+def aut2GFF(aut):
+    """aut2GFF(aut) -> string
+
+Serializes an automaton as the GOAL file format.
+"""
+
+    res = ""
+    res += "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n"
+    res += "<structure label-on=\"transition\" type=\"fa\">\n"
+
+    # get the alphabet
+    alphabet = set()
+    states = set()
+    for trans in aut["transitions"]:
+        src, symb, tgt = trans
+        alphabet.add(symb)
+        states.add(src)
+        states.add(tgt)
+
+    res += "<alphabet type=\"classical\">\n"
+    for symb in alphabet:
+        res += "<symbol>" + symb + "</symbol>\n"
+    res += "</alphabet>\n"
+
+    res += "<stateset>\n"
+    for st in states:
+        res += "<state sid=\"" + st +  "\"></state>\n";
+    res += "</stateset>\n"
+
+    res += "<acc type=\"buchi\">\n"
+    for st in aut["final"]:
+        res += "<stateID>" + st +  "</stateID>\n"
+    res += "</acc>\n"
+
+    res += "<initialStateSet>\n"
+    for st in aut["initial"]:
+        res += "<stateID>" + st + "</stateID>\n"
+    res += "</initialStateSet>\n";
+
+    res += "<transitionset>\n"
+    tid = 0
+    for trans in aut["transitions"]:
+        src, symb, tgt = trans
+        res += "<transition tid=\"" + str(tid) + "\">\n"
+        tid += 1
+        res += "<from>" + src + "</from>\n<to>" + tgt + \
+               "</to>\n<read>" + symb + "</read>\n"
+        res += "</transition>\n"
+    res += "</transitionset>\n"
+
+    res += "</structure>\n"
 
     return res

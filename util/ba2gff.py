@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 # A script for translation of a standard Buchi automaton in Rabit's BA format
-# into the Hanoi Omega Automata format.
+# into the GOAL file format
 
 import sys
 import parse_ba as BA
-
-
-
 
 ###########################################
 if __name__ == '__main__':
@@ -20,7 +17,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     aut = BA.parseBA(fd)
-    res = BA.aut2HOA(aut)
+    res = BA.aut2GFF(aut)
 
     print(res, end="")
 
