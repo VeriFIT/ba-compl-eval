@@ -184,7 +184,6 @@ measured using system "time" command.
         time_lines = stderr_split[-3:]
         stderr_split = stderr_split[:-3]
         result["stderr"] = "\n".join(stderr_split)
-        print("time lines: " + str(time_lines))
         for line in time_lines:
             mtch = re.search(r'user\s+(?P<time>\d+\.\d+)', line)
             if mtch:
