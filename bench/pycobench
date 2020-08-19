@@ -34,9 +34,11 @@
 import argparse
 import csv
 import os
+import psutil
 import queue
 import re
 import resource
+import signal
 import subprocess
 import sys
 import threading
@@ -72,11 +74,44 @@ OUTPUT_LIMIT = 16384
 # delimiter for time: min<delim>sec
 TIME_DELIMITER = '.'
 
+# delimiter for EOL
+g_newline_sep = "###"
+
 # the number of tasks that are to be run
 g_cnt_tasks = 0
 
 # the number of tasks that have finished
 g_cnt_finished_tasks = 0
+
+
+###########################################
+# taken from https://psutil.readthedocs.io/en/latest/#kill-process-tree
+def kill_proc_tree(pid, sig=signal.SIGTERM, include_parent=True,
+                   timeout=None, on_terminate=None):
+    """Kill a process tree (including grandchildren) with signal
+    "sig" and return a (gone, still_alive) tuple.
+    "on_terminate", if specified, is a callback function that is
+    called as soon as a child terminates.
+    """
+    assert pid != os.getpid(), "won't kill myself"
+    parent = psutil.Process(pid)
+    children = parent.children(recursive=True)
+    if include_parent:
+        children.append(parent)
+    for p in children:
+        p.send_signal(sig)
+    gone, alive = psutil.wait_procs(children, timeout=timeout,
+                                    callback=on_terminate)
+    return (gone, alive)
+
+
+###########################################
+def remove_newlines(text):
+    """remove_newlines(text) -> str
+
+Substitutes newline characters with a separator.
+"""
+    return text.replace('\n', g_newline_sep)
 
 
 ###########################################
@@ -102,44 +137,63 @@ Runs a command as a subprocess and collects results.
 
 
 ###########################################
+class CalledProgramError(Exception):
+    """CalledProgramError: exception for the case when a program called
+in a subprocesses ends with an error"""
+    pass
+
+
+###########################################
 def run_subproc_systime(cmd):
     """run_subproc(cmd) -> dict()
 
-Runs a command as a subprocess and collects results.
+Runs a command as a subprocess and collects results.  The time consumed is
+measured using system "time" command.
 """
     cmd = g_time_cmd + cmd
-    cmd = g_timeout_cmd + [str(g_timeout)] + cmd
-    # proc = subprocess.run(cmd, timeout=g_timeout, capture_output=True)
-    proc = subprocess.run(cmd, timeout=g_timeout,
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE
-                          )
+    proc = subprocess.Popen(cmd,
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            cwd=".."   # can be changed
+                            )
+    try:
+        outs, errs = proc.communicate(timeout=g_timeout)
+    except subprocess.TimeoutExpired:
+        kill_proc_tree(proc.pid, sig=signal.SIGKILL, include_parent=True)
+        raise
+
     result = {}
     result['retcode'] = proc.returncode
-    result['stdout'] = proc.stdout.decode().strip()
-    result['stderr'] = proc.stderr.decode().strip()
+    result['stdout'] = outs.decode().strip()
+    result['stderr'] = errs.decode().strip()
 
     # limit too big outputs
     result['stdout'] = result['stdout'][-OUTPUT_LIMIT:]
     result['stderr'] = result['stderr'][-OUTPUT_LIMIT:]
 
-    if result['retcode'] == TIMEOUT_TIMEOUT_RETCODE:
-        raise subprocess.TimeoutExpired
-
-    #  if result['retcode'] not in {0, 1}:
+    # if result['retcode'] not in {0, 1}:
     if result['retcode'] not in {0}:
-        raise Exception("Program error: " + result['stderr'])
+        raise CalledProgramError(result['stderr'])
 
-    #  if re.search(r'Invalid RE2: invalid repetition size', result['stderr']):
-        #  raise Exception("RE2 failure")
+    # extract the output of the time command from stderr
+    try:
+        stderr_split = result["stderr"].splitlines()
+        if len(stderr_split) < 3:
+            raise Exception
 
-    stderr_split = result['stderr'].splitlines()
-    for line in stderr_split:
-        mtch = re.search(r'user\s+(?P<time>\d+\.\d+)', line)
-        if mtch:
-            result['time'] = float(mtch.group('time'))
+        time_lines = stderr_split[-3:]
+        stderr_split = stderr_split[:-3]
+        result["stderr"] = "\n".join(stderr_split)
+        print("time lines: " + str(time_lines))
+        for line in time_lines:
+            mtch = re.search(r'user\s+(?P<time>\d+\.\d+)', line)
+            if mtch:
+                result['time'] = float(mtch.group('time'))
 
-    if 'time' not in result:
+        if 'time' not in result:
+            raise Exception
+
+    except Exception:
         raise Exception("Could not extract measured time\n" +
                         "retcode: " + str(result['retcode']) + "\n" +
                         "stdout: " + result['stdout'] + "\n" +
@@ -183,8 +237,8 @@ Executes one benchmark.
         return result
     except subprocess.TimeoutExpired:
         return {'timeout': True}
-    except Exception as e:
-        return {'error': True, 'error_msg': str(e)}
+    except CalledProgramError as e:
+        return {'error': True, 'error_msg': remove_newlines(str(e))}
 
 
 ###########################################
@@ -227,8 +281,8 @@ christian]).
         task_file.flush()
         res_string = 'ERROR'
     else:
-        str_stdout = result['stdout'].replace('\n','###')
-        str_stderr = result['stderr'].replace('\n','###')
+        str_stdout = remove_newlines(result['stdout'])
+        str_stderr = remove_newlines(result['stderr'])
         status = 'finished'
         time_str = str(result['time'])
         time_str = time_str.replace('.', TIME_DELIMITER)
@@ -268,6 +322,10 @@ Processes the configuration file.
     global g_cmd_dict
     config = yaml.load(conf_file, Loader=yaml.FullLoader)
     g_cmd_dict = config
+    for meth in g_cmd_dict:
+        x = g_cmd_dict[meth]
+        if "cmd" not in x:
+            raise Exception("Missing \"cmd\" value for method \"{}\"".format(meth))
 
 
 ###########################################
@@ -360,6 +418,9 @@ Runs the main program according to the arguments obtained from the parser.
     num_worker_threads = args.jobs
     if num_worker_threads is None:
         num_worker_threads = 1
+
+    # no more workers than number of jobs
+    num_worker_threads = min(num_worker_threads, g_cnt_tasks)
 
     # start the workers
     threads = []
