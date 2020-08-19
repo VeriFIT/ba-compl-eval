@@ -1,3 +1,8 @@
 seminator:
-  bin/seminator --complement=best $1
+  cmd: bin/seminator-wrap.sh $1
 
+safra:
+  cmd: bin/goal-wrap.sh $1
+
+ranker:
+  cmd: bin/rnk-red-complement $1

@@ -163,6 +163,24 @@ def aut2GFF(aut):
 
 Serializes an automaton as the GOAL file format.
 """
+    state_cnt = 0
+    state_transl_dict = dict()
+
+    ###########################################
+    def state_transl(state):
+        """state_transl(state) -> int
+
+    Translates state names into numbers.
+    """
+        nonlocal state_cnt
+        nonlocal state_transl_dict
+
+        if state not in state_transl_dict.keys():
+            state_transl_dict[state] = state_cnt
+            state_cnt += 1
+
+        return str(state_transl_dict[state])
+    ###########################################
 
     res = ""
     res += "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n"
@@ -176,6 +194,10 @@ Serializes an automaton as the GOAL file format.
         alphabet.add(symb)
         states.add(src)
         states.add(tgt)
+    for st in aut["initial"]:
+        states.add(st)
+    for st in aut["final"]:
+        states.add(st)
 
     res += "<alphabet type=\"classical\">\n"
     for symb in alphabet:
@@ -184,17 +206,17 @@ Serializes an automaton as the GOAL file format.
 
     res += "<stateset>\n"
     for st in states:
-        res += "<state sid=\"" + st +  "\"></state>\n";
+        res += "<state sid=\"" + state_transl(st) +  "\"></state>\n";
     res += "</stateset>\n"
 
     res += "<acc type=\"buchi\">\n"
     for st in aut["final"]:
-        res += "<stateID>" + st +  "</stateID>\n"
+        res += "<stateID>" + state_transl(st) +  "</stateID>\n"
     res += "</acc>\n"
 
     res += "<initialStateSet>\n"
     for st in aut["initial"]:
-        res += "<stateID>" + st + "</stateID>\n"
+        res += "<stateID>" + state_transl(st) + "</stateID>\n"
     res += "</initialStateSet>\n";
 
     res += "<transitionset>\n"
@@ -203,8 +225,9 @@ Serializes an automaton as the GOAL file format.
         src, symb, tgt = trans
         res += "<transition tid=\"" + str(tid) + "\">\n"
         tid += 1
-        res += "<from>" + src + "</from>\n<to>" + tgt + \
-               "</to>\n<read>" + symb + "</read>\n"
+        res += "<from>" + state_transl(src) + "</from>\n" +\
+               "<to>" + state_transl(tgt) + "</to>\n" + \
+               "<read>" + symb + "</read>\n"
         res += "</transition>\n"
     res += "</transitionset>\n"
 
