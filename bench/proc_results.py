@@ -12,10 +12,10 @@ fmt = 'csv'
 PARAMS_NUM = 1
 
 ###########################################
-def proc_res(fd):
-    """proc_res(fd) -> _|_
+def proc_res(fd, args):
+    """proc_res(fd, args) -> _|_
 
-    processes results from file descriptor 'fd'
+    processes results from file descriptor 'fd' using command line arguments 'args'
 """
     reader = csv.reader(
         fd, delimiter=';', quotechar='"', doublequote=False, quoting=csv.QUOTE_MINIMAL)
@@ -99,6 +99,14 @@ def proc_res(fd):
         for out in engines_outs[eng]:
             header += [eng + "-" + out]
 
+    fmt = "text"
+    if args.csv:
+        fmt = "csv"
+    if args.text:
+        fmt = "text"
+    if args.html:
+        fmt = "html"
+
     if fmt == 'html':
         print(tabulate(list_ptrns, header, tablefmt='html'))
     elif fmt == 'text':
@@ -116,15 +124,23 @@ def proc_res(fd):
 
 ###############################
 if __name__ == '__main__':
-    argc = len(sys.argv)
-    if argc == 1:
-        fd = sys.stdin
-    elif argc == 2:
-        fd = open(sys.argv[1], "r")
-    else:
-        print("Invalid number of arguments: either 0 or 1 required")
-        sys.exit(1)
+    parser = argparse.ArgumentParser(description='''proc_results.py - \
+Processes results of benchmarks from pycobench''')
+    parser.add_argument('results', metavar='result-file', nargs='?',
+        help='file with results (output of pycobench); if not provided stdin is used')
+    parser.add_argument('--csv', action="store_true",
+        help='output in CSV')
+    parser.add_argument('--text', action="store_true",
+        help='output in text')
+    parser.add_argument('--html', action="store_true",
+        help='output in HTML')
+    args = parser.parse_args()
 
-    proc_res(fd)
-    if argc == 2:
+    if args.results:
+        fd = open(args.results, "r")
+    else:
+        fd = sys.stdin
+
+    proc_res(fd, args)
+    if args.results:
         fd.close()

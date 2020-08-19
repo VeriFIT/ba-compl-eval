@@ -1,6 +1,9 @@
 seminator:
   cmd: bin/seminator-wrap.sh $1
 
+spot:
+  cmd: bin/spot-wrap.sh $1
+
 safra:
   cmd: bin/goal-wrap.sh $1
 

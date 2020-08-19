@@ -9,7 +9,7 @@ fi
 INPUT=$1
 TMP=$(mktemp)
 util/ba2hoa.py ${INPUT} > ${TMP}
-out=$(bin/seminator --complement --ba ${TMP} | grep "^States:")
+out=$(bin/autfilt --complement --ba ${TMP} | grep "^States:")
 ret=$?
 rm ${TMP}
 echo ${out}
