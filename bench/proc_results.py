@@ -5,8 +5,8 @@ import csv
 import sys
 from tabulate import tabulate
 
-fmt = 'text'
-#  fmt = 'csv'
+#  fmt = 'text'
+fmt = 'csv'
 
 # number of parameters of execution
 PARAMS_NUM = 1
@@ -68,8 +68,8 @@ def proc_res(fd):
     for bench in results:
         ls = list(bench)
         for eng in engines:
+            out_len = len(engines_outs[eng]) + 1    # +1 = time
             if eng in results[bench]:
-                out_len = len(engines_outs[eng]) + 1    # +1 = time
                 bench_res = results[bench][eng]
                 if bench_res == "ERR":
                     for i in range(out_len):
@@ -89,7 +89,8 @@ def proc_res(fd):
                             print(str(out) + " not in " + str(bench_res["output"]))
                             assert False
             else:
-                ls.append(None)
+                for i in range(out_len):
+                    ls.append("MISSING")
         list_ptrns.append(ls)
 
     header = ['blah']
