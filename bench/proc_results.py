@@ -11,20 +11,23 @@ fmt = 'csv'
 # number of parameters of execution
 PARAMS_NUM = 1
 
+
 ###########################################
 def proc_res(fd, args):
     """proc_res(fd, args) -> _|_
 
-    processes results from file descriptor 'fd' using command line arguments 'args'
+    processes results from file descriptor 'fd' using command line arguments
+    'args'
 """
     reader = csv.reader(
-        fd, delimiter=';', quotechar='"', doublequote=False, quoting=csv.QUOTE_MINIMAL)
+        fd, delimiter=';', quotechar='"',
+        doublequote=False, quoting=csv.QUOTE_MINIMAL)
 
     engines = list()
     engines_outs = dict()
     results = dict()
     for row in reader:
-        assert len(row) >= 1 + 1 + PARAMS_NUM    # status + engine name + params
+        assert len(row) >= 1 + 1 + PARAMS_NUM  # status + engine name + params
         status, eng = row[0], row[1]
         params = tuple(row[2:(PARAMS_NUM+2)])
         row_tail = row[(PARAMS_NUM+2):]
@@ -38,7 +41,8 @@ def proc_res(fd, args):
         assert eng not in results[params]
 
         if status == 'finished':
-            retcode, out, err, runtime = row_tail[0], row_tail[1], row_tail[2], row_tail[3]
+            retcode, out, err, runtime = row_tail[0], row_tail[1], \
+                                         row_tail[2], row_tail[3]
 
             eng_res = dict()
             eng_res["runtime"] = runtime
@@ -49,7 +53,8 @@ def proc_res(fd, args):
             out_lines = out.split("###")
             for line in out_lines:
                 spl = line.split(':', 1)
-                assert len(spl) == 2
+                if len(spl) != 2:  # jump over lines not in the format
+                    continue
                 name, val = spl[0], spl[1]
                 assert name not in eng_res["output"]
                 if name not in engines_outs[eng]:
@@ -66,6 +71,7 @@ def proc_res(fd, args):
 
     list_ptrns = list()
     for bench in results:
+        all_engs = True
         ls = list(bench)
         for eng in engines:
             out_len = len(engines_outs[eng]) + 1    # +1 = time
@@ -86,12 +92,26 @@ def proc_res(fd, args):
                         if out in bench_res["output"]:
                             ls.append(bench_res["output"][out])
                         else:
-                            print(str(out) + " not in " + str(bench_res["output"]))
+                            print("{} not in {}".format(out,
+                                                        bench_res["output"]))
                             assert False
             else:
+                all_engs = False
                 for i in range(out_len):
                     ls.append("MISSING")
+
+        # prepend with status of the benchmark
+        if args.tick:
+            if all_engs:
+                ls = ["T"] + ls
+            else:
+                ls = ["F"] + ls
+
         list_ptrns.append(ls)
+
+    header = list()
+    if args.tick:
+        header += ["done"]
 
     header = ['blah']
     for eng in engines:
@@ -127,13 +147,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='''proc_results.py - \
 Processes results of benchmarks from pycobench''')
     parser.add_argument('results', metavar='result-file', nargs='?',
-        help='file with results (output of pycobench); if not provided stdin is used')
+                        help='file with results (output of pycobench);'
+                             'if not provided stdin is used')
     parser.add_argument('--csv', action="store_true",
-        help='output in CSV')
+                        help='output in CSV')
     parser.add_argument('--text', action="store_true",
-        help='output in text')
+                        help='output in text')
     parser.add_argument('--html', action="store_true",
-        help='output in HTML')
+                        help='output in HTML')
+    parser.add_argument('--tick', action="store_true",
+                        help='tick finished benchmarks (usable for filtering)')
     args = parser.parse_args()
 
     if args.results:
