@@ -83,6 +83,12 @@ g_cnt_tasks = 0
 # the number of tasks that have finished
 g_cnt_finished_tasks = 0
 
+# should we be verbose
+g_verbose = False
+
+# should we be verbose
+g_verbose = False
+
 
 ###########################################
 # taken from https://psutil.readthedocs.io/en/latest/#kill-process-tree
@@ -166,6 +172,13 @@ measured using system "time" command.
     result['retcode'] = proc.returncode
     result['stdout'] = outs.decode().strip()
     result['stderr'] = errs.decode().strip()
+    if g_verbose:
+        print("==== results for {} ====".format(" ".join(cmd)))
+        print("======= stdout =======")
+        print(result["stdout"])
+        print("======= stderr =======")
+        print(result["stderr"])
+        print("======= ^^^^^^ =======")
 
     # limit too big outputs
     result['stdout'] = result['stdout'][-OUTPUT_LIMIT:]
@@ -219,7 +232,7 @@ Executes one benchmark.
         if len(cmd[i]) == 2 and cmd[i][0] == '$':
             try:
                 x = int(cmd[i][1])
-            except:
+            except Exception:
                 raise Exception("invalid placeholder \"" + cmd[i] +
                                 "\" in the command to run")
 
@@ -276,7 +289,8 @@ christian]).
         task_file.flush()
         res_string = 'TIMEOUT'
     elif 'error' in result:
-        writer.writerow(['error', result['method']] + result['params'] + [result['error_msg']])
+        writer.writerow(['error', result['method']] +
+                        result['params'] + [result['error_msg']])
         task_file.flush()
         res_string = 'ERROR'
     else:
@@ -285,11 +299,12 @@ christian]).
         status = 'finished'
         time_str = str(result['time'])
         time_str = time_str.replace('.', TIME_DELIMITER)
-        res_string = 'FINISHED \tResult: {}\tTime: {}'.format(result['retcode'], time_str)
+        res_string = 'FINISHED \tResult: {}\tTime: {}'.format(
+                     result['retcode'], time_str)
 
         writer.writerow([status, result['method']] + result['params'] +
-            [result['retcode'], str_stdout, str_stderr,
-            time_str])
+                        [result['retcode'], str_stdout, str_stderr,
+                        time_str])
         task_file.flush()
 
     global g_cnt_finished_tasks
@@ -324,7 +339,8 @@ Processes the configuration file.
     for meth in g_cmd_dict:
         x = g_cmd_dict[meth]
         if "cmd" not in x:
-            raise Exception("Missing \"cmd\" value for method \"{}\"".format(meth))
+            raise Exception("Missing \"cmd\" value "
+                            "for method \"{}\"".format(meth))
 
 
 ###########################################
@@ -338,7 +354,8 @@ been finished yet.  These are then returned in a list.
     finished_tasks = set()
     with open(tasklist_filename, 'r') as tasklist_file:
         reader = csv.reader(
-            tasklist_file, delimiter=';', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            tasklist_file, delimiter=';', quotechar='"',
+            quoting=csv.QUOTE_MINIMAL)
         try:
             for row in reader:
                 # create two sets
@@ -347,12 +364,13 @@ been finished yet.  These are then returned in a list.
                 elif row[0] == "finished":
                     finished_tasks.add((row[1], row[2]))
         except Exception as ex:
-            print('Error reading a task list at line ' + str(reader.line_num) + ': '
-                + str(ex))
+            print('Error reading a task list at line ' +
+                  str(reader.line_num) + ': ' + str(ex))
             sys.exit(1)
 
     unfinished_business = executed_tasks - finished_tasks
-    list_of_tasks = [{'method': x, 'params': y} for (x,y) in unfinished_business]
+    list_of_tasks = [{'method': x, 'params': y}
+                     for (x, y) in unfinished_business]
 
     return list_of_tasks
 
@@ -380,14 +398,15 @@ Runs the main program according to the arguments obtained from the parser.
 
         g_cmd_dict = new_cmd_dict
 
-
     # process additional program parameters
     global g_timeout
     g_timeout = args.timeout
     global g_tasks
     g_tasks = args.output_file
+    global g_verbose
+    g_verbose = args.verbose
 
-    list_of_tasks = []   # this is where we keep the tasks that are to be procecessed
+    list_of_tasks = []   # these are the tasks that are to be procecessed
     if args.tasklist:   # we want to continue in a tasklist
         list_of_tasks = prepare_list_of_tasks_from_tasklist(args.tasklist)
     else:  # take the tasks from stdin
@@ -454,27 +473,35 @@ Runs the main program according to the arguments obtained from the parser.
     for t in threads:
         t.join()
 
+
 ###########################################
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='''pycobench - \
-Executes benchmarks given using a configuration file on cases given on the \
-standard input''')
+    parser = argparse.ArgumentParser(
+                description="pycobench - "
+                "Executes benchmarks given using a configuration file on "
+                " cases given on the standard input")
     parser.add_argument('conf', metavar='file.conf', nargs=1,
-        help='configuration file (in YAML)')
-    parser.add_argument('-j', '--jobs', type=int, default = os.cpu_count(),
-        help='The number of jobs (workers) to run concurrently (default: %(default)s)')
-    parser.add_argument('-c', '--continue', metavar='TASKLIST', dest='tasklist',
-        help='''Specifying this argument continues execution of unfinished \
-tasks from %(metavar)s.  No input is read.''')
-    parser.add_argument('-o', '--output', metavar='OUTPUT_FILE', dest='output_file',
-        default = g_tasks,
-        help='The output file (default: %(default)s)')
+                        help='configuration file (in YAML)')
+    parser.add_argument('-j', '--jobs', type=int, default=os.cpu_count(),
+                        help='The number of jobs (workers) to run '
+                        'concurrently (default: %(default)s)')
+    parser.add_argument('-c', '--continue', metavar='TASKLIST',
+                        dest='tasklist',
+                        help='''Specifying this argument continues execution "
+                        "of unfinished tasks from %(metavar)s. "
+                        "No input is read.''')
+    parser.add_argument('-o', '--output', metavar='OUTPUT_FILE',
+                        dest='output_file', default=g_tasks,
+                        help='The output file (default: %(default)s)')
     parser.add_argument('-t', '--timeout', metavar='TIMEOUT', type=int,
-        dest='timeout', default = g_timeout,
-        help='The timeout in seconds (default: %(default)s)')
+                        dest='timeout', default=g_timeout,
+                        help='The timeout in seconds (default: %(default)s)')
     parser.add_argument('-m', '--methods', metavar='METHODS', type=str,
-        dest='methods',
-        help="Which methods from the configuration file to execute, separated by ';' (default: all)")
+                        dest='methods',
+                        help="Which methods from the configuration file to "
+                        "execute, separated by ';' (default: all)")
+    parser.add_argument('-v', '--verbose', action="store_true",
+                        help="verbose output")
 
     args = parser.parse_args()
     run_main(args)
