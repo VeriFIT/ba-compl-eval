@@ -17,4 +17,4 @@ schewe:
   cmd: bin/goal-wrap.sh $1 -m rank -r -tr -ro
 
 ranker:
-  cmd: bin/rnk-red-complement $1
+  cmd: bin/ranker $1
