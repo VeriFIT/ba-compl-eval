@@ -166,7 +166,11 @@ measured using system "time" command.
     try:
         outs, errs = proc.communicate(timeout=g_timeout)
     except subprocess.TimeoutExpired:
-        kill_proc_tree(proc.pid, sig=signal.SIGKILL, include_parent=True)
+        try:
+            kill_proc_tree(proc.pid, sig=signal.SIGKILL, include_parent=True)
+        except Exception:
+            pass   # do not care
+
         raise
 
     result = {}
