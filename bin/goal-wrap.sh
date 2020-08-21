@@ -11,10 +11,10 @@ shift
 params="$*"
 
 TMP="$(mktemp).gff"
-./util/ba2gff.py ${INPUT} > ${TMP}
+./util/ba2gff.py ${INPUT} > ${TMP} || exit $?
 
-out=$(bin/goal/gc complement ${params} ${TMP} | grep -i "<state sid" | wc -l)
-ret=$?
+out=$(./bin/goal/gc complement ${params} ${TMP} | grep -i "<state sid" | wc -l)
+ret=${PIPESTATUS[0]}
 rm ${TMP}
 
 echo "States: ${out}"

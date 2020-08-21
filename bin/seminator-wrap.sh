@@ -11,10 +11,10 @@ shift
 params="$*"
 
 TMP=$(mktemp)
-util/ba2hoa.py ${INPUT} > ${TMP}
+./util/ba2hoa.py ${INPUT} > ${TMP} || exit $?
 
-out=$(bin/seminator --complement --ba ${params} ${TMP} | grep "^States:")
-ret=$?
+out=$(./bin/seminator --complement --ba ${params} ${TMP} | grep "^States:")
+ret=${PIPESTATUS[0]}
 rm ${TMP}
 
 echo ${out}

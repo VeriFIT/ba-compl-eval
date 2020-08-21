@@ -16,6 +16,9 @@ piterman:
 schewe:
   cmd: bin/goal-wrap.sh $1 -m rank -r -tr -ro
 
+frib:
+  cmd: bin/goal-wrap.sh $1 -m fribourg
+
 roll:
   cmd: bin/roll-wrap.sh $1
 
