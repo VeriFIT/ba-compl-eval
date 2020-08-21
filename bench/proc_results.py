@@ -113,7 +113,7 @@ def proc_res(fd, args):
     if args.tick:
         header += ["T"]
 
-    header = ['blah']
+    header += ['name']
     for eng in engines:
         header += [eng + "-runtime"]
         for out in engines_outs[eng]:
