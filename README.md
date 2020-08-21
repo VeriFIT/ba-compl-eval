@@ -64,3 +64,39 @@ make
 cp .libs/seminator ../
 cp src/.libs/libseminator.so.0 ../
 ```
+
+### ROLL
+
+```
+wget 'https://github.com/ISCAS-PMC/roll-library/archive/dev.tar.gz' -O roll.tar.gz
+tar xzvf roll.tar.gz
+cd roll-library-dev/
+./build.sh
+cp ROLL.jar ../
+```
+
+### Ranker
+
+```
+wget 'https://github.com/vhavlena/ba-inclusion/archive/master.tar.gz' -O ranker.tar.gz
+tar xzvf ranker.tar.gz
+cd ba-inclusion-master/src/
+make
+cp rnk-red-complement ../../ranker
+```
+
+
+TODO: RABIT
+
+Ranker internally uses RABIT, for running it, you may need a particular version of Java installed.
+
+```
+export RABITEXE="${HOME}/ba-compl-eval/bin/rabit/RABIT.jar" # or the correct path
+```
+
+## Running Experiments
+
+```
+export LD_LIBRARY_PATH=$HOME/ba-compl-eval/bin              # or the correct path
+export RABITEXE="${HOME}/ba-compl-eval/bin/rabit/RABIT.jar" # or the correct path
+```

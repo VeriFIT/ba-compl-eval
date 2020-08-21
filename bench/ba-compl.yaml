@@ -1,4 +1,4 @@
-seminator:
+seminat:
   cmd: bin/seminator-wrap.sh $1 --postprocess-comp=0
 
 spot:
@@ -7,7 +7,7 @@ spot:
 safra:
   cmd: bin/goal-wrap.sh $1 -m safra
 
-goal-default:
+goal-df:
   cmd: bin/goal-wrap.sh $1
 
 piterman:
@@ -15,6 +15,9 @@ piterman:
 
 schewe:
   cmd: bin/goal-wrap.sh $1 -m rank -r -tr -ro
+
+roll:
+  cmd: bin/roll-wrap.sh $1
 
 ranker:
   cmd: bin/ranker $1
