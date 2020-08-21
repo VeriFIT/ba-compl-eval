@@ -111,7 +111,7 @@ def proc_res(fd, args):
 
     header = list()
     if args.tick:
-        header += ["done"]
+        header += ["T"]
 
     header = ['blah']
     for eng in engines:
