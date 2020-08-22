@@ -13,9 +13,9 @@ params="$*"
 TMP="$(mktemp).hoa"
 ./util/ba2hoa.py ${INPUT} > ${TMP} || exit $?
 
-# out=$(java -jar bin/ROLL.jar complement -v 0 -table -syntactic ${params} ${TMP} | grep "^States:")
+set -o pipefail
 out=$(java -jar ./bin/ROLL.jar complement ${TMP} -v 0 -table -syntactic ${params} | grep '#H.S' | sed -E 's/^.*([0-9]+).*$/\1/')
-ret=${PIPESTATUS[0]}
+ret=$?
 rm ${TMP}
 
 echo "States: ${out}"

@@ -13,8 +13,9 @@ params="$*"
 TMP=$(mktemp)
 ./util/ba2hoa.py ${INPUT} > ${TMP} || exit $?
 
+set -o pipefail
 out=$(./bin/autfilt --complement --ba ${params} ${TMP} | grep "^States:")
-ret=${PIPESTATUS[0]}
+ret=$?
 rm ${TMP}
 
 echo ${out}
