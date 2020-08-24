@@ -1,0 +1,129 @@
+---
+title: "BA Complementation Analysis"
+params:
+  file: results/random-first-1000-nogoal-to300.csv
+  timeout: 600 # seconds
+output:
+  html_notebook:
+    code_folding: hide
+  pdf_document: default
+  html_document:
+    df_print: paged
+    toc: true
+    toc_float: true
+---
+
+```{r}
+#=========================================================
+# PREAMBLE
+#=========================================================
+
+# load the plotting library
+suppressMessages(library(ggplot2))
+#library(gridExtra)
+#library(ggExtra)
+#library(tikzDevice)
+#library(Hmisc)
+#library(pastecs)
+
+theme_set(theme_bw())
+
+options(scipen=999)  # turn-off scientific notation like 1e+48
+
+# size of point for scatterplots
+POINT_SIZE = 0.1
+#POINT_SIZE = 1
+
+# timeout
+TIMEOUT = params$timeout
+TIMEOUT_VAL = 1.05 * TIMEOUT
+
+ERR_VAL = 1.3 * TIMEOUT
+
+# saturate
+TIME_MIN = 0.01 # seconds
+
+BIG_SIZE=3
+SMALL_SIZE=2
+
+# FUNCTIONS
+read_file <- function(file) {
+  filename = paste0(file)
+  df <- read.csv2(filename,
+                  header=TRUE,
+                  sep=";",
+                  dec=",",
+                  comment.char="",
+                  na.strings=c("TO", "ERR"),
+                  quote="\"",
+                  strip.white=TRUE,
+                  allowEscapes=FALSE,
+                  stringsAsFactors=FALSE)
+
+  return(df)
+}
+
+plot_scatter_log <- function(df, xlab, ylab, xstring=xlab, ystring=ylab) {
+  pscat <- ggplot(df, aes_string(x=xlab, y=ylab)) +
+    geom_point(size=POINT_SIZE) +
+    geom_abline(size=0.1) +
+    geom_vline(size=0.1, xintercept=STATES_TIMEOUT, linetype="dashed") +
+    geom_hline(size=0.1, yintercept=STATES_TIMEOUT, linetype="dashed") +
+    geom_rug(alpha = 0.2) +
+    scale_x_log10() +
+    scale_y_log10() +
+    theme(axis.text.y = element_text(angle = 90, hjust = 0.5)) +
+    coord_fixed(xlim = c(STATES_MIN, STATES_TIMEOUT), ylim = c(STATES_MIN, STATES_TIMEOUT)) +
+    labs(
+      #title="Title",
+      #subtitle="Subtitle",
+      x=xstring,
+      y=ystring)
+  return(pscat)
+}
+
+make_tikz <- function(file, picture, width=2.5, height=2.5) {
+  font_size <- 1
+  tikz(file=file, onefile=T, width=width, height=height)
+  plot(picture)
+  garbage <- dev.off()
+}
+
+make_pdf <- function(file, picture, width=5, height=5) {
+  pdf(file=file, onefile=T, width, height)
+  plot(picture)
+  garbage <- dev.off()
+}
+```
+
+```{r}
+df <- read_file(params$file)
+orig_size <- nrow(df)
+```
+
+| What     |               |
+|----------|---------------|
+| **Size** | `r orig_size` |
+
+
+```{r}
+# Sanitize
+#df[df == 'ERR'] <- NA
+#df[df == 'TO'] <- NA
+
+# need to be changed
+STATES_MIN = 1
+STATES_MAX = max(max(df[,"seminat.States"], na.rm=TRUE), max(df[,"spot.States"], na.rm=TRUE))
+
+STATES_TIMEOUT <- STATES_MAX * 1.3
+df[is.na(df)] <- STATES_TIMEOUT
+
+plot_scatter_log(df, "ranker.States", "spot.States")
+plot_scatter_log(df, "ranker.States", "seminat.States")
+plot_scatter_log(df, "ranker.States", "roll.States")
+
+
+plot_scatter_log(df, "seminat.States", "spot.States")
+plot_scatter_log(df, "roll.States", "spot.States")
+plot_scatter_log(df, "roll.States", "seminat.States")
+```
