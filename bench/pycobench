@@ -41,6 +41,7 @@ import resource
 import signal
 import subprocess
 import sys
+import termcolor
 import threading
 import yaml
 
@@ -292,19 +293,21 @@ christian]).
     if 'timeout' in result:
         writer.writerow(['timeout', result['method']] + result['params'])
         task_file.flush()
-        res_string = 'TIMEOUT'
+        res_string = termcolor.colored('TIMEOUT', 'yellow')
     elif 'error' in result:
         writer.writerow(['error', result['method']] +
                         result['params'] + [result['error_msg']])
         task_file.flush()
-        res_string = 'ERROR'
+        res_string = termcolor.colored('ERROR', 'red', attrs=['bold'])
     else:
         str_stdout = remove_newlines(result['stdout'])
         str_stderr = remove_newlines(result['stderr'])
         status = 'finished'
         time_str = str(result['time'])
         time_str = time_str.replace('.', TIME_DELIMITER)
-        res_string = 'FINISHED \tResult: {}\tTime: {}'.format(
+
+        res_string = termcolor.colored('FINISHED', 'green')
+        res_string += '\tResult: {}\tTime: {}'.format(
                      result['retcode'], time_str)
 
         writer.writerow([status, result['method']] + result['params'] +
