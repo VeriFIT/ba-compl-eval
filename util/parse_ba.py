@@ -40,6 +40,107 @@ Parses Rabit's BA format into a simple dictionary.
 
 
 ###########################################
+def parseHOA(fd):
+    """parseHOA(fd) -> dict()
+
+Parses Hanoi Omega Automata format into a simple dictionary.
+(Supports only a subset focused on state-based acceptance Buchi automata.)
+"""
+    aut = dict()
+    aut["initial"] = []
+    aut["transitions"] = []
+    aut["final"] = []
+
+    aps = dict()   # atomic propositions
+
+    # reading header
+    while True:
+        line = fd.readline()
+        if not line: # no body
+            raise Exception("Missing body!")
+        line = line.strip()
+        if line == "":
+            continue
+        if line == "--BODY--":
+            break
+        match = re.match(r'^(?P<key>[^:]+):\s*(?P<value>.*)$', line)
+        if not match:
+            raise Exception("Invalid header format: {}".format(line))
+
+        # input sanity checks
+        if match['key'] == "acc-name":
+            if (match['value'] != "Buchi"):
+                raise Exception("Not Buchi acceptance: {}".format(match['value']))
+        if match['key'] == "Acceptance":
+            if (match['value'] != "1 Inf(0)"):
+                raise Exception("Expected acceptance: \"1 Inf(0)\" Received: \"{}\"".format(match['value']))
+
+        # start state
+        if match['key'] == "Start":
+            aut["initial"] = [match['value']]
+
+        # atomic propositions
+        if match['key'] == "AP":
+            ap_ls = match['value'].split()
+            aps_num = int(ap_ls[0])
+            ap_ls = ap_ls[1:]
+            cnt = 0
+            for ap in ap_ls:   # mam APs to numbers
+                aps[cnt] = ap.strip("\"")
+                cnt += 1
+            if cnt != aps_num:
+                raise Exception("Invalid number of atomic propositions (does not match the declared number: {}".format(line))
+
+    # reading body
+    state = None
+    while True:
+        line = fd.readline()
+        if not line: # end of input
+            raise Exception("Unexpected end of file")
+        line = line.strip()
+        if line == "":
+            continue
+        if line == "--END--":
+            break
+
+        match = re.match(r'^State:\s*(?P<state>\d+)\s*(?P<final>.+)?$', line)
+        if not match:
+            if state is None:   # first state not declared
+                raise Exception("Invalid beginning of the body: {}".format(line))
+
+            trans_match = re.match(r'\[(?P<aps>[^\]].*)\]\s*(?P<dst>\d+)$', line)
+            if not trans_match:
+                raise Exception("Invalid transition: {}".format(line))
+
+            dst = trans_match['dst']
+
+            str_aps = trans_match['aps']
+            ls_str_aps = str_aps.split("&")
+            symb = None
+            for one_ap in ls_str_aps:
+                one_ap = one_ap.strip()
+                ap_match = re.match(r'^(?P<neg>!)?\s*(?P<ap>\d+)$', one_ap)
+                if not ap_match:
+                    raise Exception("Invalid AP: {}".format(line))
+                if not ap_match['neg']: # positive AP
+                    if symb is not None:   # if other AP was positive
+                        raise Exception("More than one positive AP: {}".format(line))
+
+                    symb_num = int(ap_match['ap'])
+                    symb = aps[symb_num]
+
+            aut['transitions'].append((state, symb, dst))
+
+        # continue in the transition of the current state
+        else:    # if new state declared
+            state = int(match['state'])
+            if match['final']:
+                aut['final'].append(str(state))
+
+    return aut
+
+
+###########################################
 def aut2BA(aut):
     """aut2BA(aut) -> string
 

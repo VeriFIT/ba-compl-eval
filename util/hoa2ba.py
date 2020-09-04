@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-# A script for translation of a standard Buchi automaton in Rabit's BA format
-# into the Hanoi Omega Automata format.
+# A script for translation of a standard Buchi automaton in the Hanoi Omega
+# Automata format to Rabit's BA format.
 
 import sys
 import parse_ba as BA
@@ -17,8 +17,8 @@ if __name__ == '__main__':
         print("Invalid number of arguments: either 0 or 1 required")
         sys.exit(1)
 
-    aut = BA.parseBA(fd)
-    res = BA.aut2HOA(aut)
+    aut = BA.parseHOA(fd)
+    res = BA.aut2BA(aut)
 
     print(res, end="")
 
