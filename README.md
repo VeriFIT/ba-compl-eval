@@ -28,6 +28,19 @@ After installing GOAL, copy the GOAL directory:
 cp -r /Applications/GOAL.app/Contents/Resources/Java bin/goal
 ```
 
+#### Fribourg Construction plugin for GOAL
+
+A GOAL plugin implementing the Fribourg construction needs to be downloaded separetely.
+
+```
+cd bin/
+wget 'https://frico.s3.amazonaws.com/goal_plugins/ch.unifr.goal.complement.zip'
+unzip ch.unifr.goal.complement.zip
+cd ch.unifr.goal.complement
+zip -r ch.unifr.goal.complement.zip classes plugin.xml
+cp ch.unifr.goal.complement.zip <GOAL_LOCATION>/plugins
+```
+
 ### Spot
 
 We compile Spot and copy the file `autfilt` and the required libraries into the `bin/` directory
@@ -82,7 +95,7 @@ wget 'https://github.com/vhavlena/ba-inclusion/archive/master.tar.gz' -O ranker.
 tar xzvf ranker.tar.gz
 cd ba-inclusion-master/src/
 make
-cp rnk-red-complement ../../ranker
+cp ranker ../../
 ```
 
 
