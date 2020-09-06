@@ -1,34 +1,25 @@
-seminator-nopost:
-  cmd: bin/seminator-wrap.sh $1 --postprocess-comp=0
-
-seminator-post:
+seminator:
   cmd: bin/seminator-wrap.sh $1
 
-spot-post:
+spot:
   cmd: bin/spot-wrap.sh $1
 
-safra-post:
+safra:
   cmd: bin/goal-wrap.sh $1 -m safra
 
-goal-default-nopost:
+goal-default:
   cmd: bin/goal-wrap.sh $1
 
-piterman-post:
-  cmd: bin/goal-wrap.sh $1 -m piterman -r
-
-piterman-nopost:
+piterman:
   cmd: bin/goal-wrap.sh $1 -m piterman
 
-schewe-post:
-  cmd: bin/goal-wrap.sh $1 -m rank -r -tr -ro
-
-schewe-nopost:
+schewe:
   cmd: bin/goal-wrap.sh $1 -m rank -tr -ro
 
-fribourg-post:
+fribourg:
   cmd: bin/goal-wrap.sh $1 -m fribourg
 
-roll-nopost:
+roll:
   cmd: bin/roll-wrap.sh $1
 
 ranker:

@@ -13,11 +13,16 @@ params="$*"
 TMP=$(mktemp)
 ./util/ba2hoa.py ${INPUT} > ${TMP} || exit $?
 
+TMP_OUT=$(mktemp)
+
 set -o pipefail
-out=$(./bin/autfilt --complement --ba ${params} ${TMP} | grep "^States:")
+./bin/autfilt --complement --ba ${params} ${TMP} > ${TMP_OUT}
 ret=$?
 rm ${TMP}
 
-echo ${out}
+cat ${TMP_OUT} | grep '^States:'
+cat ${TMP_OUT} | ./bin/autfilt --high | grep '^States:' | sed 's/^States/autfilt-States/'
+
+rm ${TMP_OUT}
 
 exit ${ret}
