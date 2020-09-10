@@ -23,4 +23,4 @@ roll:
   cmd: bin/roll-wrap.sh $1
 
 ranker:
-  cmd: bin/ranker-wrap $1
+  cmd: bin/ranker-wrap.sh $1
