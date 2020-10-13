@@ -1,0 +1,42 @@
+HOA: v1
+name: "FG((a | (Ga R (F!b | (!c R !d)))) & (!a | (F!a U (Gb & (c U d)))))"
+States: 9
+Start: 0
+AP: 4 "a" "b" "d" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc stutter-invariant
+--BODY--
+State: 0
+[t] 0
+[0&1&2] 1
+[!0&!1 | !0&!2&!3] 2
+[!0&1&!2&3] 3
+State: 1 {0}
+[0&1&2] 1
+[0&1&!2&3] 4
+[0&1&!2] 5
+[!0&1&!2] 6
+State: 2 {0}
+[!0&!1 | !0&!2&!3] 2
+[!0&1&!2&3] 3
+[!0&1&2 | !0&1&3] 7
+State: 3 {0}
+[!0&!2&!3] 2
+[!0&!2&3] 3
+State: 4
+[0&1&2] 1
+[0&1&!2&3] 4
+State: 5
+[0&1&!2] 5
+[0&1&2] 8
+State: 6 {0}
+[!0&1&!2] 6
+State: 7
+[!0&!1] 2
+[!0&1] 7
+State: 8
+[0&1&!2] 5
+[!0&1&!2] 6
+[0&1&2] 8
+--END--

@@ -1,0 +1,37 @@
+HOA: v1
+name: "Xa | G(Xb | (Gc U Xa))"
+States: 8
+Start: 0
+AP: 3 "c" "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[t] 1
+[t] 2
+[0] 3
+State: 1
+[1] 4
+State: 2 {0}
+[2] 2
+[0&2] 3
+[2] 5
+State: 3
+[0] 3
+[0] 6
+State: 4 {0}
+[t] 4
+State: 5 {0}
+[1&!2] 2
+[0&1&!2] 3
+[1&!2] 5
+State: 6 {0}
+[0&1] 3
+[0&1] 6
+[0&1] 7
+State: 7 {0}
+[0&!1&2] 3
+[0&!1&2] 6
+[0&!1&2] 7
+--END--

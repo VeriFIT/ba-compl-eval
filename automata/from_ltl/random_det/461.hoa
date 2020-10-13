@@ -1,0 +1,17 @@
+HOA: v1
+name: "G(a & (b | !c) & Fc)"
+States: 2
+Start: 0
+AP: 3 "b" "c" "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant
+--BODY--
+State: 0 {0}
+[0&1&2] 0
+[!1&2] 1
+State: 1
+[0&1&2] 0
+[!1&2] 1
+--END--

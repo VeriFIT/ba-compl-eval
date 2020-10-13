@@ -1,0 +1,51 @@
+HOA: v1
+name: "a | (Xb R (c | F(a & Gd)))"
+States: 11
+Start: 0
+AP: 4 "a" "c" "d" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[0] 1
+[!0&1] 2
+[!0&1] 3
+[!0&!1] 4
+State: 1 {0}
+[t] 1
+State: 2
+[3] 1
+State: 3 {0}
+[1] 2
+[1] 3
+[!1] 4
+[0&!1&2] 5
+[0&!1&2] 6
+State: 4
+[t] 4
+[0&2&!3] 5
+[0&2&!3] 6
+[0&2&3] 7
+[3] 8
+State: 5
+[2&3] 7
+State: 6 {0}
+[0&2 | 1&2] 5
+[0&2 | 1&2] 6
+[!0&!1&2] 9
+State: 7 {0}
+[2] 7
+State: 8
+[0&2&!3] 7
+[!3] 8
+State: 9
+[0&2&!3] 5
+[0&2&!3] 6
+[0&2&3] 7
+[!0&2] 9
+[!0&2&3] 10
+State: 10
+[0&2&!3] 7
+[!0&2&!3] 10
+--END--

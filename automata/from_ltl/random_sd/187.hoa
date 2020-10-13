@@ -1,0 +1,28 @@
+HOA: v1
+name: "(a & ((b & F(Gb | X(!b & c))) | (!b & G(F!b & X(b | !c))))) | (!a & ((b & G(F!b & X(b | !c))) | (!b & F(Gb | X(!b & c)))))"
+States: 6
+Start: 0
+AP: 3 "b" "c" "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[0&2] 1
+[!0&!2 | 0&2] 2
+[!0&2 | 0&!2] 3
+State: 1 {0}
+[0] 1
+State: 2
+[0] 1
+[0 | !1] 2
+[!0&1] 4
+State: 3 {0}
+[!0&!1] 3
+[0] 5
+State: 4 {0}
+[t] 4
+State: 5
+[!0&!1] 3
+[0] 5
+--END--

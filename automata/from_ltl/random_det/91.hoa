@@ -1,0 +1,45 @@
+HOA: v1
+name: "Fa & ((b U c) | XX(c & Gd))"
+States: 11
+Start: 0
+AP: 4 "a" "b" "c" "d"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc very-weak
+--BODY--
+State: 0
+[0&2] 1
+[!0&2] 2
+[0&1&!2] 3
+[0&!2] 4
+[!0&1&!2] 5
+[!0&!2] 6
+State: 1 {0}
+[t] 1
+State: 2
+[0] 1
+[!0] 2
+State: 3
+[2] 1
+[1&!2] 3
+State: 4
+[t] 7
+State: 5
+[0&2] 1
+[!0&2] 2
+[0&1&!2] 3
+[!0&1&!2] 5
+State: 6
+[0] 7
+[!0] 9
+State: 7
+[2&3] 8
+State: 8 {0}
+[3] 8
+State: 9
+[0&2&3] 8
+[!0&2&3] 10
+State: 10
+[0&3] 8
+[!0&3] 10
+--END--

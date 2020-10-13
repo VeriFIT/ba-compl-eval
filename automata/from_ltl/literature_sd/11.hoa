@@ -1,0 +1,20 @@
+HOA: v1
+name: "F(a & G(b | c | X(c R d)))"
+States: 3
+Start: 0
+AP: 4 "c" "b" "a" "d"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc weak
+--BODY--
+State: 0
+[t] 0
+[0&2 | 1&2] 1
+[!0&!1&2] 2
+State: 1 {0}
+[0 | 1] 1
+[!0&!1] 2
+State: 2 {0}
+[0&3] 1
+[!0&3] 2
+--END--

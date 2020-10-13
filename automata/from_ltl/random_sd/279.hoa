@@ -1,0 +1,36 @@
+HOA: v1
+name: "X(Xa | F(b & ((c R (!c | d)) U Gc)))"
+States: 8
+Start: 0
+AP: 4 "c" "d" "b" "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc weak
+--BODY--
+State: 0
+[t] 1
+State: 1
+[t] 2
+[0&2] 3
+[0&1&2] 4
+[t] 5
+[!0&2] 6
+State: 2
+[3] 7
+State: 3 {0}
+[0] 3
+State: 4
+[0&1&!2] 4
+[!0&!2] 6
+State: 5
+[0&2] 3
+[0&1&2] 4
+[t] 5
+[!0&2] 6
+State: 6
+[0&1&!2] 3
+[0&1&!2] 4
+[!0&!2] 6
+State: 7 {0}
+[t] 7
+--END--

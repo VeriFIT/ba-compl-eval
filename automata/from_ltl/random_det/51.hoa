@@ -1,0 +1,31 @@
+HOA: v1
+name: "(a & ((b | X(b M !c)) R (!a | d))) | (!a & ((!b & X(!b W c)) U (a & !d)))"
+States: 6
+Start: 1
+AP: 4 "b" "a" "d" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic
+properties: very-weak
+--BODY--
+State: 0 {0}
+[t] 0
+State: 1
+[0&1&2] 0
+[!0&1&2] 2
+[!0&!1] 4
+State: 2 {0}
+[0&!1 | 0&2 | 0&!3] 0
+[!0&!1 | !0&2] 2
+[!0&1&!2&!3] 5
+State: 3 {0}
+[3] 0
+[!0&!3] 3
+State: 4
+[1&!2&3] 0
+[!0&1&!2&!3] 3
+[!0&!1 | !0&2] 4
+State: 5
+[0&!3] 0
+[!0&!3] 5
+--END--
