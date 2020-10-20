@@ -95,21 +95,11 @@ wget 'https://github.com/vhavlena/ba-inclusion/archive/master.tar.gz' -O ranker.
 tar xzvf ranker.tar.gz
 cd ba-inclusion-master/src/
 make
-cp ranker ../../
-```
-
-
-TODO: RABIT
-
-Ranker internally uses RABIT, for running it, you may need a particular version of Java installed.
-
-```
-export RABITEXE="${HOME}/ba-compl-eval/bin/rabit/RABIT.jar" # or the correct path
+cp ranker ranker-tight ranker-composition ../../
 ```
 
 ## Running Experiments
 
 ```
 export LD_LIBRARY_PATH=$HOME/ba-compl-eval/bin              # or the correct path
-export RABITEXE="${HOME}/ba-compl-eval/bin/rabit/RABIT.jar" # or the correct path
 ```
