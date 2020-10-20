@@ -24,3 +24,7 @@ ranker-maxr:
 
 ranker-rrestr:
   cmd: bin/ranker-wrap.sh $1
+
+# backoff
+ranker-maxr-bo:
+  cmd: bin/ranker-composition-wrap.sh $1
