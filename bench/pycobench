@@ -307,8 +307,7 @@ christian]).
         time_str = time_str.replace('.', TIME_DELIMITER)
 
         res_string = termcolor.colored('FINISHED', 'green')
-        res_string += '\tResult: {}\tTime: {}'.format(
-                     result['retcode'], time_str)
+        res_string += f'\tResult: {result["retcode"]}\tTime: {time_str}'
 
         writer.writerow([status, result['method']] + result['params'] +
                         [result['retcode'], str_stdout, str_stderr,
@@ -487,7 +486,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
                 description="pycobench - "
                 "Executes benchmarks given using a configuration file on "
-                " cases given on the standard input")
+                "cases given on the standard input")
     parser.add_argument('conf', metavar='file.conf', nargs=1,
                         help='configuration file (in YAML)')
     parser.add_argument('-j', '--jobs', type=int, default=os.cpu_count(),

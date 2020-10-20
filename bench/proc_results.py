@@ -95,6 +95,7 @@ def proc_res(fd, args):
                             sys.stderr.write("Warning: in {} and {}: "
                                 "element {} not in {}\n".format(bench, eng,
                                 out, bench_res["output"]))
+                            ls.append("MISSING")
                             # assert False
             else:
                 all_engs = False

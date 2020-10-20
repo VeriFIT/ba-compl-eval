@@ -1,4 +1,4 @@
-# Büchi automata complementation evalution environment
+# Büchi automata complementation evaluation environment
 
 ## Installing Dependencies
 ```

@@ -7,9 +7,6 @@ spot:
 safra:
   cmd: bin/goal-wrap.sh $1 -m safra
 
-goal-default:
-  cmd: bin/goal-wrap.sh $1
-
 piterman:
   cmd: bin/goal-wrap.sh $1 -m piterman
 
@@ -22,5 +19,8 @@ fribourg:
 roll:
   cmd: bin/roll-wrap.sh $1
 
-ranker:
+ranker-maxr:
+  cmd: bin/ranker-wrap.sh $1
+
+ranker-rrestr:
   cmd: bin/ranker-wrap.sh $1
