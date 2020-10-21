@@ -2,7 +2,6 @@
 
 ## Installing Dependencies
 ```
-cd bench
 pip3 install -r requirements.txt
 ```
 
