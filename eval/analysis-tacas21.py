@@ -272,6 +272,6 @@ plot_list = [(params['x'], params['y'], params['filename'], scatter_plot(df,
 print("\n\n")
 print("Generating plots...")
 for x, y, filename, plot in plot_list:
-  filename = f"plots/{filename}.png"
+  filename = f"plots/{filename}.html"
   print(f"plotting x: {x}, y: {y}... saving to {filename}")
   plot.save(filename, scale_factor=2)
