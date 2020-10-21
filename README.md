@@ -51,7 +51,7 @@ tar xzf spot-2.9.3.tar.gz
 cd spot-2.9.3/
 ./configure
 make
-cp bin/autfilt ../
+cp bin/.libs/autfilt ../
 cp spot/.libs/libspot.so.0 ../
 cp buddy/src/.libs/libbddx.so.0 ../
 export LD_LIBRARY_PATH=$HOME/ba-compl-eval/bin        # or the correct path

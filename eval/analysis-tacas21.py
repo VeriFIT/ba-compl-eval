@@ -85,8 +85,8 @@ print(f"# of automata: {len(df)}")
 
 # some sanitization
 # remove automata with trivial language
-df = df[df['ranker-Transitions'] != 0]
-df = df[df['ranker-autfilt-States'] != 1]
+df = df[df['ranker-maxr-Transitions'] != 0]
+df = df[df['ranker-maxr-autfilt-States'] != 1]
 
 print(f'# of automata after sanitization: {len(df)}')
 print("\n\n")
@@ -106,11 +106,11 @@ df_summary_states = pd.DataFrame(summary_states).transpose()
 
 
 ################  states of complements ##################
-interesting = ["ranker-nopost",
-               "ranker-tight-nopost",
+interesting = ["ranker-maxr-nopost",
+               "ranker-rrestr-nopost",
                "schewe",
-               "ranker-autfilt",
-               "ranker-composition-autfilt",
+               "ranker-maxr-autfilt",
+               "ranker-maxr-bo-autfilt",
                "piterman-autfilt",
                "safra-autfilt",
                "spot-autfilt",
@@ -141,8 +141,8 @@ print(tab.tabulate(tab_interesting, headers=headers, tablefmt="github"))
 print("\n\n")
 
 #################### runtimes of complementation ##################
-interesting = ["ranker",
-               "ranker-composition",
+interesting = ["ranker-maxr",
+               "ranker-maxr-bo",
                "piterman",
                "safra",
                "spot",
@@ -193,14 +193,14 @@ for col in df.columns:
 
 
 # comparing wins/loses
-compare_methods = [("ranker-nopost-States", "ranker-tight-nopost-States"),
-                   ("ranker-nopost-States", "schewe-States"),
-                   ("ranker-autfilt-States", "piterman-autfilt-States"),
-                   ("ranker-autfilt-States", "safra-autfilt-States"),
-                   ("ranker-autfilt-States", "spot-autfilt-States"),
-                   ("ranker-autfilt-States", "fribourg-autfilt-States"),
-                   ("ranker-autfilt-States", "seminator-autfilt-States"),
-                   ("ranker-autfilt-States", "roll-autfilt-States"),
+compare_methods = [("ranker-maxr-nopost-States", "ranker-rrestr-nopost-States"),
+                   ("ranker-maxr-nopost-States", "schewe-States"),
+                   ("ranker-maxr-autfilt-States", "piterman-autfilt-States"),
+                   ("ranker-maxr-autfilt-States", "safra-autfilt-States"),
+                   ("ranker-maxr-autfilt-States", "spot-autfilt-States"),
+                   ("ranker-maxr-autfilt-States", "fribourg-autfilt-States"),
+                   ("ranker-maxr-autfilt-States", "seminator-autfilt-States"),
+                   ("ranker-maxr-autfilt-States", "roll-autfilt-States"),
                   ]
 
 tab_wins = []
@@ -226,8 +226,8 @@ print("##############    other claimed results    ###############")
 ############# the best solution ##########
 df['other_min'] = df[['safra-autfilt-States','piterman-autfilt-States', 'spot-autfilt-States', 'fribourg-autfilt-States', 'seminator-autfilt-States', 'roll-autfilt-States']].min(axis=1)
 
-ranker_best = df[df['ranker-autfilt-States'] < df['other_min']]
-ranker_not_best = df[df['ranker-autfilt-States'] > df['other_min']]
+ranker_best = df[df['ranker-maxr-autfilt-States'] < df['other_min']]
+ranker_not_best = df[df['ranker-maxr-autfilt-States'] > df['other_min']]
 
 num_ranker_not_strictly_best = len(df) - len(ranker_not_best)
 num_ranker_not_strictly_best_percent = "{:.1f}".format(num_ranker_not_strictly_best / len(df) * 100)
@@ -238,29 +238,16 @@ print(f"ranker stricly best: {num_ranker_strictly_best} (= {num_ranker_strictly_
 # print(f"ranker not best = {len(ranker_not_best)}")
 
 ###########   BackOff   ################
-backoff = df[df["ranker-composition-Engine"].str.contains("GOAL", na=False)]
+backoff = df[df["ranker-maxr-bo-Engine"].str.contains("GOAL", na=False)]
 print(f"backoff executions: {len(backoff)}")
 
 
-
-to_cmp = [
-  ('ranker', 'seminator'),
-  ('ranker', 'safra'),
-#  ('ranker', 'goal-default'),            # -- this is Piterman
-  ('ranker', 'piterman'),
-  ('ranker', 'schewe'),
-  ('ranker', 'fribourg'),
-  ('ranker', 'spot'),
-  ('ranker', 'roll'),
-  ('ranker', 'ranker-tight'),
-]
-
-to_cmp2 = [{'x':"ranker-nopost", 'y':"ranker-tight-nopost", 'xname':'Ranker-MaxR', 'yname':'Ranker-RRestr', 'filename': "fig_1a"},
-           {'x':"ranker-nopost", 'y':"schewe", 'xname': "Ranker-MaxR", 'yname': "Schewe-RedAvgOut", 'filename': "fig_1b"},
-           {'x':"ranker-autfilt", 'y':"seminator-autfilt", 'xname': "Ranker-MaxR+PP", 'yname': "Seminator 2+PP", 'max': 10000, 'tickCount': 3, 'filename': "fig_2a"},
-           {'x':"ranker-autfilt", 'y':"piterman-autfilt", 'xname': "Ranker-MaxR+PP", 'yname': "Piterman+PP", 'max': 10000, 'tickCount': 3, 'filename': "fig_2b"},
-           {'x':"ranker-autfilt", 'y':"fribourg-autfilt", 'xname': "Ranker-MaxR+PP", 'yname': "Fribourg+PP", 'max': 10000, 'tickCount': 3, 'filename': "fig_2c"},
-           {'x':"ranker-autfilt", 'y':"roll-autfilt", 'xname': "Ranker-MaxR+PP", 'yname': "ROLL+PP", 'max': 10000, 'tickCount': 3, 'filename': "fig_2d"},
+to_cmp2 = [{'x':"ranker-maxr-nopost", 'y':"ranker-rrestr-nopost", 'xname':'Ranker-MaxR', 'yname':'Ranker-RRestr', 'filename': "fig_1a"},
+           {'x':"ranker-maxr-nopost", 'y':"schewe", 'xname': "Ranker-MaxR", 'yname': "Schewe-RedAvgOut", 'filename': "fig_1b"},
+           {'x':"ranker-maxr-autfilt", 'y':"seminator-autfilt", 'xname': "Ranker-MaxR+PP", 'yname': "Seminator 2+PP", 'max': 10000, 'tickCount': 3, 'filename': "fig_2a"},
+           {'x':"ranker-maxr-autfilt", 'y':"piterman-autfilt", 'xname': "Ranker-MaxR+PP", 'yname': "Piterman+PP", 'max': 10000, 'tickCount': 3, 'filename': "fig_2b"},
+           {'x':"ranker-maxr-autfilt", 'y':"fribourg-autfilt", 'xname': "Ranker-MaxR+PP", 'yname': "Fribourg+PP", 'max': 10000, 'tickCount': 3, 'filename': "fig_2c"},
+           {'x':"ranker-maxr-autfilt", 'y':"roll-autfilt", 'xname': "Ranker-MaxR+PP", 'yname': "ROLL+PP", 'max': 10000, 'tickCount': 3, 'filename': "fig_2d"},
           ]
 
 # add fields where not present
