@@ -396,6 +396,7 @@ Runs the main program according to the arguments obtained from the parser.
     global g_cmd_dict
     if args.methods:
         methods = args.methods.split(';')
+        methods = [meth for meth in methods if meth != ""]
         new_cmd_dict = dict()
         for m in methods:
             if m not in g_cmd_dict:
