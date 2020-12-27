@@ -1,5 +1,4 @@
 HOA: v1
-name: "Ga | (b R c)"
 States: 4
 Start: 3
 AP: 3 "a" "c" "b"
@@ -9,15 +8,29 @@ properties: trans-labels explicit-labels state-acc colored
 properties: deterministic stutter-invariant very-weak
 --BODY--
 State: 0 {0}
-[0] 0
+[0&!1&!2] 0
+[0&!1&2] 0
+[0&1&!2] 0
+[0&1&2] 0
 State: 1 {0}
-[1&!2] 1
-[1&2] 2
-State: 2 {0}
-[t] 2
-State: 3 {0}
-[0&!1] 0
 [!0&1&!2] 1
-[1&2] 2
+[0&1&!2] 1
+[!0&1&2] 2
+[0&1&2] 2
+State: 2 {0}
+[!0&!1&!2] 2
+[!0&!1&2] 2
+[!0&1&!2] 2
+[!0&1&2] 2
+[0&!1&!2] 2
+[0&!1&2] 2
+[0&1&!2] 2
+[0&1&2] 2
+State: 3 {0}
+[0&!1&!2] 0
+[0&!1&2] 0
+[!0&1&!2] 1
+[!0&1&2] 2
+[0&1&2] 2
 [0&1&!2] 3
 --END--

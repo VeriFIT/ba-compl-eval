@@ -1,5 +1,4 @@
 HOA: v1
-name: "(!a & FG!a) | (a & GFa)"
 States: 5
 Start: 0
 AP: 1 "a"
@@ -15,7 +14,8 @@ State: 1 {0}
 [!0] 1
 State: 2
 [!0] 1
-[t] 2
+[!0] 2
+[0] 2
 State: 3 {0}
 [0] 3
 [!0] 4

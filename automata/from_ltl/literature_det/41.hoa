@@ -1,5 +1,4 @@
 HOA: v1
-name: "G(a | X(b R c))"
 States: 2
 Start: 0
 AP: 3 "a" "c" "b"
@@ -9,9 +8,17 @@ properties: trans-labels explicit-labels state-acc colored
 properties: deterministic weak
 --BODY--
 State: 0 {0}
-[0] 0
-[!0] 1
+[0&!1&!2] 0
+[0&!1&2] 0
+[0&1&!2] 0
+[0&1&2] 0
+[!0&!1&!2] 1
+[!0&!1&2] 1
+[!0&1&!2] 1
+[!0&1&2] 1
 State: 1 {0}
 [0&1&2] 0
-[!0&1 | 1&!2] 1
+[!0&1&!2] 1
+[!0&1&2] 1
+[0&1&!2] 1
 --END--

@@ -1,5 +1,4 @@
 HOA: v1
-name: "GFa U G(!a | Xa)"
 States: 4
 Start: 0
 AP: 1 "a"
@@ -9,13 +8,15 @@ properties: trans-labels explicit-labels state-acc
 --BODY--
 State: 0
 [!0] 1
-[t] 2
+[!0] 2
+[0] 2
 [0] 3
 State: 1 {0}
 [!0] 1
 [0] 3
 State: 2
-[t] 2
+[!0] 2
+[0] 2
 [0] 3
 State: 3 {0}
 [0] 3

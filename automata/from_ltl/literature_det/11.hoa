@@ -1,5 +1,4 @@
 HOA: v1
-name: "Fa & ((a | b) R ((a | !b) R ((a | b) R ((a | !b) R (b R !a)))))"
 States: 7
 Start: 5
 AP: 2 "a" "b"
@@ -9,10 +8,15 @@ properties: trans-labels explicit-labels state-acc deterministic
 properties: stutter-invariant very-weak
 --BODY--
 State: 0 {0}
-[t] 0
+[!0&!1] 0
+[!0&1] 0
+[0&!1] 0
+[0&1] 0
 State: 1
-[0] 0
-[!0] 1
+[0&!1] 0
+[0&1] 0
+[!0&!1] 1
+[!0&1] 1
 State: 2
 [!0&1] 1
 [!0&!1] 2

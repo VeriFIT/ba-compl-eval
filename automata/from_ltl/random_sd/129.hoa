@@ -1,5 +1,4 @@
 HOA: v1
-name: "F(Ga & XGb)"
 States: 2
 Start: 0
 AP: 2 "a" "b"
@@ -8,8 +7,12 @@ Acceptance: 1 Inf(0)
 properties: trans-labels explicit-labels state-acc very-weak
 --BODY--
 State: 0
-[t] 0
-[0] 1
+[!0&!1] 0
+[!0&1] 0
+[0&!1] 0
+[0&1] 0
+[0&!1] 1
+[0&1] 1
 State: 1 {0}
 [0&1] 1
 --END--

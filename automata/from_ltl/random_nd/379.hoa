@@ -1,5 +1,4 @@
 HOA: v1
-name: "FGa R (a | b)"
 States: 3
 Start: 0
 AP: 2 "a" "b"
@@ -9,11 +8,20 @@ properties: trans-labels explicit-labels state-acc stutter-invariant
 properties: very-weak
 --BODY--
 State: 0 {0}
-[0 | 1] 0
-[0 | 1] 2
+[!0&1] 0
+[0&!1] 0
+[0&1] 0
+[!0&1] 2
+[0&!1] 2
+[0&1] 2
 State: 1 {0}
-[0] 1
+[0&!1] 1
+[0&1] 1
 State: 2
-[0] 1
-[t] 2
+[0&!1] 1
+[0&1] 1
+[!0&!1] 2
+[!0&1] 2
+[0&!1] 2
+[0&1] 2
 --END--

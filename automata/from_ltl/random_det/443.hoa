@@ -1,5 +1,4 @@
 HOA: v1
-name: "XXXGa"
 States: 4
 Start: 2
 AP: 1 "a"
@@ -11,9 +10,12 @@ properties: very-weak
 State: 0 {0}
 [0] 0
 State: 1
-[t] 0
+[!0] 0
+[0] 0
 State: 2
-[t] 3
+[!0] 3
+[0] 3
 State: 3
-[t] 1
+[!0] 1
+[0] 1
 --END--

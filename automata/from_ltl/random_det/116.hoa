@@ -1,5 +1,4 @@
 HOA: v1
-name: "X((!a | !b) & F(a | (b U Ga)))"
 States: 4
 Start: 0
 AP: 2 "a" "b"
@@ -9,13 +8,22 @@ properties: trans-labels explicit-labels state-acc deterministic
 properties: very-weak
 --BODY--
 State: 0
-[t] 1
+[!0&!1] 1
+[!0&1] 1
+[0&!1] 1
+[0&1] 1
 State: 1
 [0&!1] 2
-[!0] 3
+[!0&!1] 3
+[!0&1] 3
 State: 2 {0}
-[t] 2
+[!0&!1] 2
+[!0&1] 2
+[0&!1] 2
+[0&1] 2
 State: 3
-[0] 2
-[!0] 3
+[0&!1] 2
+[0&1] 2
+[!0&!1] 3
+[!0&1] 3
 --END--

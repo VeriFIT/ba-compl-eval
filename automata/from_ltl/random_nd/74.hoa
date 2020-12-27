@@ -1,5 +1,4 @@
 HOA: v1
-name: "GF(a | G(F!a & Fb))"
 States: 5
 Start: 0
 AP: 2 "a" "b"
@@ -9,22 +8,30 @@ properties: trans-labels explicit-labels state-acc complete
 properties: stutter-invariant
 --BODY--
 State: 0 {0}
-[0] 0
-[!0] 1
+[0&!1] 0
+[0&1] 0
+[!0&!1] 1
+[!0&1] 1
 [!0&1] 2
 State: 1
-[0] 0
-[!0] 1
+[0&!1] 0
+[0&1] 0
+[!0&!1] 1
+[!0&1] 1
 [!0&1] 2
 State: 2 {0}
 [!0&1] 2
-[!1] 3
+[!0&!1] 3
+[0&!1] 3
 [0&1] 4
 State: 3
 [!0&1] 2
-[!1] 3
+[!0&!1] 3
+[0&!1] 3
 [0&1] 4
 State: 4
-[!0] 2
-[0] 4
+[!0&!1] 2
+[!0&1] 2
+[0&!1] 4
+[0&1] 4
 --END--

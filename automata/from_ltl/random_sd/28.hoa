@@ -1,5 +1,4 @@
 HOA: v1
-name: "F(Gb & Fa)"
 States: 2
 Start: 0
 AP: 2 "b" "a"
@@ -9,8 +8,12 @@ properties: trans-labels explicit-labels state-acc stutter-invariant
 properties: very-weak
 --BODY--
 State: 0
-[t] 0
+[!0&!1] 0
+[!0&1] 0
+[0&!1] 0
+[0&1] 0
 [0&1] 1
 State: 1 {0}
-[0] 1
+[0&!1] 1
+[0&1] 1
 --END--

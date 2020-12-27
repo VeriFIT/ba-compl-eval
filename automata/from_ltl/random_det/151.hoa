@@ -1,5 +1,4 @@
 HOA: v1
-name: "a R b"
 States: 2
 Start: 1
 AP: 2 "b" "a"
@@ -9,7 +8,10 @@ properties: trans-labels explicit-labels state-acc colored
 properties: deterministic stutter-invariant very-weak
 --BODY--
 State: 0 {0}
-[t] 0
+[!0&!1] 0
+[!0&1] 0
+[0&!1] 0
+[0&1] 0
 State: 1 {0}
 [0&1] 0
 [0&!1] 1

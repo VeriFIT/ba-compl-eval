@@ -1,5 +1,4 @@
 HOA: v1
-name: "G((a | XGb) & (c | XG!b))"
 States: 3
 Start: 1
 AP: 3 "a" "c" "b"
@@ -9,11 +8,16 @@ properties: trans-labels explicit-labels state-acc colored
 properties: deterministic very-weak
 --BODY--
 State: 0 {0}
-[1&2] 0
+[!0&1&2] 0
+[0&1&2] 0
 State: 1 {0}
-[!0&1] 0
-[0&1] 1
-[0&!1] 2
+[!0&1&!2] 0
+[!0&1&2] 0
+[0&1&!2] 1
+[0&1&2] 1
+[0&!1&!2] 2
+[0&!1&2] 2
 State: 2 {0}
-[0&!2] 2
+[0&!1&!2] 2
+[0&1&!2] 2
 --END--

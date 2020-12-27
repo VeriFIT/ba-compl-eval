@@ -1,5 +1,4 @@
 HOA: v1
-name: "F(a | (b & Xb))"
 States: 3
 Start: 0
 AP: 2 "a" "b"
@@ -11,10 +10,16 @@ properties: deterministic terminal
 State: 0
 [!0&!1] 0
 [!0&1] 1
-[0] 2
+[0&!1] 2
+[0&1] 2
 State: 1
 [!0&!1] 0
-[0 | 1] 2
+[!0&1] 2
+[0&!1] 2
+[0&1] 2
 State: 2 {0}
-[t] 2
+[!0&!1] 2
+[!0&1] 2
+[0&!1] 2
+[0&1] 2
 --END--

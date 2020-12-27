@@ -1,5 +1,4 @@
 HOA: v1
-name: "a R (b & X(b W (a & Gc)))"
 States: 3
 Start: 0
 AP: 3 "b" "a" "c"
@@ -8,11 +7,20 @@ Acceptance: 1 Inf(0)
 properties: trans-labels explicit-labels state-acc colored very-weak
 --BODY--
 State: 0 {0}
-[0&!1] 0
-[0&1] 1
+[0&!1&!2] 0
+[0&!1&2] 0
+[0&1&!2] 1
+[0&1&2] 1
 State: 1 {0}
-[0] 1
-[1&2] 2
+[0&!1&!2] 1
+[0&!1&2] 1
+[0&1&!2] 1
+[0&1&2] 1
+[!0&1&2] 2
+[0&1&2] 2
 State: 2 {0}
-[2] 2
+[!0&!1&2] 2
+[!0&1&2] 2
+[0&!1&2] 2
+[0&1&2] 2
 --END--

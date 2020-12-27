@@ -1,5 +1,4 @@
 HOA: v1
-name: "FG((a | Gb) & (!a | F!b | G(a & b)))"
 States: 5
 Start: 0
 AP: 2 "b" "a"
@@ -8,7 +7,10 @@ Acceptance: 1 Inf(0)
 properties: trans-labels explicit-labels state-acc stutter-invariant
 --BODY--
 State: 0
-[t] 0
+[!0&!1] 0
+[!0&1] 0
+[0&!1] 0
+[0&1] 0
 [!0&1] 1
 [0&1] 2
 [0&!1] 3

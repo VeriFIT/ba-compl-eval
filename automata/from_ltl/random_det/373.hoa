@@ -1,5 +1,4 @@
 HOA: v1
-name: "X(a & F!b & Xb)"
 States: 6
 Start: 2
 AP: 2 "a" "b"
@@ -9,16 +8,26 @@ properties: trans-labels explicit-labels state-acc deterministic
 properties: terminal
 --BODY--
 State: 0 {0}
-[t] 0
+[!0&!1] 0
+[!0&1] 0
+[0&!1] 0
+[0&1] 0
 State: 1
-[1] 0
+[!0&1] 0
+[0&1] 0
 State: 2
-[t] 5
+[!0&!1] 5
+[!0&1] 5
+[0&!1] 5
+[0&1] 5
 State: 3
-[1] 4
+[!0&1] 4
+[0&1] 4
 State: 4
-[!1] 0
-[1] 4
+[!0&!1] 0
+[0&!1] 0
+[!0&1] 4
+[0&1] 4
 State: 5
 [0&!1] 1
 [0&1] 3

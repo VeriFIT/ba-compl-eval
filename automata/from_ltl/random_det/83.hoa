@@ -1,5 +1,4 @@
 HOA: v1
-name: "X((G!a & ((!a & b & Fa) | (!b & (a | G!a)))) | (Fa & ((b & (a | G!a)) | (!a & !b & Fa))))"
 States: 3
 Start: 1
 AP: 2 "a" "b"
@@ -9,9 +8,16 @@ properties: trans-labels explicit-labels state-acc deterministic
 properties: very-weak
 --BODY--
 State: 0
-[!0&!1 | 0&1] 2
+[!0&!1] 2
+[0&1] 2
 State: 1
-[t] 0
+[!0&!1] 0
+[!0&1] 0
+[0&!1] 0
+[0&1] 0
 State: 2 {0}
-[t] 2
+[!0&!1] 2
+[!0&1] 2
+[0&!1] 2
+[0&1] 2
 --END--

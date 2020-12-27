@@ -1,5 +1,4 @@
 HOA: v1
-name: "X(a | XGa)"
 States: 4
 Start: 2
 AP: 1 "a"
@@ -14,7 +13,9 @@ State: 1
 [!0] 0
 [0] 3
 State: 2
-[t] 1
+[!0] 1
+[0] 1
 State: 3 {0}
-[t] 3
+[!0] 3
+[0] 3
 --END--

@@ -1,5 +1,4 @@
 HOA: v1
-name: "GF(F!a R Xa)"
 States: 2
 Start: 1
 AP: 1 "a"
@@ -12,5 +11,6 @@ State: 0
 [!0] 0
 [0] 1
 State: 1 {0}
-[t] 0
+[!0] 0
+[0] 0
 --END--

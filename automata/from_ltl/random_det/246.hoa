@@ -1,5 +1,4 @@
 HOA: v1
-name: "XXa"
 States: 4
 Start: 3
 AP: 1 "a"
@@ -11,9 +10,12 @@ properties: terminal
 State: 0
 [0] 2
 State: 1
-[t] 0
+[!0] 0
+[0] 0
 State: 2 {0}
-[t] 2
+[!0] 2
+[0] 2
 State: 3
-[t] 1
+[!0] 1
+[0] 1
 --END--

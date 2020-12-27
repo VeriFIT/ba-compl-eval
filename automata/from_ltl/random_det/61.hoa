@@ -1,5 +1,4 @@
 HOA: v1
-name: "(a | b) R Fa"
 States: 2
 Start: 1
 AP: 1 "a"
@@ -9,7 +8,8 @@ properties: trans-labels explicit-labels state-acc complete
 properties: deterministic stutter-invariant terminal
 --BODY--
 State: 0 {0}
-[t] 0
+[!0] 0
+[0] 0
 State: 1
 [0] 0
 [!0] 1

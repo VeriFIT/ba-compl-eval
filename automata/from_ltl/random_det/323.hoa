@@ -1,5 +1,4 @@
 HOA: v1
-name: "(a & XF!a) | (!a & XGa)"
 States: 4
 Start: 2
 AP: 1 "a"
@@ -9,7 +8,8 @@ properties: trans-labels explicit-labels state-acc deterministic
 properties: very-weak
 --BODY--
 State: 0 {0}
-[t] 0
+[!0] 0
+[0] 0
 State: 1 {0}
 [0] 1
 State: 2

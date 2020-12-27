@@ -1,5 +1,4 @@
 HOA: v1
-name: "(Fa | (b & X(b W XXFc))) U Ga"
 States: 2
 Start: 0
 AP: 1 "a"
@@ -8,7 +7,8 @@ Acceptance: 1 Inf(0)
 properties: trans-labels explicit-labels state-acc very-weak
 --BODY--
 State: 0
-[t] 0
+[!0] 0
+[0] 0
 [0] 1
 State: 1 {0}
 [0] 1

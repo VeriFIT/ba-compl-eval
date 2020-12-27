@@ -1,5 +1,4 @@
 HOA: v1
-name: "G(a & F!b & FG(a | b))"
 States: 2
 Start: 0
 AP: 2 "b" "a"

@@ -1,5 +1,4 @@
 HOA: v1
-name: "X(Xa R Fa)"
 States: 4
 Start: 3
 AP: 1 "a"
@@ -9,12 +8,15 @@ properties: trans-labels explicit-labels state-acc complete
 properties: deterministic very-weak
 --BODY--
 State: 0 {0}
-[t] 0
+[!0] 0
+[0] 0
 State: 1
 [0] 0
 [!0] 1
 State: 2
-[t] 1
+[!0] 1
+[0] 1
 State: 3
-[t] 2
+[!0] 2
+[0] 2
 --END--

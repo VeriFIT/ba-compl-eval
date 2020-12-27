@@ -1,5 +1,4 @@
 HOA: v1
-name: "XXXFa"
 States: 5
 Start: 3
 AP: 1 "a"
@@ -9,14 +8,18 @@ properties: trans-labels explicit-labels state-acc complete
 properties: deterministic terminal
 --BODY--
 State: 0 {0}
-[t] 0
+[!0] 0
+[0] 0
 State: 1
 [0] 0
 [!0] 1
 State: 2
-[t] 1
+[!0] 1
+[0] 1
 State: 3
-[t] 4
+[!0] 4
+[0] 4
 State: 4
-[t] 2
+[!0] 2
+[0] 2
 --END--

@@ -1,5 +1,4 @@
 HOA: v1
-name: "G(a & (b R c))"
 States: 1
 Start: 0
 AP: 2 "a" "c"
