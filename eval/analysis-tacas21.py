@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 
 # PREAMBLE
-import altair as alt
 import pandas as pd
 import re as re
 import tabulate as tab
+import plotnine as p9
+import math
+import mizani.formatters as mizani
+
 
 FILE_INPUT = "results.csv"
+#FILE_INPUT = "results/results-2020-09-06/random-all-to300-merged.csv"
 
 # in seconds
 TIMEOUT = 300
 TIMEOUT_VAL = TIMEOUT * 1.1
 TIME_MIN = 0.01
-
-# do not care about the limit
-alt.data_transformers.disable_max_rows()
 
 # For reading in files
 def read_file(filename):
@@ -26,31 +27,52 @@ def read_file(filename):
           na_values=['ERR','TO', 'MISSING'])
    return df
 
-
 # For printing scatter plots
-def scatter_plot(df, xcol, ycol, domain, xname=None, yname=None, log=False, width=600, height=600, tickCount=5):
+
+def scatter_plot(df, xcol, ycol, domain, xname=None, yname=None, log=False, width=6, height=6, clamp=True, tickCount=5):
     assert len(domain) == 2
+
+    POINT_SIZE=0.5
+    DASH_PATTERN=(0, (3,1))
 
     if xname == None:
       xname = xcol
     if yname == None:
       yname = ycol
 
-    plot_type = "log" if log else "linear"
-    scatter = alt.Chart(df).mark_point(size=10, filled=True).encode(
-       x=alt.X(xcol + ':Q', axis=alt.Axis(title=xname, tickCount=tickCount), scale=alt.Scale(type=plot_type, base=10, domain=domain, clamp=True)),
-       y=alt.Y(ycol + ':Q', axis=alt.Axis(title=yname, tickCount=tickCount), scale=alt.Scale(type=plot_type, base=10, domain=domain, clamp=True))
-       )
+    # formater for axes' labels
+    ax_formatter = mizani.custom_format('{:n}')
 
-    rules = (alt.Chart(pd.DataFrame({'y': [domain[1]]})).mark_rule(strokeDash=[3,1]).encode(y='y') +
-             alt.Chart(pd.DataFrame({'x': [domain[1]]})).mark_rule(strokeDash=[3,1]).encode(x='x'))
+    if clamp: # clamp overflowing values if required
+      df = df.copy(deep=True)
+      df.loc[df[xcol] > domain[1], xcol] = domain[1]
+      df.loc[df[ycol] > domain[1], ycol] = domain[1]
 
-    diag = alt.Chart(pd.DataFrame({'x': domain, 'y': domain})).mark_line(color='black', strokeDash=[3,1], size=1).encode(x='x', y='y')
 
-    res = scatter + rules + diag
-    res = res.properties(
-        width=width, height=height
-        )
+    # generate scatter plot
+    scatter  = p9.ggplot(df)
+    scatter += p9.aes(x=xcol, y=ycol)
+    scatter += p9.geom_point(size=POINT_SIZE, na_rm=True)
+    scatter += p9.labs(x=xname, y=yname)
+
+    if log: # log scale
+      scatter += p9.scale_x_log10(limits=domain, labels=ax_formatter)
+      scatter += p9.scale_y_log10(limits=domain, labels=ax_formatter)
+    else:
+      scatter += p9.scale_x_continuous(limits=domain, labels=ax_formatter)
+      scatter += p9.scale_y_continuous(limits=domain, labels=ax_formatter)
+
+    #scatter += p9.theme_xkcd()
+    scatter += p9.theme_bw()
+    scatter += p9.theme(panel_grid_major=p9.element_line(color='#666666', alpha=0.5))
+    scatter += p9.theme(figure_size=(width, height))
+
+    # generate additional lines
+    scatter += p9.geom_abline(intercept=0, slope=1, linetype=DASH_PATTERN)  # diagonal
+    scatter += p9.geom_vline(xintercept=domain[1], linetype=DASH_PATTERN)   # vertical rule
+    scatter += p9.geom_hline(yintercept=domain[1], linetype=DASH_PATTERN)   # horizontal rule
+
+    res = scatter
 
     return res
 
@@ -261,7 +283,7 @@ for params in to_cmp2:
   if 'tickCount' not in params:
     params['tickCount'] = 5
 
-size = 400
+size = 8
 plot_list = [(params['x'], params['y'], params['filename'], scatter_plot(df,
                                  xcol=params['x'] + '-States', ycol=params['y'] + '-States',
                                  xname=params['xname'], yname=params['yname'],
@@ -272,6 +294,8 @@ plot_list = [(params['x'], params['y'], params['filename'], scatter_plot(df,
 print("\n\n")
 print("Generating plots...")
 for x, y, filename, plot in plot_list:
-  filename = f"plots/{filename}.html"
+  filename = f"plots/{filename}.pdf"
   print(f"plotting x: {x}, y: {y}... saving to {filename}")
-  plot.save(filename, scale_factor=2)
+  #plot.save(filename, scale_factor=2)
+  plot.save(filename)
+  print(plot)
