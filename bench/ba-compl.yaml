@@ -16,6 +16,9 @@ schewe:
 fribourg:
   cmd: bin/goal-wrap.sh $1 -m fribourg
 
+ltl2dstar:
+  cmd: bin/ltl2dstar-wrap.sh $1
+
 roll:
   cmd: bin/roll-wrap.sh $1
 

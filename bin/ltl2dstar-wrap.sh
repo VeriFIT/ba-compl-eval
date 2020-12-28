@@ -10,16 +10,15 @@ INPUT=$1
 shift
 params="$*"
 
-# TMP=$(mktemp)
-# ./util/ba2hoa.py ${INPUT} > ${TMP} || exit $?
+#TMP=$(mktemp)
+#./util/ba2hoa.py ${INPUT} > ${TMP} || exit $?
 
 TMP_OUT=$(mktemp)
 
 set -o pipefail
-# ./bin/seminator --complement --ba --postprocess-comp=0 ${params} ${TMP} > ${TMP_OUT}
-./bin/seminator --complement --ba --postprocess-comp=0 ${params} ${INPUT} > ${TMP_OUT}
+./bin/ltl2dstar --input=nba --output=nba -H ${INPUT} ${TMP_OUT}
 ret=$?
-# rm ${TMP}
+#rm ${TMP}
 
 cat ${TMP_OUT} | grep '^States:'
 cat ${TMP_OUT} | ./bin/autfilt --high | grep '^States:' | sed 's/^States/autfilt-States/'
