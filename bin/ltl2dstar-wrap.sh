@@ -16,7 +16,7 @@ params="$*"
 TMP_OUT=$(mktemp)
 
 set -o pipefail
-./bin/ltl2dstar --input=nba --output=nba -H ${INPUT} ${TMP_OUT}
+./bin/ltl2dstar --complement-input=yes --input=nba --output=nba -H ${INPUT} ${TMP_OUT}
 ret=$?
 #rm ${TMP}
 
