@@ -10,7 +10,7 @@ INPUT=$1
 
 TMP=$(mktemp)
 TMP_STAT=$(mktemp)
-./bin/ranker-composition ${INPUT} > ${TMP} 2> ${TMP_STAT} || exit 1
+./bin/ranker-composition --stats ${INPUT} > ${TMP} 2> ${TMP_STAT} || exit 1
 
 set -o pipefail
 autfilt_out=$(./bin/autfilt --high ${TMP} | grep "^States:" | sed 's/^States/autfilt-States/')
