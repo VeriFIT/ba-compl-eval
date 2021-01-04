@@ -27,7 +27,7 @@ GOAL_TMP="$(mktemp)"
 #this was working
 #out=$(/usr/bin/time -p ${GOAL_TMP_DIR}/goal/gc complement ${params} ${TMP} 2>${TIME_TMP} | grep -i "<state sid" | wc -l)
 # /usr/bin/time -p ${GOAL_TMP_DIR}/goal/gc batch "load \$aut \$1; \$compl = complement --option \$3 \$aut; save -c hoaf \$compl \$2;" ${TMP} ${GOAL_TMP} "${params}" 2> ${TIME_TMP}
-/usr/bin/time -p ${GOAL_TMP_DIR}/goal/gc batch "load \$aut \$1; \$compl = complement --option \$3 \$aut; save -c hoaf \$compl \$2;" ${INPUT} ${GOAL_TMP} "${params}" 2> ${TIME_TMP}
+/usr/bin/time -p ${GOAL_TMP_DIR}/goal/gc batch "load -c hoaf \$aut \$1; \$compl = complement --option \$3 \$aut; save -c hoaf \$compl \$2;" ${INPUT} ${GOAL_TMP} "${params}" 2> ${TIME_TMP}
 ret=$?
 # rm ${TMP}
 rm -rf ${GOAL_TMP_DIR}
