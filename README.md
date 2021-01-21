@@ -101,4 +101,5 @@ cp ranker ranker-tight ranker-composition ../../
 
 ```
 export LD_LIBRARY_PATH=$HOME/ba-compl-eval/bin              # or the correct path
+export GOALEXE=$HOME/ba-compl-eval/bin/goal/gc              # or the correct path
 ```

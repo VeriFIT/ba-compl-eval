@@ -9,7 +9,7 @@ if [ \( "$#" -ne 1 \) -a \( "$#" -ne 2 -o "$1" != "--csv" \) ] ; then
 fi
 
 if [ \( $1 = "--print-header" \) ] ; then
-	echo -n "automaton;"
+	echo -n "name;"
 	echo -n "empty;"
 	echo -n "deterministic;"
 	echo -n "inherently weak;"
@@ -62,7 +62,7 @@ if [ ${WANTS_CSV} == 1 ] ; then
 	echo -n "${is_very_weak};"
 	echo
 else
-	echo "automaton: ${INPUT}"
+	echo "name: ${INPUT}"
 	echo "empty: ${is_empty}"
 	echo "deterministic: ${is_deterministic}"
 	echo "inherently weak: ${is_inherently_weak}"

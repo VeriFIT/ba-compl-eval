@@ -1,4 +1,4 @@
-automaton;empty;deterministic;inherently weak;semi deterministic;terminal;unambiguous;weak;very weak;
+name;empty;deterministic;inherently weak;semi deterministic;terminal;unambiguous;weak;very weak;
 automata/from_ltl/literature_det/1.hoa;0;1;1;1;1;1;1;1;
 automata/from_ltl/literature_det/10.hoa;0;1;1;1;1;1;1;1;
 automata/from_ltl/literature_det/100.hoa;0;1;0;1;0;1;0;0;

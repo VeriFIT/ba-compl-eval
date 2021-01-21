@@ -213,6 +213,18 @@ Serializes an automaton as the Hanoi Omega Automata file format.
     for st in aut["final"]:
         state_transl(st)
 
+    aps = max(int.bit_length(symb_cnt-1), 1)
+    for key,val in symb_transl_dict.items():
+        symb_bin = [val >> i & 1 for i in range(aps-1,-1,-1)]
+        tmp = "["
+        for i in range(len(symb_bin)):
+            if i != 0:
+                tmp += " & "
+            if symb_bin[i] == 0:
+                tmp += "!"
+            tmp += str(i)
+            symb_transl_dict[key] = tmp + "]"
+
     res = ""
     res += "HOA: v1\n"
     res += "States: {}\n".format(state_cnt)
@@ -227,11 +239,10 @@ Serializes an automaton as the Hanoi Omega Automata file format.
     res += "Acceptance: 1 Inf(0)\n"
 
     # atomic propositions
-    res += "AP: {}".format(symb_cnt)
-    for i in range(symb_cnt):
-        for key in symb_transl_dict:
-            if symb_transl_dict[key] == i:
-                res += " \"{}\"".format(key)
+    # res += "AP: {}".format(symb_cnt)
+    res += "AP: {}".format(aps)
+    for i in range(aps):
+        res += f" \"a{i}\""
     res += "\n"
 
     res += "--BODY--\n"
@@ -244,15 +255,14 @@ Serializes an automaton as the Hanoi Omega Automata file format.
         for trans in aut["transitions"]:
             src, symb, tgt = trans
             if src == name:
-                res += "  ["
-                for i in range(symb_cnt):
-                    if i != 0:
-                        res += " & "
-                    if symb_transl_dict[symb] != i:
-                        res += "!"
-                    res += str(i)
-
-                res += "] {}\n".format(state_transl(tgt))
+                # res += "  ["
+                # for i in range(symb_cnt):
+                #     if i != 0:
+                #         res += " & "
+                #     if symb_transl_dict[symb] != i:
+                #         res += "!"
+                #     res += str(i)
+                res += f"  {symb_transl_dict[symb]} {state_transl(tgt)}\n"
     res += "--END--\n"
 
     return res
