@@ -237,6 +237,7 @@ Serializes an automaton as the Hanoi Omega Automata file format.
     # magic setting for Buchi condition
     res += "acc-name: Buchi\n"
     res += "Acceptance: 1 Inf(0)\n"
+    res += "properties: explicit-labels state-acc trans-labels\n"
 
     # atomic propositions
     # res += "AP: {}".format(symb_cnt)
