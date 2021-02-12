@@ -159,10 +159,120 @@ Serializes an automaton as Rabit's BA file.
 
 
 ###########################################
-def aut2HOA(aut):
-    """aut2HOA(aut) -> string
+def get_ap_alphabet_one_hot(symbols):
+    """get_ap_alphabet_one_hot(symbols) -> (list(), dict())
 
-Serializes an automaton as the Hanoi Omega Automata file format.
+Creates an AP alphabet (for HOA automata) in the one-hot encoding.
+
+Returns a pair (list of APs, dict of input symbol -> output symbol)
+"""
+    res_dict = dict()
+    res_list = list(set(symbols))
+
+    for i in range(len(res_list)):
+        symb = res_list[i]
+        new_symb = "["
+        for j in range(len(res_list)):
+            if j != 0:
+                new_symb += " & "
+
+            if i != j:
+                new_symb += "!"
+
+            new_symb += str(j)
+
+        new_symb += "]"
+        res_dict[symb] = new_symb
+
+    return (res_list, res_dict)
+
+
+###########################################
+def int_to_binary_str(num, bits):
+    """int_to_binary_str(num, bits) -> string
+
+Converts an integer into a Boolean combination of 'bits'-many atomic
+propositions represented with a string.
+"""
+    symb_bin = [num >> i & 1 for i in range(bits-1,-1,-1)]
+    res = ""
+    for i in range(len(symb_bin)):
+        if i != 0:
+            res += " & "
+        if symb_bin[i] == 0:
+            res += "!"
+        res += str(i)
+
+    return res
+
+
+###########################################
+def get_ap_alphabet_binary_nonexhaust(symbols):
+    """get_ap_alphabet_binary_nonexhaust(symbols) -> (list(), dict())
+
+Creates an AP alphabet (for HOA automata) in the binary non-exhaustive encoding.
+
+Returns a pair (list of APs, dict of input symbol -> output symbol)
+"""
+    res_dict = dict()
+    symbols = list(set(symbols))
+
+    aps = max(int.bit_length(len(symbols)-1), 1)
+    for cnt in range(len(symbols)):
+        symb_bin = [cnt >> i & 1 for i in range(aps-1,-1,-1)]
+        new_symb = "[" + int_to_binary_str(cnt, aps) + "]"
+        res_dict[symbols[cnt]] = new_symb
+
+    res_list = ["a" + str(i) for i in range(aps)]
+    return (res_list, res_dict)
+
+
+###########################################
+def get_ap_alphabet_binary_exhaust(symbols):
+    """get_ap_alphabet_binary_exhaust(symbols) -> (list(), dict())
+
+Creates an AP alphabet (for HOA automata) in the binary exhaustive encoding.
+
+Returns a pair (list of APs, dict of input symbol -> output symbol)
+"""
+    res_dict = dict()
+    symbols = list(set(symbols))
+
+    aps = max(int.bit_length(len(symbols)-1), 1)
+    for cnt in range(len(symbols)):
+        symb_bin = [cnt >> i & 1 for i in range(aps-1,-1,-1)]
+        new_symb = "[" + int_to_binary_str(cnt, aps) + "]"
+        res_dict[symbols[cnt]] = new_symb
+
+        # making the encoding exhaustive
+        if cnt == len(symbols)-1:
+            # recompute new_symb:
+            tmp = int_to_binary_str(cnt, aps)
+            for j in range(cnt+1,2**aps):
+                tmp += " | " + int_to_binary_str(j, aps)
+            new_symb = f"[{tmp}]"
+            res_dict[symbols[cnt]] = new_symb
+
+    res_list = ["a" + str(i) for i in range(aps)]
+    return (res_list, res_dict)
+
+
+###########################################
+def aut2HOA(aut, encoding="BINARY_NONEXHAUSTIVE"):
+    """aut2HOA(aut, encoding) -> string
+
+Serializes an automaton as the Hanoi Omega Automata file format using the
+selected encoding of explicit alphabet into combinations of atomic propositions.
+
+Possible values of encoding:
+    * "ONE_HOT": every symbol is an atomic proposition
+    * "BINARY_NONEXHAUSTIVE": binary encoding into log2(number_of_symbols)
+        atomic propositions (there might still be some unused Boolean
+        combination of atomic propositions if number_of_symbols is not a power
+        of 2
+    * "BINARY_EXHAUSTIVE": similar to "BINARY_NONEXHAUSTIVE" but all Boolean
+        combinations of atomic propositions are used (by mapping one symbol of
+        the input alphabet to several combinations)
 """
     state_cnt = 0
     state_transl_dict = dict()
@@ -183,24 +293,7 @@ Serializes an automaton as the Hanoi Omega Automata file format.
         return str(state_transl_dict[state])
     ###########################################
 
-    symb_cnt = 0
-    symb_transl_dict = dict()
-
-    ###########################################
-    def symb_transl(symb):
-        """symb_transl(symb) -> int
-
-    Translates symbol names into numbers.
-    """
-        nonlocal symb_cnt
-        nonlocal symb_transl_dict
-
-        if symb not in symb_transl_dict.keys():
-            symb_transl_dict[symb] = symb_cnt
-            symb_cnt += 1
-
-        return str(symb_transl_dict[symb])
-    ###########################################
+    symb_set = set()
 
     # count states and transitions
     for st in aut["initial"]:
@@ -208,22 +301,33 @@ Serializes an automaton as the Hanoi Omega Automata file format.
     for trans in aut["transitions"]:
         src, symb, tgt = trans
         state_transl(src)
-        symb_transl(symb)
+        symb_set.add(symb)
         state_transl(tgt)
     for st in aut["final"]:
         state_transl(st)
 
-    aps = max(int.bit_length(symb_cnt-1), 1)
-    for key,val in symb_transl_dict.items():
-        symb_bin = [val >> i & 1 for i in range(aps-1,-1,-1)]
-        tmp = "["
-        for i in range(len(symb_bin)):
-            if i != 0:
-                tmp += " & "
-            if symb_bin[i] == 0:
-                tmp += "!"
-            tmp += str(i)
-            symb_transl_dict[key] = tmp + "]"
+    if encoding == "ONE_HOT":
+        ap_list, symb_transl_dict = get_ap_alphabet_one_hot(symb_set)
+    elif encoding == "BINARY_NONEXHAUSTIVE":
+        ap_list, symb_transl_dict = get_ap_alphabet_binary_nonexhaust(symb_set)
+    elif encoding == "BINARY_EXHAUSTIVE":
+        ap_list, symb_transl_dict = get_ap_alphabet_binary_exhaust(symb_set)
+    else:
+        raise Exception("Invalid value of 'encoding'")
+
+    ###########################################
+    def symb_transl(symb):
+        """symb_transl(symb) -> int
+
+    Translates symbol names into numbers.
+    """
+        nonlocal symb_transl_dict
+
+        if symb not in symb_transl_dict.keys():
+            assert False
+
+        return str(symb_transl_dict[symb])
+    ###########################################
 
     res = ""
     res += "HOA: v1\n"
@@ -241,14 +345,14 @@ Serializes an automaton as the Hanoi Omega Automata file format.
 
     # atomic propositions
     # res += "AP: {}".format(symb_cnt)
-    res += "AP: {}".format(aps)
-    for i in range(aps):
-        res += f" \"a{i}\""
+    res += "AP: {}".format(len(ap_list))
+    for ap in ap_list:
+        res += f" \"{ap}\""
     res += "\n"
 
     res += "--BODY--\n"
     for (name, num) in state_transl_dict.items():
-        res += "State: {}".format(num)
+        res += f"State: {num} \"{name}\""
         if name in aut["final"]:
             res += " { 0 }"
         res += "\n"
