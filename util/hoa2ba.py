@@ -3,7 +3,7 @@
 # Automata format to Rabit's BA format.
 
 import sys
-import parse_ba as BA
+import buchi_conv_common as BA
 
 
 ###########################################

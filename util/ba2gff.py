@@ -3,7 +3,7 @@
 # into the GOAL file format
 
 import sys
-import parse_ba as BA
+import buchi_conv_common as BA
 
 ###########################################
 if __name__ == '__main__':
