@@ -1,5 +1,6 @@
 #!/bin/bash
 AUTFILT="autfilt"
+RANKER="bin/ranker"
 
 # Check the number of command-line arguments
 if [ \( "$#" -ne 1 \) -a \( "$#" -ne 2 -o "$1" != "--csv" \) ] ; then
@@ -18,6 +19,7 @@ if [ \( $1 = "--print-header" \) ] ; then
 	echo -n "unambiguous;"
 	echo -n "weak;"
 	echo -n "very weak;"
+	echo -n "elevator;"
 	echo
 	exit 0
 fi
@@ -41,6 +43,15 @@ run_autfilt () {
 	fi
 }
 
+run_ranker_elevator () {
+	${RANKER} --elevator-test ${INPUT} | grep "Yes" > /dev/null
+	if [ \( $? == 1 \) ] ; then
+		echo 0
+	else
+		echo 1
+	fi
+}
+
 is_empty=$(run_autfilt "--is-empty")
 is_deterministic=$(run_autfilt "--is-deterministic")
 is_inherently_weak=$(run_autfilt "--is-inherently-weak")
@@ -49,6 +60,7 @@ is_terminal=$(run_autfilt "--is-terminal")
 is_unambiguous=$(run_autfilt "--is-unambiguous")
 is_weak=$(run_autfilt "--is-weak")
 is_very_weak=$(run_autfilt "--is-very-weak")
+is_elevator=$(run_ranker_elevator)
 
 if [ ${WANTS_CSV} == 1 ] ; then
 	echo -n "${INPUT};"
@@ -60,6 +72,7 @@ if [ ${WANTS_CSV} == 1 ] ; then
 	echo -n "${is_unambiguous};"
 	echo -n "${is_weak};"
 	echo -n "${is_very_weak};"
+	echo -n "${is_elevator};"
 	echo
 else
 	echo "name: ${INPUT}"
@@ -71,4 +84,5 @@ else
 	echo "unambiguous: ${is_unambiguous}"
 	echo "weak: ${is_weak}"
 	echo "very weak: ${is_very_weak}"
+	echo "elevator: ${is_elevator}"
 fi
