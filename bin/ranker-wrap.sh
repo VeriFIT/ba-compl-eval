@@ -2,7 +2,7 @@
 
 # Check the number of command-line arguments
 if [ \( "$#" -lt 1 \) ] ; then
-	echo "usage: ${0} <input-ba>"
+	echo "usage: ${0} <input-ba> [params]"
 	exit 1
 fi
 
