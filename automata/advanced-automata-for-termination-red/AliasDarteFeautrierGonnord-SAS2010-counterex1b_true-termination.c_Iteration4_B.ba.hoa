@@ -1,10 +1,10 @@
 HOA: v1
-States: 2
+States: 3
 Start: 0
 AP: 4 "a0" "a1" "a2" "a3"
 acc-name: Buchi
 Acceptance: 1 Inf(0)
-properties: trans-labels explicit-labels trans-acc
+properties: trans-labels explicit-labels state-acc
 --BODY--
 State: 0
 [!0&!1&!2&!3] 0
@@ -28,7 +28,6 @@ State: 0
 [0&!1&!2&!3] 1
 [0&!1&!2&3] 1
 State: 1
-[!0&1&!2&!3] 1 {0}
 [!0&!1&!2&!3] 1
 [!0&!1&!2&3] 1
 [!0&!1&2&!3] 1
@@ -36,4 +35,14 @@ State: 1
 [!0&1&!2&3] 1
 [!0&1&2&!3] 1
 [0&!1&!2&3] 1
+[!0&1&!2&!3] 2
+State: 2 {0}
+[!0&!1&!2&!3] 1
+[!0&!1&!2&3] 1
+[!0&!1&2&!3] 1
+[!0&!1&2&3] 1
+[!0&1&!2&3] 1
+[!0&1&2&!3] 1
+[0&!1&!2&3] 1
+[!0&1&!2&!3] 2
 --END--
