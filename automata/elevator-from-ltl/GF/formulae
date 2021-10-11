@@ -1,0 +1,10 @@
+GFa
+GF(b | GFa)
+GF(c | GF(b | GFa))
+GF(d | GF(c | GF(b | GFa)))
+GF(e | GF(d | GF(c | GF(b | GFa))))
+GF(f | GF(e | GF(d | GF(c | GF(b | GFa)))))
+GF(g | GF(f | GF(e | GF(d | GF(c | GF(b | GFa))))))
+GF(h | GF(g | GF(f | GF(e | GF(d | GF(c | GF(b | GFa)))))))
+GF(i | GF(h | GF(g | GF(f | GF(e | GF(d | GF(c | GF(b | GFa))))))))
+GF(j | GF(i | GF(h | GF(g | GF(f | GF(e | GF(d | GF(c | GF(b | GFa)))))))))
