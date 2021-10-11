@@ -56,6 +56,8 @@ def proc_res(fd, args):
                 if len(spl) != 2:  # jump over lines not in the format
                     continue
                 name, val = spl[0], spl[1]
+                if name in eng_res["output"]:
+                    raise Exception(f"multiple occurrences of key {name} for {params}")
                 assert name not in eng_res["output"]
                 if name not in engines_outs[eng]:
                     engines_outs[eng].append(name)
