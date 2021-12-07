@@ -22,12 +22,8 @@ ltl2dstar:
 roll:
   cmd: bin/roll-wrap.sh $1
 
-ranker-maxr:
+ranker:
   cmd: bin/ranker-wrap.sh $1
 
-ranker-rrestr:
-  cmd: bin/ranker-tight-wrap.sh $1
-
-# backoff
-ranker-maxr-bo:
-  cmd: bin/ranker-composition-wrap.sh $1
+ranker-copyheur-backoff:
+  cmd: bin/ranker-wrap.sh $1 --preprocess=copyheur --backoff
