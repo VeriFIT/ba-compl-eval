@@ -163,7 +163,7 @@ def print_classification(df):
     print(f"!   # weak: {len(df_weak)}")
     print(f"!   # very weak: {len(df_very_weak)}")
     print(f"!   # elevator: {len(df_elevator)}")
-    print(f"!   # elevator not semideterministic: {len(df_elevator_not_semi)}")
+    print(f"!   # elevator not semi-deterministic: {len(df_elevator_not_semi)}")
 
 
 # computes summary statistics
@@ -195,6 +195,13 @@ def load_results(filename):
     print(f"!   file:  {filename}")
     print(f"!   time:  {datetime.datetime.now()}")
     print(f"!   # of automata: {len(df)}")
+    return df
+
+
+# loads a file with the classification
+def load_results_classification(results, classification):
+    df = load_results(results)
+    df = connect_with_classification(df, classification)
     return df
 
 
