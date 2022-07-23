@@ -199,11 +199,12 @@ def load_results(filename):
 
 
 # remove automata of a particular kind (e.g. inherently weak, etc.)
-def remove_auts(df, kind):
+def remove_aut(df, kind):
     before = len(df)
     df = df[df[kind] == 0]
     after = len(df)
     print(f"! removed {before-after} automata of the type \"{kind}\"")
+    return df
 
 
 # get rid of timeouts and 0 states and give them some value
