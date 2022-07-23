@@ -207,19 +207,19 @@ def remove_auts(df, kind):
 
 # get rid of timeouts and 0 states and give them some value
 def sanitize_results(df, df_summary_states):
-  # min and max states
+    # min and max states
     states_min = 1
-  states_max = df_summary_states['max'].max()
-  states_timeout = states_max * 1.1
+    states_max = df_summary_states['max'].max()
+    states_timeout = states_max * 1.1
 
-  # sanitizing NAs
-  for col in df.columns:
-      if re.search('-States$', col):
-          df[col].fillna(states_timeout, inplace=True)
-          df[col].replace(0, states_min, inplace=True)  # to remove 0 (in case of log graph)
+    # sanitizing NAs
+    for col in df.columns:
+        if re.search('-States$', col):
+            df[col].fillna(states_timeout, inplace=True)
+            df[col].replace(0, states_min, inplace=True)  # to remove 0 (in case of log graph)
 
-      if re.search('-runtime$', col):
-          df[col].fillna(TIMEOUT_VAL, inplace=True)
-          df.loc[df[col] < TIME_MIN, col] = TIME_MIN  # to remove 0 (in case of log graph)
+        if re.search('-runtime$', col):
+            df[col].fillna(TIMEOUT_VAL, inplace=True)
+            df.loc[df[col] < TIME_MIN, col] = TIME_MIN  # to remove 0 (in case of log graph)
 
-  return df
+    return df
