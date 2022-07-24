@@ -221,6 +221,7 @@ def sanitize_results(df, df_summary_states, timeout):
     states_min = 1
     states_max = df_summary_states['max'].max()
     states_timeout = states_max * 1.1
+    time_min = 0.01
 
     # sanitizing NAs
     for col in df.columns:
@@ -230,6 +231,6 @@ def sanitize_results(df, df_summary_states, timeout):
 
         if re.search('-runtime$', col):
             df[col].fillna(timeout, inplace=True)
-            df.loc[df[col] < TIME_MIN, col] = TIME_MIN  # to remove 0 (in case of log graph)
+            df.loc[df[col] < time_min, col] = time_min  # to remove 0 (in case of log graph)
 
     return df
