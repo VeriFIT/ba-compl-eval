@@ -104,7 +104,7 @@ def scatplot(df, params):
                       tickCount=params['tickCount'],
                       log=True, width=size, height=size)
 
-    if params['save'] == True:
+    if 'save' in params and params['save'] == True:
         pl.save(filename=params['filename'], dpi=1000)
 
     return pl
