@@ -6,6 +6,7 @@ import datetime
 import mizani.formatters as mizani
 import pandas as pd
 import plotnine as p9
+import re as re
 
 # Read a file into a data frame
 def read_file(filename):
