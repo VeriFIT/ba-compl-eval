@@ -20,6 +20,7 @@ if [ \( $1 = "--print-header" \) ] ; then
 	echo -n "weak;"
 	echo -n "very weak;"
 	echo -n "elevator;"
+	echo -n "one-state;"
 	echo
 	exit 0
 fi
@@ -44,11 +45,20 @@ run_autfilt () {
 }
 
 run_ranker_elevator () {
-	${RANKER} --elevator-test ${INPUT} | grep "Yes" > /dev/null
+	timeout 60 ${RANKER} --elevator-test ${INPUT} | grep "Yes" > /dev/null
 	if [ \( $? == 1 \) ] ; then
 		echo 0
 	else
 		echo 1
+	fi
+}
+
+run_one_state () {
+	cat ${INPUT} | grep '^States: 1$' > /dev/null
+	if [ \( $? == 0 \) ] ; then
+		echo 1
+	else
+		echo 0
 	fi
 }
 
@@ -61,6 +71,7 @@ is_unambiguous=$(run_autfilt "--is-unambiguous")
 is_weak=$(run_autfilt "--is-weak")
 is_very_weak=$(run_autfilt "--is-very-weak")
 is_elevator=$(run_ranker_elevator)
+is_one_state=$(run_one_state)
 
 if [ ${WANTS_CSV} == 1 ] ; then
 	echo -n "${INPUT};"
@@ -73,6 +84,7 @@ if [ ${WANTS_CSV} == 1 ] ; then
 	echo -n "${is_weak};"
 	echo -n "${is_very_weak};"
 	echo -n "${is_elevator};"
+	echo -n "${is_one_state};"
 	echo
 else
 	echo "name: ${INPUT}"
@@ -85,4 +97,5 @@ else
 	echo "weak: ${is_weak}"
 	echo "very weak: ${is_very_weak}"
 	echo "elevator: ${is_elevator}"
+	echo "one-state: ${is_one_state}"
 fi
