@@ -26,10 +26,6 @@ autfilt_str=${autfilt_version}
 TMP=$(mktemp)
 "${autfilt_exe}" "${params[@]}" "${INPUT}" > "${TMP}" || exit 1
 
-set -o pipefail
-autfilt_out=$("${autfilt_exe}" --high "${TMP}" | grep "^States:" | sed "s/^States/${autfilt_str}-autfilt-states/")
-ret=$?
-
 cat "${TMP}" | grep "^States:" | sed "s/^States/${autfilt_str}-states/"
 echo "${autfilt_out}"
 
