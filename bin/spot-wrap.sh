@@ -6,24 +6,33 @@ if [ \( "$#" -lt 1 \) ] ; then
 	exit 1
 fi
 
+ABSOLUTE_SCRIPT_PATH=$(readlink -f "$0")
+SCRIPT_DIR=$(dirname "${ABSOLUTE_SCRIPT_PATH}")
+
 INPUT=$1
 shift
-params="$*"
+# preserve argument boundaries and spacing
+params=("$@")
 
-#TMP=$(mktemp)
-#./util/ba2hoa.py ${INPUT} > ${TMP} || exit $?
+autfilt_exe="autfilt"
+# capture the full version output (may contain multiple lines)
+autfilt_version_output="$("${autfilt_exe}" --version 2>/dev/null)"
+# extract the first line
+autfilt_first_line=$(awk 'NR==1{print; exit}' <<< "${autfilt_version_output}")
+# extract the version token from the first line (last whitespace-separated field)
+autfilt_version=$(awk '{print $NF}' <<< "${autfilt_first_line}")
+autfilt_str=${autfilt_version}
 
-TMP_OUT=$(mktemp)
+TMP=$(mktemp)
+"${autfilt_exe}" "${params[@]}" "${INPUT}" > "${TMP}" || exit 1
 
 set -o pipefail
-# ./bin/autfilt --complement --ba ${params} ${TMP} > ${TMP_OUT}
-./bin/autfilt --complement --ba ${params} ${INPUT} > ${TMP_OUT}
+autfilt_out=$("${autfilt_exe}" --high "${TMP}" | grep "^States:" | sed "s/^States/${autfilt_str}-autfilt-states/")
 ret=$?
-#rm ${TMP}
 
-cat ${TMP_OUT} | grep '^States:'
-cat ${TMP_OUT} | ./bin/autfilt --high | grep '^States:' | sed 's/^States/autfilt-States/'
+cat "${TMP}" | grep "^States:" | sed "s/^States/${autfilt_str}-states/"
+echo "${autfilt_out}"
 
-rm ${TMP_OUT}
+rm -f "${TMP}"
 
 exit ${ret}
