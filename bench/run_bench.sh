@@ -61,7 +61,7 @@ benchmarks=()
 
 # If no benchmark is given, run the three omega automata complementation sets
 if [ -z "$1" ]; then
-  benchmarks=("advanced-automata" "s1s-direct-red" "from_ltl_red")
+  benchmarks=("advanced_automata" "s1s_direct_red" "from_ltl_red")
 else
   # treat each positional argument as a benchmark name (no grouping)
   for BENCH_NAME in "$@"; do
