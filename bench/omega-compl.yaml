@@ -9,3 +9,9 @@ kofola:
 
 kofola-red:
   cmd: ../bin/kofola-wrap.sh --complement --high $1 
+
+kofola-tela:
+  cmd: ../bin/kofola-wrap.sh --complement --params='tela=yes' $1
+
+kofola-tela-red:
+  cmd: ../bin/kofola-wrap.sh --complement --params='tela=yes' --high $1
