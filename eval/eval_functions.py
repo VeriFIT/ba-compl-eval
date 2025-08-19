@@ -502,3 +502,97 @@ def write_latex_table_body(df, float_format="{:.2f}", format_index_name=True, in
     if format_index_name:
         df_table = df.rename(index=format_index_name_default)
     return df_table.to_latex(buf=None, columns=None, header=False, index=True, na_rep='NaN', formatters=None, float_format=float_format.format, sparsify=None, index_names=True, bold_rows=False, column_format=None, longtable=None, escape=None, encoding=None, decimal='.', multicolumn=None, multicolumn_format=None, multirow=None, caption=None, label=None, position=None).splitlines()
+
+def parse_classification(benchmark_name):
+    """Parse classification CSV file for a specific benchmark and return pandas DataFrame.
+    
+    Args:
+        benchmark_name (str): Name of the benchmark (will look for classifications/<benchmark>-classification.csv)
+        
+    Returns:
+        pd.DataFrame: DataFrame with columns 'automaton', 'benchmark', and 'info' where info contains
+                     a dictionary of classification properties
+    """
+    classification_csv_path = f"classifications/{benchmark_name}-classification.csv"
+    
+    # Read the classification CSV
+    df_class = pd.read_csv(classification_csv_path, sep=';')
+    
+    # Get property columns (all columns except 'name')
+    property_columns = [col for col in df_class.columns if col != 'name']
+    
+    # Create info column by combining all property columns into a dictionary
+    def create_info_dict(row):
+        info = {}
+        for prop in property_columns:
+            # Convert to boolean (1 -> True, 0 -> False)
+            info[prop] = bool(int(row[prop]))
+        return info
+    
+    # Create the result DataFrame
+    result_df = pd.DataFrame({
+        'automaton': df_class['name'],
+        'benchmark': benchmark_name,
+        'info': df_class.apply(create_info_dict, axis=1)
+    })
+    
+    return result_df
+
+def join_with_classification(main_df, classification_df, automaton_column='name', benchmark_column='benchmark'):
+    """Join main dataframe with classification dataframe on automaton name and benchmark.
+    
+    Args:
+        main_df (pd.DataFrame): Main dataframe containing benchmark results
+        classification_df (pd.DataFrame): Classification dataframe from parse_classification()
+        automaton_column (str, optional): Column name in main_df containing automaton names. 
+                                         Defaults to 'name'.
+        benchmark_column (str, optional): Column name in main_df containing benchmark names.
+                                         Defaults to 'benchmark'.
+        
+    Returns:
+        pd.DataFrame: Merged dataframe with classification info added
+    """
+    # Perform left join to preserve all rows from main_df
+    result_df = main_df.merge(
+        classification_df, 
+        left_on=[automaton_column, benchmark_column], 
+        right_on=['automaton', 'benchmark'], 
+        how='left'
+    )
+    
+    # Drop the redundant columns from classification_df
+    if 'automaton' in result_df.columns:
+        result_df = result_df.drop('automaton', axis=1)
+    
+    return result_df
+
+def parse_classifications_for_benchmarks(benchmark_names):
+    """Parse classification CSV files for multiple benchmarks and return combined DataFrame.
+    
+    Args:
+        benchmark_names (list): List of benchmark names
+        
+    Returns:
+        pd.DataFrame: Combined DataFrame with columns 'automaton', 'benchmark', and 'info'
+    """
+    classification_dfs = []
+    
+    for benchmark_name in benchmark_names:
+        try:
+            df = parse_classification(benchmark_name)
+            classification_dfs.append(df)
+        except FileNotFoundError:
+            print(f"WARNING: Classification file not found for benchmark '{benchmark_name}'")
+            continue
+        except Exception as e:
+            print(f"WARNING: Error parsing classification for benchmark '{benchmark_name}': {e}")
+            continue
+    
+    if not classification_dfs:
+        print("WARNING: No classification files could be loaded")
+        return pd.DataFrame(columns=['automaton', 'benchmark', 'info'])
+    
+    # Combine all classification dataframes
+    combined_df = pd.concat(classification_dfs, ignore_index=True)
+    
+    return combined_df
