@@ -1,0 +1,24 @@
+HOA: v1
+States: 4
+Start: 0
+AP: 1 "p0"
+Acceptance: 10 (Inf(0)&Inf(1)&Inf(2)) | ((Inf(3)&Inf(4)) & Fin(5)) | ((Inf(6)&Inf(7)&Inf(8)) & Fin(9))
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[!0] 0 {3 5}
+[!0] 2 {2 8}
+[!0] 3
+State: 1
+[!0] 2 {3}
+[!0] 0 {4}
+[!0] 3 {7}
+[0] 1 {0 3 5}
+State: 2
+[0] 3 {7 8}
+[0] 0 {1 2}
+[0] 1
+State: 3
+[!0] 1 {0}
+[0] 2 {3 7}
+--END--
