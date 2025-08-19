@@ -1,0 +1,122 @@
+execute;spot-red-2.14.1;../automata/tela_determinisation/CheckInstallation/automaton4.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/ExpCNF/automaton0.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton108.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton162.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton216.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton219.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton297.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton327.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton380.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton432.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton0.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton1.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton102.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton103.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton130.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton188.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton204.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton208.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton240.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton248.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton281.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton288.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton400.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton426.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton427.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton430.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton440.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton461.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton471.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton473.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton48.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton517.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton521.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton522.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton523.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton564.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton60.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton603.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton611.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton618.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton640.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton641.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton658.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton660.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton68.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton682.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton690.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton705.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton740.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton752.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton800.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton807.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton825.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton826.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton850.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton86.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton860.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton90.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton900.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton940.hoa
+execute;spot-red-2.14.1;../automata/tela_determinisation/random/automaton981.hoa
+finished;spot-red-2.14.1;../automata/tela_determinisation/ExpCNF/automaton0.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton108.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton162.hoa;0;states: 8;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/CheckInstallation/automaton4.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton216.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton219.hoa;0;states: 13;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton297.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton327.hoa;0;states: 15;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton380.hoa;0;states: 8;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/SpecialDNF/automaton432.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton0.hoa;0;states: 1;;0.01
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton1.hoa;0;states: 12;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton188.hoa;1;;autfilt: product: left automaton is declared not weak, but the acceptance makes this impossible;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton102.hoa;0;states: 40;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton130.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton103.hoa;0;states: 84;;0.01
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton204.hoa;0;states: 21;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton240.hoa;0;states: 19;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton248.hoa;0;states: 22;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton208.hoa;0;states: 234;;0.01
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton288.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton426.hoa;0;states: 26;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton281.hoa;0;states: 508;;0.02
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton427.hoa;0;states: 16;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton430.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton440.hoa;0;states: 37;;0.01
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton471.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton473.hoa;0;states: 12;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton48.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton461.hoa;0;states: 758;;0.04
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton517.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton521.hoa;0;states: 10;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton522.hoa;0;states: 2;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton523.hoa;0;states: 27;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton564.hoa;0;states: 2;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton60.hoa;0;states: 7;;0.01
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton400.hoa;0;states: 2110;;0.17
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton611.hoa;0;states: 5;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton618.hoa;0;states: 1;;0.01
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton641.hoa;0;states: 109;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton658.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton660.hoa;0;states: 10;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton68.hoa;0;states: 45;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton603.hoa;0;states: 39;;0.09
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton690.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton705.hoa;0;states: 2;;0.01
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton740.hoa;0;states: 307;;0.02
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton752.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton800.hoa;0;states: 8;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton807.hoa;0;states: 29;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton825.hoa;0;states: 16;;0.02
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton682.hoa;0;states: 1908;;0.13
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton826.hoa;0;states: 651;;0.04
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton850.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton86.hoa;0;states: 105;;0.01
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton90.hoa;0;states: 1;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton860.hoa;0;states: 68;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton900.hoa;0;states: 82;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton940.hoa;0;states: 11;;0.0
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton981.hoa;0;states: 2;;0.08
+finished;spot-red-2.14.1;../automata/tela_determinisation/random/automaton640.hoa;0;states: 3224;;0.39

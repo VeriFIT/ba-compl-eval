@@ -1,0 +1,17 @@
+spot:
+  cmd: ../bin/spot-wrap.sh --complement $1
+
+spot-red:
+  cmd: ../bin/spot-wrap.sh --complement --high $1
+
+kofola:
+  cmd: ../bin/kofola-wrap.sh --complement $1
+
+kofola-red:
+  cmd: ../bin/kofola-wrap.sh --complement --high $1 
+
+kofola-tela:
+  cmd: ../bin/kofola-wrap.sh --complement --params='tela=yes' $1
+
+kofola-tela-red:
+  cmd: ../bin/kofola-wrap.sh --complement --params='tela=yes' --high $1
