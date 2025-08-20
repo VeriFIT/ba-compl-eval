@@ -103,3 +103,50 @@ cp ranker ranker-tight ranker-composition ../../
 export LD_LIBRARY_PATH=$HOME/ba-compl-eval/bin              # or the correct path
 export GOALEXE=$HOME/ba-compl-eval/bin/goal/gc              # or the correct path
 ```
+
+## Evaluation Guidelines
+
+### Running Experiments on Evaluation Server
+
+- Script: `bench/run_bench.sh`
+- Purpose: runs `pycobench` for a chosen tool and benchmark suite and writes `.tasks` files.
+- Example (on server, bash):
+```
+  cd /path/to/ba-compl-eval
+  ./bench/run_bench.sh -t kofola advanced_automata
+```
+
+- Output: files named like `benchmark-to{timeout}-{tool}-{YYYY-MM-DD-hh-mm}.tasks` are created in the server `bench/` folder. The script also appends filenames to `tasks_names.txt`.
+
+### Collecting Statistics (client)
+
+1) Collect tasks files on the client
+There are two helper scripts in `eval/`:
+
+A) Fetch over SSH from server and commit locally:
+- Script: `eval/get_task_and_generate_csv.sh`
+- Before using, edit the top of the script to set `HOST`, `PORT` and `FILE_PATH_ON_HOST` to match your server and path.
+- Usage:
+```
+  cd eval
+  ./get_task_and_generate_csv.sh <FILE.tasks>
+```
+- This script copies the `.tasks` file via scp, extracts tool/version information (from a `;version-states` line if present), renames the file to include the version and commits it to git.
+
+Filename and parsing conventions
+- Expected tasks filename format: `benchmark-to{timeout}-{tool}-{YYYY-MM-DD-hh-mm}.tasks`.
+- Version extraction: scripts look for a line containing `;version-states` to extract tool version. If absent, the plain tool name is used.
+
+2) Generate CSV and analyse
+- The Jupyter notebook `eval/eval.ipynb` is the main analysis entry point. Open it with `jupyter lab` or `jupyter notebook`.
+- Edit the notebook to set:
+  - `tools = [...]` — list of tool names (match `tool` or `tool-version` used in filenames/columns).
+  - `benches = [...]` — benchmarks to analyse (strings matching `benchmark` values, e.g. `advanced_automata`).
+- `eval/eval_functions.py` provides helpers used by the notebook:
+  - `load_benches(benches, tools, timeout=120)` — reads latest `.tasks` outputs and returns a DataFrame with columns like `<tool>-states` and `<tool>-runtime`.
+  - `simple_table`, `scatter_plot`, `scatter_plot_states`, `cactus_plot`, `get_solved`, `get_timeouts`, `get_errors`, etc. — utilities used in the notebook.
+
+3) Classifications (automata properties)
+- Location: `eval/classifications/`
+- Expected filename: `<benchmark>-classification.csv` (semicolon separated).
+- `eval_functions.parse_classification(benchmark_name)` reads the CSV and returns a DataFrame with columns `automaton`, `benchmark`, `info` (a dict of boolean properties). Use `join_with_classification` to merge this information into the main results DataFrame.
