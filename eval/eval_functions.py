@@ -417,6 +417,10 @@ def get_timeouts(df, tool):
     """Returns dataframe containing rows of df, where df[tool-result] is timeout, i.e., 'TO'"""
     return df[(df[tool+"-states"].str.strip() == 'TO')]
 
+def get_errors(df, tool):
+    """Returns dataframe containing rows of df, where df[tool-result] is error, i.e., 'ERR'"""
+    return df[(df[tool+"-states"].str.strip().isin(['ERR', 'MISSING']))]
+
 def simple_table(df, tools, benches, separately=False, stat_from_solved=True):
     """Prints a simple table with statistics for each tools.
 
@@ -431,7 +435,7 @@ def simple_table(df, tools, benches, separately=False, stat_from_solved=True):
     result = ""
 
     def print_table_from_full_df(df):
-        header = ["tool", "✅", "❌", "states", "max-states", "states-avg", "states-med", "time", "time-avg", "time-med", "TO"]
+        header = ["tool", "✅", "❌", "states", "max-states", "states-avg", "states-med", "time", "time-avg", "time-med", "TO", "ERR"]
         result = ""
         result += f"# of automata: {len(df)}\n"
         result += "----------------------------------------------------------------------------------------------------\n"
@@ -439,6 +443,7 @@ def simple_table(df, tools, benches, separately=False, stat_from_solved=True):
         for tool in tools:
             valid = len(get_solved(df, tool))
             to = len(get_timeouts(df, tool))
+            err = len(get_errors(df, tool))
             runtime_col = df[f"{tool}-runtime"]
             states_col = df[f"{tool}-states"]
             if stat_from_solved:
@@ -452,7 +457,7 @@ def simple_table(df, tools, benches, separately=False, stat_from_solved=True):
             runtime_avg = runtime_col.mean()
             runtime_med = runtime_col.median()
             
-            table.append([tool, valid, to, states_total, states_max, states_avg, states_med, runtime_total, runtime_avg, runtime_med, to])
+            table.append([tool, valid, to + err, states_total, states_max, states_avg, states_med, runtime_total, runtime_avg, runtime_med, to, err])
         result += tab.tabulate(table, headers='firstrow', floatfmt=".2f") + "\n"
         result += "----------------------------------------------------------------------------------------------------\n\n"
         return result
