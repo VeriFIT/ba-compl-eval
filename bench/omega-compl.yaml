@@ -1,17 +1,23 @@
 spot:
-  cmd: ../bin/spot-wrap.sh --complement $1
+  cmd: ../bin/spot-wrap.sh $1 --complement
 
 spot-red:
-  cmd: ../bin/spot-wrap.sh --complement --high $1
+  cmd: ../bin/spot-wrap.sh $1 --complement --high
 
 kofola:
-  cmd: ../bin/kofola-wrap.sh --complement $1
+  cmd: ../bin/kofola-wrap.sh $1 --complement
+
+kofola-check:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --check
 
 kofola-red:
-  cmd: ../bin/kofola-wrap.sh --complement --high $1 
+  cmd: ../bin/kofola-wrap.sh $1 --complement --high
 
 kofola-tela:
-  cmd: ../bin/kofola-wrap.sh --complement --params='tela=yes' $1
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes'
+
+kofola-tela-check:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes' --check
 
 kofola-tela-red:
-  cmd: ../bin/kofola-wrap.sh --complement --params='tela=yes' --high $1
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes' --high

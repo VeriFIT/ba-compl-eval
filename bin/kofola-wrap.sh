@@ -14,12 +14,18 @@ shift
 # preserve argument boundaries and spacing
 params=("$@")
 
-# Remove any parameter that contains --high (kofola doesn't accept it)
+# Remove any parameter that contains --high or --check (kofola doesn't accept them)
 kofola_params=()
 has_high=0
+has_check=0
 for p in "${params[@]}"; do
     if [[ "$p" == *--high* ]]; then
         has_high=1
+        # skip this parameter when invoking kofola
+        continue
+    fi
+    if [[ "$p" == *--check* ]]; then
+        has_check=1
         # skip this parameter when invoking kofola
         continue
     fi
@@ -49,6 +55,25 @@ ret=$?
 
 # prefix the States header with the short git hash and print the full output
 cat "${TMP}" | grep "^States:" | sed "s/^States/$kofola_str-states/"
+
+# if --check is specified, check correctness using autcross
+if [ "$has_check" -eq 1 ]; then
+    TIMEOUT=60
+    AUTCROSS_CMD="autcross -T ${TIMEOUT}"
+    CHECK_TMP=$(mktemp)
+    
+    # Use autcross to compare kofola output with autfilt --complement
+    cat "${INPUT}" | ${AUTCROSS_CMD} "a=%H; cat ${TMP} > %O" 'autfilt --complement %H > %O' > "${CHECK_TMP}" 2>&1
+
+    check_ret=$?
+    if [ ${check_ret} -eq 0 ]; then
+        echo "check: True"
+    else
+        echo "check: False"
+    fi
+    
+    rm -f "${CHECK_TMP}"
+fi
 
 rm -f "${TMP}"
 
