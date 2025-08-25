@@ -59,7 +59,18 @@ def load_benches(benches, tools, timeout = 120):
         df["benchmark"] = bench
         dfs[bench] = df
 
-    df_runtime_result = pd.concat(dfs, ignore_index=True)[["benchmark", "name"] + [f(tool) for tool in tools for f in (lambda x: x + "-states", lambda x: x + "-runtime")]]
+    # Collect all available columns to include check columns if present
+    all_dfs = pd.concat(dfs, ignore_index=True)
+    base_columns = ["benchmark", "name"]
+    tool_columns = []
+    
+    for tool in tools:
+        tool_columns.extend([f"{tool}-states", f"{tool}-runtime"])
+        # Include check column if it exists
+        if f"{tool}-check" in all_dfs.columns:
+            tool_columns.append(f"{tool}-check")
+    
+    df_runtime_result = all_dfs[base_columns + tool_columns]
     
     for tool in tools:
         states_ser = pd.to_numeric(df_runtime_result[f"{tool}-states"], errors='coerce')
@@ -416,6 +427,38 @@ def get_solved(df, tool):
 def get_timeouts(df, tool):
     """Returns dataframe containing rows of df, where df[tool-result] is timeout, i.e., 'TO'"""
     return df[(df[tool+"-states"].str.strip() == 'TO')]
+
+def get_invalid(df, check_tools):
+    """Returns dataframe containing rows of df where any of the check_tools has check column set to False.
+    
+    Args:
+        df (Dataframe): data
+        check_tools (list): List of tools to check for invalid results.
+        
+    Returns:
+        Dataframe: Rows where at least one tool in check_tools has check=False
+    """
+    if not check_tools:
+        return df.iloc[0:0]  # Return empty dataframe with same columns
+    
+    # Build condition for any tool having False check
+    conditions = []
+    for tool in check_tools:
+        check_col = f"{tool}-check"
+        if check_col in df.columns:
+            # Check for False values (could be string "False" or boolean False)
+            condition = (df[check_col].astype(str).str.strip().str.lower() == 'false') | (df[check_col] == False)
+            conditions.append(condition)
+    
+    if not conditions:
+        return df.iloc[0:0]  # Return empty dataframe if no check columns found
+    
+    # Combine all conditions with OR (any tool having False check)
+    combined_condition = conditions[0]
+    for condition in conditions[1:]:
+        combined_condition = combined_condition | condition
+    
+    return df[combined_condition]
 
 def get_errors(df, tool):
     """Returns dataframe containing rows of df, where df[tool-result] is error, i.e., 'ERR'"""
