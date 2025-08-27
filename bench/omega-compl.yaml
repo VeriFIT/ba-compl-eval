@@ -7,8 +7,8 @@ spot-red:
 kofola:
   cmd: ../bin/kofola-wrap.sh $1 --complement
 
-kofola-merge:
-  cmd: ../bin/kofola-wrap.sh $1 --complement --params='merge_iwa=yes;merge_det=yes'
+kofola-break:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='sh-break=yes'
 
 kofola-check:
   cmd: ../bin/kofola-wrap.sh $1 --complement --check
