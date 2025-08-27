@@ -141,7 +141,7 @@ def _apply_scatter_points(scatter, x_col, y_col, color_column, color_by_benchmar
     
     return scatter
 
-def _apply_scatter_theme(scatter, width, height, transparent, show_legend, legend_width):
+def _apply_scatter_theme(scatter, width, height, transparent, show_legend, legend_width, color_by_benchmark, color_labels=None):
     """Apply common theme elements to scatter plot.
     
     Args:
@@ -151,6 +151,8 @@ def _apply_scatter_theme(scatter, width, height, transparent, show_legend, legen
         transparent: whether background should be transparent
         show_legend: whether to show legend
         legend_width: additional width for legend
+        color_by_benchmark: whether to color by benchmark
+        color_labels: optional ordered list of labels to map colors to (legend order)
         
     Returns:
         ggplot object with theme applied
@@ -166,7 +168,18 @@ def _apply_scatter_theme(scatter, width, height, transparent, show_legend, legen
     scatter += p9.theme(axis_title=p9.element_text(size=24, color="black"))
     scatter += p9.theme(legend_text=p9.element_text(size=12))
     scatter += p9.theme(legend_key_width=2)
-    scatter += p9.scale_color_hue(l=0.4, s=0.9, h=0.1)
+    
+    # Apply brighter, more distinct colors for benchmarks
+    if color_by_benchmark:
+        # Custom bright and distinct color palette
+        bright_colors = ["#E31A1C", "#1F78B4", "#33A02C", "#FF7F00", "#6A3D9A", "#FFD700", "#A6CEE3", "#FB9A99", "#B2DF8A", "#FDBF6F", "#CAB2D6", "#FFFF99"]
+        if color_labels is not None:
+            # build a mapping from label -> color preserving provided order
+            labels = list(color_labels)
+            color_map = {str(lbl): bright_colors[i % len(bright_colors)] for i, lbl in enumerate(labels)}
+            scatter += p9.scale_color_manual(values=color_map, breaks=labels)
+        else:
+            scatter += p9.scale_color_manual(values=bright_colors)
     
     if transparent:
         scatter += p9.theme(
@@ -198,7 +211,7 @@ def _add_scatter_reference_lines(scatter, clamp_domain, dash_pattern=(0, (6, 2))
     scatter += p9.geom_hline(yintercept=clamp_domain[1], linetype=dash_pattern)  # horizontal rule
     return scatter
 
-def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01, 120], xname=None, yname=None, log=True, width=6, height=6, show_legend=True, legend_width=2, file_name_to_save=None, transparent=False, color_by_benchmark=True, color_column="benchmark"):
+def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01, 120], xname=None, yname=None, log=True, width=6, height=6, show_legend=True, legend_width=2, file_name_to_save=None, transparent=False, color_by_benchmark=True, color_column="benchmark", legend_name_map=None):
     """Returns scatter plot for runtime comparison between two tools.
 
     Args:
@@ -212,21 +225,35 @@ def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01
         yname (str, optional): Name of the y axis. Defaults to None, uses y_tool.
         log (bool, optional): Use logarithmic scale. Defaults to True.
         width (int, optional): Figure width in inches. Defaults to 6.
-        height (int, optional): Figure height in inches. Defaults to 6.
+        height (int, optional): Figure height in inches. Defaults to 6. Will be set equal to width to make plot square.
         show_legend (bool, optional): Print legend. Defaults to True.
         legend_width (int, optional): Additional width for legend. Defaults to 2.
         file_name_to_save (str, optional): If not None, save the result to file_name_to_save.pdf. Defaults to None.
         transparent (bool, optional): Whether the generated plot should have transparent background. Defaults to False.
         color_by_benchmark (bool, optional): Whether the dots should be colored based on the benchmark. Defaults to True.
         color_column (str, optional): Name of the column to use for coloring. Defaults to 'benchmark'.
+        legend_name_map (dict, optional): Optional dict mapping original benchmark names to labels shown in legend.
     """
     assert len(clamp_domain) == 2
 
     POINT_SIZE = 1.0
     DASH_PATTERN = (0, (6, 2))
 
+    # Make the plot square by setting height equal to width
+    height = width
+
     # Prepare data
     df, x_col, y_col, xname, yname = _prepare_scatter_data(df, x_tool, y_tool, "runtime", xname, yname)
+
+    # optionally create a legend mapping column
+    color_col_used = color_column
+    color_labels = None
+    if color_by_benchmark and legend_name_map is not None and color_column in df.columns:
+        legend_col = f"{color_column}"
+        df[legend_col] = df[color_column].map(legend_name_map).fillna(df[color_column])
+        color_col_used = legend_col
+        # preserve order of appearance in dataframe for labels
+        color_labels = list(pd.Series(df[color_col_used].unique()).astype(str))
 
     # formatter for axes' labels
     ax_formatter = mizani.custom_format('{:n}')
@@ -238,7 +265,7 @@ def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01
 
     # generate scatter plot
     scatter = p9.ggplot(df)
-    scatter = _apply_scatter_points(scatter, x_col, y_col, color_column, color_by_benchmark, show_legend, POINT_SIZE)
+    scatter = _apply_scatter_points(scatter, x_col, y_col, color_col_used, color_by_benchmark, show_legend, POINT_SIZE)
     scatter += p9.labs(x=xname, y=yname)
 
     if log:  # log scale
@@ -248,7 +275,7 @@ def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01
         scatter += p9.scale_x_continuous(limits=clamp_domain, labels=ax_formatter)
         scatter += p9.scale_y_continuous(limits=clamp_domain, labels=ax_formatter)
 
-    scatter = _apply_scatter_theme(scatter, width, height, transparent, show_legend, legend_width)
+    scatter = _apply_scatter_theme(scatter, width, height, transparent, show_legend, legend_width, color_by_benchmark, color_labels=color_labels)
     scatter = _add_scatter_reference_lines(scatter, clamp_domain, DASH_PATTERN)
 
     if file_name_to_save != None:
@@ -256,7 +283,7 @@ def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01
 
     return scatter
 
-def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname=None, yname=None, log=True, width=6, height=6, show_legend=True, legend_width=2, file_name_to_save=None, transparent=False, color_by_benchmark=True, color_column="benchmark"):
+def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname=None, yname=None, log=True, width=6, height=6, show_legend=True, legend_width=2, file_name_to_save=None, transparent=False, color_by_benchmark=True, color_column="benchmark", legend_name_map=None):
     """Returns scatter plot for state space size comparison between two tools.
 
     Args:
@@ -269,19 +296,32 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
         yname (str, optional): Name of the y axis. Defaults to None, uses y_tool.
         log (bool, optional): Use logarithmic scale. Defaults to True.
         width (int, optional): Figure width in inches. Defaults to 6.
-        height (int, optional): Figure height in inches. Defaults to 6.
+        height (int, optional): Figure height in inches. Defaults to 6. Will be set equal to width to make plot square.
         show_legend (bool, optional): Print legend. Defaults to True.
         legend_width (int, optional): Additional width for legend. Defaults to 2.
         file_name_to_save (str, optional): If not None, save the result to file_name_to_save.pdf. Defaults to None.
         transparent (bool, optional): Whether the generated plot should have transparent background. Defaults to False.
         color_by_benchmark (bool, optional): Whether the dots should be colored based on the benchmark. Defaults to True.
         color_column (str, optional): Name of the column to use for coloring. Defaults to 'benchmark'.
+        legend_name_map (dict, optional): Optional dict mapping original benchmark names to labels shown in legend.
     """
     POINT_SIZE = 1.0
     DASH_PATTERN = (0, (6, 2))
 
+    # Make the plot square by setting height equal to width
+    height = width
+
     # Prepare data
     df, x_col, y_col, xname, yname = _prepare_scatter_data(df, x_tool, y_tool, "states", xname, yname)
+
+    # optionally create a legend mapping column
+    color_col_used = color_column
+    color_labels = None
+    if color_by_benchmark and legend_name_map is not None and color_column in df.columns:
+        legend_col = f"{color_column}"
+        df[legend_col] = df[color_column].map(legend_name_map).fillna(df[color_column])
+        color_col_used = legend_col
+        color_labels = list(pd.Series(df[color_col_used].unique()).astype(str))
 
     # Auto-compute clamp domain if not provided
     if clamp_domain is None:
@@ -317,7 +357,7 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
 
     # generate scatter plot
     scatter = p9.ggplot(df)
-    scatter = _apply_scatter_points(scatter, x_col, y_col, color_column, color_by_benchmark, show_legend, POINT_SIZE)
+    scatter = _apply_scatter_points(scatter, x_col, y_col, color_col_used, color_by_benchmark, show_legend, POINT_SIZE)
     scatter += p9.labs(x=xname, y=yname)
 
     if log:  # log scale
@@ -327,7 +367,7 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
         scatter += p9.scale_x_continuous(limits=clamp_domain, labels=ax_formatter)
         scatter += p9.scale_y_continuous(limits=clamp_domain, labels=ax_formatter)
 
-    scatter = _apply_scatter_theme(scatter, width, height, transparent, show_legend, legend_width)
+    scatter = _apply_scatter_theme(scatter, width, height, transparent, show_legend, legend_width, color_by_benchmark, color_labels=color_labels)
     scatter = _add_scatter_reference_lines(scatter, clamp_domain, DASH_PATTERN)
 
     if file_name_to_save != None:
