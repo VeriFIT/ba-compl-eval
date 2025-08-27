@@ -59,15 +59,17 @@ cat "${TMP}" | grep "^States:" | sed "s/^States/$kofola_str-states/"
 # if --check is specified, check correctness using autcross
 if [ "$has_check" -eq 1 ]; then
     TIMEOUT=60
-    AUTCROSS_CMD="autcross -T ${TIMEOUT}"
+    AUTCROSS_CMD="autcross"
     CHECK_TMP=$(mktemp)
     
     # Use autcross to compare kofola output with autfilt --complement
-    cat "${INPUT}" | ${AUTCROSS_CMD} "a=%H; cat ${TMP} > %O" 'autfilt --complement %H > %O' > "${CHECK_TMP}" 2>&1
+    cat "${INPUT}" | timeout ${TIMEOUT} ${AUTCROSS_CMD} "a=%H; cat ${TMP} > %O" 'autfilt --complement %H > %O' > "${CHECK_TMP}" 2>&1
 
     check_ret=$?
     if [ ${check_ret} -eq 0 ]; then
         echo "check: True"
+    elif [ ${check_ret} -eq 124 ]; then
+        echo "check: TO"
     else
         echo "check: False"
     fi

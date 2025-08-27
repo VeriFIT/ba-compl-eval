@@ -441,14 +441,30 @@ def get_invalid(df, check_tools):
     if not check_tools:
         return df.iloc[0:0]  # Return empty dataframe with same columns
     
-    # Build condition for any tool having False check
+    # Build condition for any tool having False check, but exclude rows where the corresponding
+    # <tool>-states value is missing (NaN, empty string or literal 'MISSING').
     conditions = []
     for tool in check_tools:
         check_col = f"{tool}-check"
-        if check_col in df.columns:
-            # Check for False values (could be string "False" or boolean False)
-            condition = (df[check_col].astype(str).str.strip().str.lower() == 'false') | (df[check_col] == False)
+        check_state = f"{tool}-states"
+        if check_col in df.columns and check_state in df.columns:
+            # original states series (may contain NaN or special tokens like 'MISSING')
+            state_series = df[check_state]
+            # normalized string version for comparisons
+            state_str = state_series.astype(str).str.strip()
+            # consider a state valid if it's not NaN, not empty and not the token 'MISSING'
+            state_valid = state_series.notna() & (state_str.str.upper() != 'MISSING') & (state_str != '')
+
+            # Check for False values in the check column (string 'False' or boolean False)
+            check_false = (df[check_col].astype(str).str.strip().str.lower() == 'false') | (df[check_col] == False)
+
+            # only mark invalid when check says False and the state is present/valid
+            condition = check_false & state_valid
             conditions.append(condition)
+        elif check_col in df.columns:
+            # If states column is absent, fall back to using the check column alone
+            check_false = (df[check_col].astype(str).str.strip().str.lower() == 'false') | (df[check_col] == False)
+            conditions.append(check_false)
     
     if not conditions:
         return df.iloc[0:0]  # Return empty dataframe if no check columns found
