@@ -12,7 +12,7 @@ show_help() {
 	echo "Options:"
 	echo "  -h        Show this help message"
 	echo "  -t TOOL   Which tool to run (default=kofola)"
-	echo "  -j N      How many processes to run in parallel (default=8)"
+	echo "  -j N      How many processes to run in parallel (default=4)"
 	echo "  -m N      Memory limit of each process in GB (default=8)"
 	echo "  -s N      Timeout for each process in seconds (default=120)"
 	
@@ -25,7 +25,7 @@ show_help() {
 # If no benchmark is given, run the three omega-complementation benchmark sets.
 
 tool="kofola"
-j_value="8"
+j_value="4"
 m_value="8"
 s_value="120"
 while getopts "ht:j:m:s:" option; do
@@ -61,7 +61,7 @@ benchmarks=()
 
 # If no benchmark is given, run the three omega automata complementation sets
 if [ -z "$1" ]; then
-  benchmarks=("advanced_automata" "s1s_direct_red" "from_ltl_red")
+  benchmarks=("advanced_automata_termination" "autohyper" "pecan" "s1s" "state_of_buchi" "seminator")
 else
   # treat each positional argument as a benchmark name (no grouping)
   for BENCH_NAME in "$@"; do
