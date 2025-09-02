@@ -24,3 +24,6 @@ kofola-tela-check:
 
 kofola-tela-red:
   cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes' --high
+
+kofola-tacas23:
+  cmd: ../bin/kofola-tacas23-wrap.sh $1 --algo=comp --merge-iwa --merge-det --iw-sim

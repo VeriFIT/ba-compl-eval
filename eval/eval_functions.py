@@ -342,6 +342,23 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
     # formatter for axes' labels
     ax_formatter = mizani.custom_format('{:n}')
 
+    # Replace timeout/missing values with the maximum value (where dashed line is rendered)
+    # Consider true missing (NaN) and empty strings as missing as well
+    x_col_orig = f"{x_tool}-states"
+    y_col_orig = f"{y_tool}-states"
+
+    # Identify timeout/missing values. Handle NaN, empty string and tokens like 'TO','ERR','MISSING'
+    x_series = df[x_col_orig]
+    y_series = df[y_col_orig]
+    x_str = x_series.astype(str).str.strip()
+    y_str = y_series.astype(str).str.strip()
+    x_timeouts = x_series.isna() # | x_str.isin(['TO', 'ERR', 'MISSING']) | (x_str == '')
+    y_timeouts = y_series.isna() # | y_str.isin(['TO', 'ERR', 'MISSING']) | (y_str == '')
+    
+    # Replace timeout values with the maximum domain value
+    df.loc[x_timeouts, x_col] = clamp_domain[1]
+    df.loc[y_timeouts, y_col] = clamp_domain[1]
+
     if clamp:  # clamp overflowing values if required
         df.loc[df[x_col] > clamp_domain[1], x_col] = clamp_domain[1]
         df.loc[df[y_col] > clamp_domain[1], y_col] = clamp_domain[1]

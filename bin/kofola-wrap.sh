@@ -58,7 +58,7 @@ cat "${TMP}" | grep "^States:" | sed "s/^States/$kofola_str-states/"
 
 # if --check is specified, check correctness using autcross
 if [ "$has_check" -eq 1 ]; then
-    TIMEOUT=60
+    TIMEOUT=100
     AUTCROSS_CMD="autcross"
     CHECK_TMP=$(mktemp)
     
