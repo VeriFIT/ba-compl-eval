@@ -38,6 +38,7 @@ import psutil
 import queue
 import re
 import resource
+import shlex
 import signal
 import subprocess
 import sys
@@ -244,7 +245,7 @@ Executes one benchmark.
     name = params['method']
     in_params = params['params']
     cmd = g_cmd_dict[name]['cmd']
-    cmd = cmd.split()
+    cmd = shlex.split(cmd)
     # in_params = in_params.split()
 
     # substitute $1, $2, etc. with the real parameters
