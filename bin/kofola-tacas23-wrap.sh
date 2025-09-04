@@ -36,9 +36,9 @@ TMP=$(mktemp)
 set -o pipefail
 
 if [ "$has_high" -eq 1 ]; then
-    "${kofola_exe}" "${kofola_params[@]}" "${INPUT}" | autfilt --high > "${TMP}"
+    autfilt --tgba ${INPUT} | "${kofola_exe}" "${kofola_params[@]}" | autfilt --high > "${TMP}"
 else
-    "${kofola_exe}" "${kofola_params[@]}" "${INPUT}" > "${TMP}"
+    autfilt --tgba ${INPUT} | "${kofola_exe}" "${kofola_params[@]}" > "${TMP}"
 fi
 
 # capture return code
