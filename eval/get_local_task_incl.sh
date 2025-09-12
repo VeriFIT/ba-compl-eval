@@ -16,10 +16,10 @@ extract_tool_name() {
     echo "$tool_name"
 }
 
-# Extracts the tool version from the line containing substring ";version-states".
+# Extracts the tool version from the line containing substring ";version-result".
 get_tool_version() {
 	local line_with_version="$1"
-	line_with_version=${line_with_version%-states*}
+	line_with_version=${line_with_version%-result*}
 	line_with_version=${line_with_version##*;}
 	echo ${line_with_version%;}
 }
@@ -30,7 +30,7 @@ process_tasks() {
 	local file_name=$1
 	local tool_name=$(extract_tool_name "$file_name")
 	local benchmark_name=${file_name%%-*}
-	local path_to_file="inclusion/$benchmark_name/$file_name"
+	local path_to_file="incl/$benchmark_name/$file_name"
 
 	if test -e $FILE_PATH_ON_HOST/$file_name; then
 		cp $FILE_PATH_ON_HOST/$file_name $path_to_file

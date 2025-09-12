@@ -61,7 +61,7 @@ benchmarks=()
 
 # If no benchmark is given, run the three omega automata complementation sets
 if [ -z "$1" ]; then
-  benchmarks=("autohyper-incl")
+  benchmarks=("autohyper")
 else
   # treat each positional argument as a benchmark name (no grouping)
   for BENCH_NAME in "$@"; do
@@ -76,7 +76,7 @@ for benchmark in "${benchmarks[@]}"; do
 	echo "Running benchmark $benchmark"
 	FILE_PREFIX="$benchmark-to${s_value}-$tool-$CUR_DATE"
 	TASKS_FILE="$FILE_PREFIX.tasks"
-	cat "$benchmark.input" | ./pycobench -c omega-incl.yaml -j $j_value -t $s_value --memout $m_value -m "$tool" -o "$TASKS_FILE"
+	cat "inputs/incl/$benchmark.input" | ./pycobench -c omega-incl.yaml -j $j_value -t $s_value --memout $m_value -m "$tool" -o "$TASKS_FILE"
 	tasks_files+=("$TASKS_FILE")
 	echo "$TASKS_FILE" >> tasks_names.txt
 done

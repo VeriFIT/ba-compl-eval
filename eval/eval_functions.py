@@ -82,6 +82,69 @@ def load_benches(benches, tools, timeout = 120):
     df_all = df_runtime_result #.merge(df_stats)
     return df_all
 
+def load_benches_incl(benches, tools, timeout=120):
+    """Load inclusion benchmark results.
+
+    Behaves like load_benches but expects inclusion runs (method 'incl').
+    Returns a dataframe with columns:
+      - 'benchmark', 'name'
+      - for each tool: '<tool>-result' (true/false/TO/ERR/MISSING if present) and '<tool>-runtime' (float seconds)
+      - optional '<tool>-check' if present in inputs
+    Non-numeric runtimes (TO/ERR/MISSING) are set to the timeout value and coerced to float.
+    If a tool has only timeouts (and thus no '-result' column in the CSV), the column is added and filled with 'TO'.
+    """
+    dfs = dict()
+    for bench in benches:
+        input_data = ""
+        for tool in tools:
+            assert tool != ""
+            input_data += read_latest_result_file(bench, "incl", tool, timeout)
+        # Convert pyco_proc CSV text to a DataFrame
+        buf = io.StringIO()
+        old_stdout = sys.stdout
+        # temporarily set PARAMS_NUM=2 for inclusion tasks (two params: A and B)
+        old_params = getattr(pyco_proc, 'PARAMS_NUM', None)
+        pyco_proc.PARAMS_NUM = 2
+        try:
+            sys.stdout = buf
+            pyco_proc.proc_res(io.StringIO(input_data), Namespace(csv=True, html=False, text=False, tick=False))
+        finally:
+            sys.stdout = old_stdout
+            # restore original PARAMS_NUM
+            if old_params is None:
+                delattr(pyco_proc, 'PARAMS_NUM')
+            else:
+                pyco_proc.PARAMS_NUM = old_params
+        csv_output = buf.getvalue()
+        df = pd.read_csv(io.StringIO(csv_output), sep=";", dtype='unicode')
+
+        # Ensure result column exists even when a tool only timed out (pyco_proc then omits outputs)
+        for tool in tools:
+            if f"{tool}-result" not in df.columns:
+                df[f"{tool}-result"] = "TO"
+
+        df["benchmark"] = bench
+        dfs[bench] = df
+
+    # Combine and select columns similarly to load_benches but for inclusion 'result'
+    all_dfs = pd.concat(dfs, ignore_index=True)
+    
+    base_columns = ["benchmark", "name"]
+    tool_columns = []
+    for tool in tools:
+        tool_columns.extend([f"{tool}-result", f"{tool}-runtime"])
+
+    df_runtime_result = all_dfs[base_columns + tool_columns]
+
+    # Coerce runtimes to float and replace non-numeric with timeout
+    for tool in tools:
+        runtimes = pd.to_numeric(df_runtime_result[f"{tool}-runtime"], errors='coerce')
+        mask_non_numeric = runtimes.isna()
+        df_runtime_result.loc[mask_non_numeric, f"{tool}-runtime"] = float(timeout)
+        df_runtime_result[f"{tool}-runtime"] = pd.to_numeric(df_runtime_result[f"{tool}-runtime"], errors='coerce').astype(float)
+
+    return df_runtime_result
+
 def _prepare_scatter_data(df, x_tool, y_tool, col, xname=None, yname=None):
     """Prepare data for scatter plots by setting up column names and copying dataframe.
     
