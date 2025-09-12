@@ -22,16 +22,16 @@ autfilt_version=$(awk '{print $NF}' <<< "${autfilt_first_line}")
 autfilt_str=${autfilt_version}
 
 TMP=$(mktemp)
-"${autfilt_exe}" --included-in="$B" "$A" "${params[@]}" > "${TMP}" || exit 1
+"${autfilt_exe}" --included-in="$B" "$A" "${params[@]}" > "${TMP}"
 ret=$?
 
 # print result flag based on exit code while preserving the original exit code
 if [ "${ret}" -eq 0 ]; then
-	echo "autfilt_str: true"
+	echo "${autfilt_str}-result: true"
 else
-	echo "autfilt_str: false"
+	echo "${autfilt_str}-result: false"
 fi
 
 rm ${TMP}
 
-exit ${ret}
+exit 0

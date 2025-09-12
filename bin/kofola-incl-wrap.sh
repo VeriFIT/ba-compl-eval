@@ -32,9 +32,9 @@ ret=$?
 
 # Inspect the output and print the requested short result line
 if grep -q "Inclusion does not hold!" "${TMP}"; then
-	echo "${kofola_str}: false"
+	echo "${kofola_str}-result: false"
 elif grep -q "Inclusion holds!" "${TMP}"; then
-	echo "${kofola_str}: true"
+	echo "${kofola_str}-result: true"
 fi
 
 rm "${TMP}"
