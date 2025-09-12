@@ -12,13 +12,13 @@ from enum import Enum
 
 import pyco_proc
 
-def read_latest_result_file(bench, tool, timeout):
+def read_latest_result_file(bench, method, tool, timeout):
     assert tool != ""
 
     #substring to filter files with the same timeout
     timeout_str = f"to{timeout}-"
     matching_files = []
-    for root, _, files in os.walk(bench):
+    for root, _, files in os.walk(method + "/" + bench):
         for file in files:
             if tool in file and timeout_str in file:
                 matching_files.append(os.path.join(root, file))
@@ -36,7 +36,7 @@ def load_benches(benches, tools, timeout = 120):
         input_data = ""
         for tool in tools:
             assert tool != ""
-            input_data += read_latest_result_file(bench, tool, timeout)
+            input_data += read_latest_result_file(bench, "compl", tool, timeout)
         # pyco_proc.proc_res writes CSV to stdout; capture that output into a buffer
         buf = io.StringIO()
         old_stdout = sys.stdout

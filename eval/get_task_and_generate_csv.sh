@@ -1,9 +1,9 @@
 #!/bin/zsh
 
 # Fill these out
-HOST=""
-PORT=""
-FILE_PATH_ON_HOST=""
+HOST="vojta@verifit3.fit.vutbr.cz"
+PORT="6086"
+FILE_PATH_ON_HOST="ba-compl-eval/bench"
 
 # Exctracts tool name from the first argument which is assumed
 # to be a file path of form
