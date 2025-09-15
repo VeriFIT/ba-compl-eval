@@ -11,18 +11,18 @@ Both workflows share infrastructure (wrappers, `pycobench`, result post‑proces
 - Input lists (`inputs/compl/*.input` vs `inputs/incl/*.input`)
 
 ---
-## 1. Python Dependencies
+## Python Dependencies
 ```
 pip3 install -r requirements.txt
 ```
 
 ---
-## 2. External Tools (Optional / As Needed)
+## External Tools (Optional / As Needed)
 Comment out entries in the relevant YAML (`bench/omega-compl.yaml` or `bench/omega-incl.yaml`) to disable a tool variant.
 
 Assume the repository lives at `${HOME}/ba-compl-eval`.
 
-### 2.1 GOAL
+### GOAL
 
 Download [GOAL](http://goal.im.ntu.edu.tw/wiki/doku.php#download) and move the file into the `bin/` directory.  Then
 
@@ -51,7 +51,7 @@ zip -r ch.unifr.goal.complement.zip classes plugin.xml
 cp ch.unifr.goal.complement.zip <GOAL_LOCATION>/plugins
 ```
 
-### 2.2 Spot
+### Spot
 
 We compile Spot and copy the file `autfilt` and the required libraries into the `bin/` directory
 
@@ -70,7 +70,7 @@ export LD_LIBRARY_PATH=$HOME/ba-compl-eval/bin        # or the correct path
 
 macOS note: you may need a Homebrew Bison (`brew install bison`) and set `$BISON`.
 
-### 2.3 Seminator 2 (depends on Spot)
+### Seminator 2 (depends on Spot)
 
 ```
 cd bin/
@@ -85,7 +85,7 @@ cp .libs/seminator ../
 cp src/.libs/libseminator.so.0 ../
 ```
 
-### 2.4 ROLL
+### ROLL
 
 ```
 wget 'https://github.com/ISCAS-PMC/roll-library/archive/dev.tar.gz' -O roll.tar.gz
@@ -95,7 +95,7 @@ cd roll-library-dev/
 cp ROLL.jar ../
 ```
 
-### 2.5 Ranker (Inclusion related)
+### Ranker (Inclusion related)
 
 ```
 wget 'https://github.com/vhavlena/ba-inclusion/archive/master.tar.gz' -O ranker.tar.gz
@@ -106,14 +106,14 @@ cp ranker ranker-tight ranker-composition ../../
 ```
 
 ---
-## 3. Environment Variables
+## Environment Variables
 ```
 export LD_LIBRARY_PATH=$HOME/ba-compl-eval/bin   # adjust to your path
 export GOALEXE=$HOME/ba-compl-eval/bin/goal/gc   # if GOAL used
 ```
 
 ---
-## 4. Benchmarks & Inputs
+## Benchmarks & Inputs
 Input lists (one HOA path per line):
 - Complementation: `inputs/compl/*.input`
 - Inclusion:       `inputs/incl/*.input` (pairs consumed internally by wrappers / pycobench)
@@ -125,9 +125,9 @@ Bench script default benchmark sets:
 You can pass explicit benchmark names as positional arguments. No grouping/expansion is performed.
 
 ---
-## 5. Running Benchmarks (Server Side)
+## Running Benchmarks (Server Side)
 
-### 5.1 Complementation
+### Complementation
 Script: `bench/run_bench_compl.sh`
 ```
 ./bench/run_bench_compl.sh -t kofola -s 120 -j 4 -m 8 advanced_automata_termination
@@ -138,14 +138,14 @@ Options:
 - `-m GB` memory limit per process (default 8)
 - `-s SEC` timeout per task (default 120)
 
-### 5.2 Inclusion
+### Inclusion
 Script: `bench/run_bench_incl.sh`
 ```
 ./bench/run_bench_incl.sh -t kofola_fast_early autohyper rabit
 ```
 Options identical; default tool is `kofola_fast`.
 
-### 5.3 Output Files
+### Output Files
 For each benchmark a `.tasks` file is created in `bench/`:
 ```
 <benchmark>-to<timeout>-<tool>-YYYY-MM-DD-hh-mm.tasks
@@ -157,7 +157,7 @@ Column semantics inside `.tasks` differ:
 - Inclusion: result status (`true|false|TO|ERR`) for pair A,B (-> `<tool>-result` later)
 
 ---
-## 6. Tool Configuration YAML
+## Tool Configuration YAML
 Edit or comment entries:
 - `bench/omega-compl.yaml` – complementation tool variants (e.g. `kofola-subs-tup`, `spot-red`, `kofola-tacas23`).
 - `bench/omega-incl.yaml`  – inclusion tool variants (e.g. `kofola_fast_early_plus`, `spot`).
@@ -165,11 +165,11 @@ Edit or comment entries:
 Keys become the `-t` TOOL argument (hyphens vs underscores must match exactly what you use later in analysis; keep consistent).
 
 ---
-## 7. Retrieving & Normalising Results (Client Side)
+## Retrieving & Normalising Results (Client Side)
 
 From `eval/` use the helper scripts (edit HOST/PORT/PATH first):
 
-### 7.1 Complementation
+### Complementation
 ```
 cd eval
 ./get_task_compl.sh <benchmark-toTIMEOUT-TOOL-DATE.tasks>
@@ -179,7 +179,7 @@ Processing steps:
 2. Detect tool version from first `;version-states` line (if present) and rename file to inject `-<version>` after tool name.
 3. Commit the file (`git add` + commit message `<tool>[-<version>] on <benchmark>`).
 
-### 7.2 Inclusion
+### Inclusion
 ```
 cd eval
 ./get_task_incl.sh <benchmark-toTIMEOUT-TOOL-DATE.tasks>
@@ -192,9 +192,9 @@ autohyper-to120-kofola_fast-1.2.3-2025-09-15-12-30.tasks
 ```
 
 ---
-## 8. Analysis (Jupyter Notebooks)
+## Analysis (Jupyter Notebooks)
 
-### 8.1 Complementation Notebook
+### Complementation Notebook
 `eval/eval_compl.ipynb` uses:
 ```
 from eval_functions import load_benches
@@ -202,7 +202,7 @@ df = load_benches(benches, tools, timeout=120)
 ```
 DataFrame columns: `benchmark`, `name`, and per tool: `<tool>-states`, `<tool>-runtime` (+ optional `<tool>-check`). Timeouts have state `TO` and runtime coerced to timeout value.
 
-### 8.2 Inclusion Notebook
+### Inclusion Notebook
 `eval/eval_incl.ipynb` uses:
 ```
 from eval_functions import load_benches_incl
@@ -210,13 +210,7 @@ df = load_benches_incl(benches, tools, timeout=120)
 ```
 Columns: `benchmark`, `name`, per tool `<tool>-result` (values `true|false|TO|ERR|MISSING`) and `<tool>-runtime` (float seconds). Missing result columns are auto‑filled with `TO`.
 
-### 8.3 Plot / Utility Functions
-Found in `eval/eval_functions.py`:
-- `scatter_plot` (runtime vs runtime)
-- `scatter_plot_states` (states vs states; complementation only)
-- `cactus_plot`, `get_solved`, `get_timeouts`, `get_errors`, etc.
-
-### 8.4 Classification Metadata
+### Classification Metadata
 Place classification CSVs in `eval/classifications/` named:
 ```
 <benchmark>-classification.csv
@@ -224,7 +218,7 @@ Place classification CSVs in `eval/classifications/` named:
 Use helpers: `parse_classification`, `join_with_classification` to merge property info.
 
 ---
-## 9. Quick End‑to‑End Example (Complementation)
+## Quick End‑to‑End Example (Complementation)
 Server:
 ```
 ./bench/run_bench_compl.sh -t kofola advanced_automata_termination
@@ -236,7 +230,7 @@ cd eval
 python3 -c "from eval_functions import load_benches;print(load_benches(['advanced_automata_termination'], ['kofola']))"
 ```
 
-## 10. Quick End‑to‑End Example (Inclusion)
+## Quick End‑to‑End Example (Inclusion)
 Server:
 ```
 ./bench/run_bench_incl.sh -t kofola_fast autohyper
