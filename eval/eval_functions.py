@@ -12,13 +12,13 @@ from enum import Enum
 
 import pyco_proc
 
-def read_latest_result_file(bench, tool, timeout):
+def read_latest_result_file(bench, method, tool, timeout):
     assert tool != ""
 
     #substring to filter files with the same timeout
     timeout_str = f"to{timeout}-"
     matching_files = []
-    for root, _, files in os.walk(bench):
+    for root, _, files in os.walk(method + "/" + bench):
         for file in files:
             if tool in file and timeout_str in file:
                 matching_files.append(os.path.join(root, file))
@@ -36,7 +36,7 @@ def load_benches(benches, tools, timeout = 120):
         input_data = ""
         for tool in tools:
             assert tool != ""
-            input_data += read_latest_result_file(bench, tool, timeout)
+            input_data += read_latest_result_file(bench, "compl", tool, timeout)
         # pyco_proc.proc_res writes CSV to stdout; capture that output into a buffer
         buf = io.StringIO()
         old_stdout = sys.stdout
@@ -82,6 +82,69 @@ def load_benches(benches, tools, timeout = 120):
     df_all = df_runtime_result #.merge(df_stats)
     return df_all
 
+def load_benches_incl(benches, tools, timeout=120):
+    """Load inclusion benchmark results.
+
+    Behaves like load_benches but expects inclusion runs (method 'incl').
+    Returns a dataframe with columns:
+      - 'benchmark', 'name'
+      - for each tool: '<tool>-result' (true/false/TO/ERR/MISSING if present) and '<tool>-runtime' (float seconds)
+      - optional '<tool>-check' if present in inputs
+    Non-numeric runtimes (TO/ERR/MISSING) are set to the timeout value and coerced to float.
+    If a tool has only timeouts (and thus no '-result' column in the CSV), the column is added and filled with 'TO'.
+    """
+    dfs = dict()
+    for bench in benches:
+        input_data = ""
+        for tool in tools:
+            assert tool != ""
+            input_data += read_latest_result_file(bench, "incl", tool, timeout)
+        # Convert pyco_proc CSV text to a DataFrame
+        buf = io.StringIO()
+        old_stdout = sys.stdout
+        # temporarily set PARAMS_NUM=2 for inclusion tasks (two params: A and B)
+        old_params = getattr(pyco_proc, 'PARAMS_NUM', None)
+        pyco_proc.PARAMS_NUM = 2
+        try:
+            sys.stdout = buf
+            pyco_proc.proc_res(io.StringIO(input_data), Namespace(csv=True, html=False, text=False, tick=False))
+        finally:
+            sys.stdout = old_stdout
+            # restore original PARAMS_NUM
+            if old_params is None:
+                delattr(pyco_proc, 'PARAMS_NUM')
+            else:
+                pyco_proc.PARAMS_NUM = old_params
+        csv_output = buf.getvalue()
+        df = pd.read_csv(io.StringIO(csv_output), sep=";", dtype='unicode')
+
+        # Ensure result column exists even when a tool only timed out (pyco_proc then omits outputs)
+        for tool in tools:
+            if f"{tool}-result" not in df.columns:
+                df[f"{tool}-result"] = "TO"
+
+        df["benchmark"] = bench
+        dfs[bench] = df
+
+    # Combine and select columns similarly to load_benches but for inclusion 'result'
+    all_dfs = pd.concat(dfs, ignore_index=True)
+    
+    base_columns = ["benchmark", "name"]
+    tool_columns = []
+    for tool in tools:
+        tool_columns.extend([f"{tool}-result", f"{tool}-runtime"])
+
+    df_runtime_result = all_dfs[base_columns + tool_columns]
+
+    # Coerce runtimes to float and replace non-numeric with timeout
+    for tool in tools:
+        runtimes = pd.to_numeric(df_runtime_result[f"{tool}-runtime"], errors='coerce')
+        mask_non_numeric = runtimes.isna()
+        df_runtime_result.loc[mask_non_numeric, f"{tool}-runtime"] = float(timeout)
+        df_runtime_result[f"{tool}-runtime"] = pd.to_numeric(df_runtime_result[f"{tool}-runtime"], errors='coerce').astype(float)
+
+    return df_runtime_result
+
 def _prepare_scatter_data(df, x_tool, y_tool, col, xname=None, yname=None):
     """Prepare data for scatter plots by setting up column names and copying dataframe.
     
@@ -113,7 +176,7 @@ def _prepare_scatter_data(df, x_tool, y_tool, col, xname=None, yname=None):
 
     return df, x_col, y_col, xname, yname
 
-def _apply_scatter_points(scatter, x_col, y_col, color_column, color_by_benchmark, show_legend, point_size=1.0):
+def _apply_scatter_points(scatter, x_col, y_col, color_column, color_by_benchmark, show_legend, point_size=2.0):
     """Apply scatter points and rug plots to a ggplot object.
     
     Args:
@@ -236,7 +299,7 @@ def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01
     """
     assert len(clamp_domain) == 2
 
-    POINT_SIZE = 1.0
+    POINT_SIZE = 2.0
     DASH_PATTERN = (0, (6, 2))
 
     # Make the plot square by setting height equal to width
@@ -305,7 +368,7 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
         color_column (str, optional): Name of the column to use for coloring. Defaults to 'benchmark'.
         legend_name_map (dict, optional): Optional dict mapping original benchmark names to labels shown in legend.
     """
-    POINT_SIZE = 1.0
+    POINT_SIZE = 2.0
     DASH_PATTERN = (0, (6, 2))
 
     # Make the plot square by setting height equal to width
@@ -464,9 +527,52 @@ def sanity_check(df, tool, compare_with):
     all_bad = []
     for tool_other in compare_with:
         pt = df
-        pt = pt[((pt[tool+"-result"].str.strip() == 'sat') & (pt[tool_other+"-result"].str.strip() == 'unsat') | (pt[tool+"-result"].str.strip() == 'unsat') & (pt[tool_other+"-result"].str.strip() == 'sat'))]
+        pt = pt[((pt[tool+"-result"].str.strip() == 'true') & (pt[tool_other+"-result"].str.strip() == 'false') | (pt[tool+"-result"].str.strip() == 'false') & (pt[tool_other+"-result"].str.strip() == 'true'))]
         all_bad.append(pt)
     return pd.concat(all_bad).drop_duplicates()
+
+def get_solved_incl(df, tool):
+    """Return rows where the inclusion tool produced a definitive result (true or false).
+
+    Args:
+        df (pd.DataFrame): Dataframe containing inclusion results with a column
+            named "<tool>-result" for the given tool.
+        tool (str): Tool name prefix used in the dataframe columns.
+
+    Returns:
+        pd.DataFrame: Subset of `df` where `<tool>-result` equals 'true' or 'false'
+        (string comparison, whitespace-insensitive). The original dataframe's
+        row order and other columns are preserved.
+    """
+    return df[(df[tool+"-result"].str.strip() == 'true')|(df[tool+"-result"].str.strip() == 'false')]
+
+def get_timeouts_incl(df, tool):
+    """Return rows where the inclusion tool timed out.
+
+    Args:
+        df (pd.DataFrame): Dataframe containing inclusion results with a column
+            named "<tool>-result" for the given tool.
+        tool (str): Tool name prefix used in the dataframe columns.
+
+    Returns:
+        pd.DataFrame: Subset of `df` where `<tool>-result` equals 'TO'
+        (timeout token). Comparison is done on the stripped string value.
+    """
+    return df[(df[tool+"-result"].str.strip() == 'TO')]
+
+def get_errors_incl(df, tool):
+    """Return rows where the inclusion tool produced an error or missing result.
+
+    Args:
+        df (pd.DataFrame): Dataframe containing inclusion results with a column
+            named "<tool>-result" for the given tool.
+        tool (str): Tool name prefix used in the dataframe columns.
+
+    Returns:
+        pd.DataFrame: Subset of `df` where `<tool>-result` equals 'ERR' or
+        'MISSING' (string comparison, whitespace-insensitive).
+    """
+    return df[(df[tool+"-result"].str.strip() == 'ERR')|(df[tool+"-result"].str.strip() == 'MISSING')]
 
 def get_solved(df, tool):
     """Returns dataframe containing rows of df where <tool>-states is numeric (i.e., solved).
@@ -586,6 +692,66 @@ def simple_table(df, tools, benches, separately=False, stat_from_solved=True):
         result += print_table_from_full_df(df[df["benchmark"].isin(benches)])
 
     return result
+
+def simple_table_incl(df, tools, benches, separately=False, stat_from_solved=True):
+    """Generate a simple statistics table for inclusion benchmarks.
+
+    The function computes per-tool counts and timing statistics for inclusion
+    experiments. It expects `df` to contain columns named `<tool>-result`
+    (values like 'true','false','TO','ERR','MISSING') and `<tool>-runtime`
+    (seconds as numeric or non-numeric tokens).
+
+    Args:
+        df (pd.DataFrame): Combined dataframe with a 'benchmark' column and
+            per-tool '<tool>-result' and '<tool>-runtime' columns.
+        tools (list): List of tool name prefixes to include in the table.
+        benches (list): List of benchmark names to consider (rows filtered by
+            `df["benchmark"].isin(benches)` unless `separately` is True).
+        separately (bool): If True, return a concatenated string containing a
+            table for each benchmark in `benches`; otherwise produce a single
+            table over all specified benchmarks.
+        stat_from_solved (bool): When True, compute aggregate timing stats
+            (total/mean/median) from only solved instances (i.e. rows where
+            `<tool>-result` is 'true' or 'false'). When False, use all rows.
+
+    Returns:
+        str: A formatted ASCII table (tabulate) summarizing for each tool:
+             [tool, #solved, #not-solved, total-time, avg-time, med-time, TO, ERR]
+    """
+
+    result = ""
+
+    def print_table_from_full_df(df):
+        header = ["tool", "✅", "❌", "time", "time-avg", "time-med", "TO", "ERR"]
+        result = ""
+        result += f"# of automata: {len(df)}\n"
+        result += "----------------------------------------------------------------------------------------------------\n"
+        table = [header]
+        for tool in tools:
+            valid = len(get_solved_incl(df, tool))
+            to = len(get_timeouts_incl(df, tool))
+            err = len(get_errors_incl(df, tool))
+            runtime_col = df[f"{tool}-runtime"]
+            if stat_from_solved:
+                runtime_col = get_solved_incl(df, tool)[f"{tool}-runtime"]
+            runtime_total = runtime_col.sum()
+            runtime_avg = runtime_col.mean()
+            runtime_med = runtime_col.median()
+
+            table.append([tool, valid, to + err, runtime_total, runtime_avg, runtime_med, to, err])
+        result += tab.tabulate(table, headers='firstrow', floatfmt=".2f") + "\n"
+        result += "----------------------------------------------------------------------------------------------------\n\n"
+        return result
+
+    if (separately):
+        for bench in benches:
+            result += f"Benchmark {bench}\n"
+            result += print_table_from_full_df(df[df["benchmark"] == bench])
+    else:
+        result += print_table_from_full_df(df[df["benchmark"].isin(benches)])
+
+    return result
+
 
 def add_vbs(df, tools_list, name = None):
     """Adds virtual best solvers from tools in tool_list
