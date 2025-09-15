@@ -1,7 +1,7 @@
-# Büchi Automata Complementation & Inclusion Evaluation Environment
+# Omega Automata Complementation & Inclusion Evaluation Environment
 
 This repository provides an environment to benchmark and analyse tools for:
-1. Omega-automata (Büchi) complementation
+1. Omega-automata complementation
 2. Omega-automata language inclusion (A ⊆ B)
 
 Both workflows share infrastructure (wrappers, `pycobench`, result post‑processing) but differ in:
