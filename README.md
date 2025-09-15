@@ -247,23 +247,3 @@ cd eval
 ./get_task_incl.sh autohyper-to120-kofola_fast-<DATE>.tasks
 python3 -c "from eval_functions import load_benches_incl;print(load_benches_incl(['autohyper'], ['kofola_fast']))"
 ```
-
----
-## 11. Troubleshooting
-| Symptom | Cause | Fix |
-|---------|-------|-----|
-| Missing `<tool>-states` or `<tool>-result` column | Tool produced only timeouts | Column auto-filled; verify tool wrapper path |
-| `ImportError: libspot.so.0` | LD_LIBRARY_PATH not set | Export path to `bin/` before running notebooks |
-| No version injected into filename | No `;version-states` / `;version-result` line | Accept plain tool name or update wrapper to emit version |
-| Long runtimes show as exactly timeout | Non-numeric replaced | Expected behaviour for TO / ERR |
-
----
-## 12. Conventions Summary
-- Tasks filename: `<benchmark>-to<timeout>-<tool>-<timestamp>.tasks`
-- Complementation result columns: `<tool>-states`, `<tool>-runtime`
-- Inclusion result columns: `<tool>-result`, `<tool>-runtime`
-- Timeout handling: runtime coerced to timeout, non-numeric marker retained in states/result column.
-
----
-## 13. License / Citation
-If you use this infrastructure in academic work, please cite the corresponding tool / benchmark sources (add your project-specific citation info here).
