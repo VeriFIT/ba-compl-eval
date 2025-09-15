@@ -176,7 +176,7 @@ def _prepare_scatter_data(df, x_tool, y_tool, col, xname=None, yname=None):
 
     return df, x_col, y_col, xname, yname
 
-def _apply_scatter_points(scatter, x_col, y_col, color_column, color_by_benchmark, show_legend, point_size=1.0):
+def _apply_scatter_points(scatter, x_col, y_col, color_column, color_by_benchmark, show_legend, point_size=2.0):
     """Apply scatter points and rug plots to a ggplot object.
     
     Args:
@@ -299,7 +299,7 @@ def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01
     """
     assert len(clamp_domain) == 2
 
-    POINT_SIZE = 1.0
+    POINT_SIZE = 2.0
     DASH_PATTERN = (0, (6, 2))
 
     # Make the plot square by setting height equal to width
@@ -368,7 +368,7 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
         color_column (str, optional): Name of the column to use for coloring. Defaults to 'benchmark'.
         legend_name_map (dict, optional): Optional dict mapping original benchmark names to labels shown in legend.
     """
-    POINT_SIZE = 1.0
+    POINT_SIZE = 2.0
     DASH_PATTERN = (0, (6, 2))
 
     # Make the plot square by setting height equal to width
