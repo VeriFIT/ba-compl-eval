@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 # Fill these out
-HOST="vojta@verifit3.fit.vutbr.cz"
-PORT="6086"
+HOST=""
+PORT=""
 FILE_PATH_ON_HOST="ba-compl-eval/bench"
 
 # Exctracts tool name from the first argument which is assumed
@@ -33,7 +33,7 @@ process_tasks() {
 	local file_name=$1
 	local tool_name=$(extract_tool_name "$file_name")
 	local benchmark_name=${file_name%%-*}
-	local path_to_file=$benchmark_name/$file_name
+	local path_to_file="compl/$benchmark_name/$file_name"
 
 	if ssh -p $PORT $HOST "test -e $FILE_PATH_ON_HOST/$file_name"; then
 		scp -P $PORT $HOST:$FILE_PATH_ON_HOST/$file_name $path_to_file
