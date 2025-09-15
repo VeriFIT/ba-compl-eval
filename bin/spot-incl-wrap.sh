@@ -28,7 +28,7 @@ ret=$?
 # print result flag based on exit code while preserving the original exit code
 if [ "${ret}" -eq 0 ]; then
 	echo "${autfilt_str}-result: true"
-else
+elif [ "${ret}" -eq 1 ]; then
 	echo "${autfilt_str}-result: false"
 fi
 

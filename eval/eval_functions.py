@@ -527,9 +527,52 @@ def sanity_check(df, tool, compare_with):
     all_bad = []
     for tool_other in compare_with:
         pt = df
-        pt = pt[((pt[tool+"-result"].str.strip() == 'sat') & (pt[tool_other+"-result"].str.strip() == 'unsat') | (pt[tool+"-result"].str.strip() == 'unsat') & (pt[tool_other+"-result"].str.strip() == 'sat'))]
+        pt = pt[((pt[tool+"-result"].str.strip() == 'true') & (pt[tool_other+"-result"].str.strip() == 'false') | (pt[tool+"-result"].str.strip() == 'false') & (pt[tool_other+"-result"].str.strip() == 'true'))]
         all_bad.append(pt)
     return pd.concat(all_bad).drop_duplicates()
+
+def get_solved_incl(df, tool):
+    """Return rows where the inclusion tool produced a definitive result (true or false).
+
+    Args:
+        df (pd.DataFrame): Dataframe containing inclusion results with a column
+            named "<tool>-result" for the given tool.
+        tool (str): Tool name prefix used in the dataframe columns.
+
+    Returns:
+        pd.DataFrame: Subset of `df` where `<tool>-result` equals 'true' or 'false'
+        (string comparison, whitespace-insensitive). The original dataframe's
+        row order and other columns are preserved.
+    """
+    return df[(df[tool+"-result"].str.strip() == 'true')|(df[tool+"-result"].str.strip() == 'false')]
+
+def get_timeouts_incl(df, tool):
+    """Return rows where the inclusion tool timed out.
+
+    Args:
+        df (pd.DataFrame): Dataframe containing inclusion results with a column
+            named "<tool>-result" for the given tool.
+        tool (str): Tool name prefix used in the dataframe columns.
+
+    Returns:
+        pd.DataFrame: Subset of `df` where `<tool>-result` equals 'TO'
+        (timeout token). Comparison is done on the stripped string value.
+    """
+    return df[(df[tool+"-result"].str.strip() == 'TO')]
+
+def get_errors_incl(df, tool):
+    """Return rows where the inclusion tool produced an error or missing result.
+
+    Args:
+        df (pd.DataFrame): Dataframe containing inclusion results with a column
+            named "<tool>-result" for the given tool.
+        tool (str): Tool name prefix used in the dataframe columns.
+
+    Returns:
+        pd.DataFrame: Subset of `df` where `<tool>-result` equals 'ERR' or
+        'MISSING' (string comparison, whitespace-insensitive).
+    """
+    return df[(df[tool+"-result"].str.strip() == 'ERR')|(df[tool+"-result"].str.strip() == 'MISSING')]
 
 def get_solved(df, tool):
     """Returns dataframe containing rows of df where <tool>-states is numeric (i.e., solved).
@@ -649,6 +692,66 @@ def simple_table(df, tools, benches, separately=False, stat_from_solved=True):
         result += print_table_from_full_df(df[df["benchmark"].isin(benches)])
 
     return result
+
+def simple_table_incl(df, tools, benches, separately=False, stat_from_solved=True):
+    """Generate a simple statistics table for inclusion benchmarks.
+
+    The function computes per-tool counts and timing statistics for inclusion
+    experiments. It expects `df` to contain columns named `<tool>-result`
+    (values like 'true','false','TO','ERR','MISSING') and `<tool>-runtime`
+    (seconds as numeric or non-numeric tokens).
+
+    Args:
+        df (pd.DataFrame): Combined dataframe with a 'benchmark' column and
+            per-tool '<tool>-result' and '<tool>-runtime' columns.
+        tools (list): List of tool name prefixes to include in the table.
+        benches (list): List of benchmark names to consider (rows filtered by
+            `df["benchmark"].isin(benches)` unless `separately` is True).
+        separately (bool): If True, return a concatenated string containing a
+            table for each benchmark in `benches`; otherwise produce a single
+            table over all specified benchmarks.
+        stat_from_solved (bool): When True, compute aggregate timing stats
+            (total/mean/median) from only solved instances (i.e. rows where
+            `<tool>-result` is 'true' or 'false'). When False, use all rows.
+
+    Returns:
+        str: A formatted ASCII table (tabulate) summarizing for each tool:
+             [tool, #solved, #not-solved, total-time, avg-time, med-time, TO, ERR]
+    """
+
+    result = ""
+
+    def print_table_from_full_df(df):
+        header = ["tool", "✅", "❌", "time", "time-avg", "time-med", "TO", "ERR"]
+        result = ""
+        result += f"# of automata: {len(df)}\n"
+        result += "----------------------------------------------------------------------------------------------------\n"
+        table = [header]
+        for tool in tools:
+            valid = len(get_solved_incl(df, tool))
+            to = len(get_timeouts_incl(df, tool))
+            err = len(get_errors_incl(df, tool))
+            runtime_col = df[f"{tool}-runtime"]
+            if stat_from_solved:
+                runtime_col = get_solved_incl(df, tool)[f"{tool}-runtime"]
+            runtime_total = runtime_col.sum()
+            runtime_avg = runtime_col.mean()
+            runtime_med = runtime_col.median()
+
+            table.append([tool, valid, to + err, runtime_total, runtime_avg, runtime_med, to, err])
+        result += tab.tabulate(table, headers='firstrow', floatfmt=".2f") + "\n"
+        result += "----------------------------------------------------------------------------------------------------\n\n"
+        return result
+
+    if (separately):
+        for bench in benches:
+            result += f"Benchmark {bench}\n"
+            result += print_table_from_full_df(df[df["benchmark"] == bench])
+    else:
+        result += print_table_from_full_df(df[df["benchmark"].isin(benches)])
+
+    return result
+
 
 def add_vbs(df, tools_list, name = None):
     """Adds virtual best solvers from tools in tool_list

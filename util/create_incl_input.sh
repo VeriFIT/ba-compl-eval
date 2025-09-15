@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Generate input pairs "<aut1>.hoa;<aut2>.hoa" by matching files that differ
-# only by the suffix _A.hoa vs _B.hoa (and _A.ba.hoa vs _B.ba.hoa).
+# only by the suffix A.hoa vs B.hoa (and A.ba.hoa vs B.ba.hoa).
 #
 # Usage:
 #   ./create_pairs_input.sh <folder_with_hoa_files> [output_file]
@@ -26,16 +26,16 @@ if [ ! -d "$HOA_FOLDER" ]; then
     exit 1
 fi
 
-# Generate pairs by scanning only *_A*.hoa candidates to avoid duplicates
+# Generate pairs by scanning only *A*.hoa candidates to avoid duplicates
 generate_pairs() {
     # Use plain newline-delimited listing for portability on macOS (BSD sort)
-    find "$HOA_FOLDER" -type f -name "*_A*.hoa" -print | LC_ALL=C sort |
+    find "$HOA_FOLDER" -type f -name "*A*.hoa" -print | LC_ALL=C sort |
     while IFS= read -r f; do
         b=""
-        if [[ "$f" == *_A.ba.hoa ]]; then
-            b="${f%_A.ba.hoa}_B.ba.hoa"
-        elif [[ "$f" == *_A.hoa ]]; then
-            b="${f%_A.hoa}_B.hoa"
+        if [[ "$f" == *A.ba.hoa ]]; then
+            b="${f%A.ba.hoa}B.ba.hoa"
+        elif [[ "$f" == *A.hoa ]]; then
+            b="${f%A.hoa}B.hoa"
         else
             continue
         fi
