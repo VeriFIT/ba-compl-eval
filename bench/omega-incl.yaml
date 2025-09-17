@@ -1,5 +1,5 @@
-kofola-fast:
-   cmd: ../bin/kofola-incl-wrap.sh $1 $2 --params='preproc_incl_B=low;merge_iwa=yes;merge_det=yes;nac-alg=subs_tup';
+kofola:
+   cmd: ../bin/kofola-incl-wrap.sh $1 $2
 
 kofola_fast_early:
   cmd: ../bin/kofola-incl-wrap.sh $1 $2 --params='preproc_incl_B=low;early_sim=yes;merge_iwa=yes;merge_det=yes;nac-alg=subs_tup';
