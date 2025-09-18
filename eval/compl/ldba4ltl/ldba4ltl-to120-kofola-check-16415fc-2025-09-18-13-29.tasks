@@ -1,0 +1,36 @@
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp10.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp11.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp12.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp13.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp14.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp15.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp16.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp17.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp18.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp1.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp2.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp3.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp4.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp5.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp6.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp7.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp8.hoa
+execute;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp9.hoa
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp10.hoa;0;states: 30###check: True;;0.02
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp11.hoa;0;states: 170###check: True;;0.06
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp13.hoa;0;states: 236###check: True;;0.27
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp16.hoa;0;states: 4###check: True;;0.01
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp17.hoa;0;states: 9###check: True;;0.0
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp18.hoa;0;states: 5###check: True;;0.01
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp1.hoa;0;states: 6###check: True;;0.01
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp2.hoa;0;states: 20###check: True;;0.01
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp14.hoa;0;states: 1146###check: True;;0.96
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp3.hoa;0;states: 112###check: True;;0.58
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp5.hoa;0;states: 56###check: True;;0.03
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp12.hoa;0;states: 4214###check: True;;3.77
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp7.hoa;0;states: 3###check: True;;0.01
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp8.hoa;0;states: 6###check: True;;0.01
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp9.hoa;0;states: 8###check: True;;0.01
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp4.hoa;0;states: 720###check: False;;91.53
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp6.hoa;0;states: 4246###check: TO;;98.45
+finished;kofola-check-16415fc;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp15.hoa;0;states: 70764###check: True;;103.6
