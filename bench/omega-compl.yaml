@@ -41,4 +41,4 @@ kofola-tacas23:
   cmd: ../bin/kofola-tacas23-wrap.sh $1 --algo=comp --merge-iwa --merge-det --iw-sim
 
 cola:
-  cmd: ../bin/cola-wrap.sh $1 --determinize=cola --parity --acd --complement --simulation --stutter --use-scc
+  cmd: ../bin/cola-wrap.sh $1 --determinize=ba --parity --acd --complement --simulation --use-scc
