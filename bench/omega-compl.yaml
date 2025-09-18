@@ -7,6 +7,9 @@ spot-red:
 kofola:
   cmd: ../bin/kofola-wrap.sh $1 --complement
 
+kofola-sim-prune:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='sim-ms-prune=yes'
+
 kofola-subs-tup:
   cmd: ../bin/kofola-wrap.sh $1 --complement --params='nac-alg=subs_tup'
 
