@@ -10,6 +10,9 @@ kofola:
 kofola-sim-prune:
   cmd: ../bin/kofola-wrap.sh $1 --complement --params='sim-ms-prune=yes'
 
+kofola-sim-prune-check:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='sim-ms-prune=yes' --check
+
 kofola-subs-tup:
   cmd: ../bin/kofola-wrap.sh $1 --complement --params='nac-alg=subs_tup'
 
@@ -36,3 +39,6 @@ kofola-tela-red:
 
 kofola-tacas23:
   cmd: ../bin/kofola-tacas23-wrap.sh $1 --algo=comp --merge-iwa --merge-det --iw-sim
+
+cola:
+  cmd: ../bin/cola-wrap.sh $1 --determinize=cola --parity --acd --complement --simulation --stutter --use-scc
