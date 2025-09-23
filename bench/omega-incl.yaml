@@ -12,3 +12,6 @@ kofola_fast_early_early_plus:
 
 spot:
   cmd: ../bin/spot-incl-wrap.sh $1 $2
+
+spot-forq:
+  cmd: ../bin/spot-incl-wrap.sh $1 $2 --forq

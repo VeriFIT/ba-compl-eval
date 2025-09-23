@@ -50,7 +50,7 @@ fi
 
 emit_pairs() {
   # Limit initial scan to *sup.aut* to avoid duplicates; handle .aut and .autfilt separately.
-  find "$AUT_FOLDER" -type f \( -name "*sup.aut" -o -name "*sup.autfilt" \) -print | LC_ALL=C sort |
+  find "$AUT_FOLDER" -type f \( -name "*sup.autfilt" \) -print | LC_ALL=C sort |
   while IFS= read -r f; do
     partner=""
     if [[ "$f" == *sup.autfilt ]]; then

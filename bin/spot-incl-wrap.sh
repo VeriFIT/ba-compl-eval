@@ -12,6 +12,17 @@ shift
 shift
 params=("$@")
 
+# Check if --forq parameter is present and set environment variable
+original_spot_containment_check="${SPOT_CONTAINMENT_CHECK}"
+forq_found=false
+for param in "${params[@]}"; do
+	if [ "$param" = "--forq" ]; then
+		export SPOT_CONTAINMENT_CHECK=forq
+		forq_found=true
+		break
+	fi
+done
+
 autfilt_exe="autfilt"
 # capture the full version output (may contain multiple lines)
 autfilt_version_output="$("${autfilt_exe}" --version 2>/dev/null)"
@@ -33,5 +44,14 @@ elif [ "${ret}" -eq 1 ]; then
 fi
 
 rm ${TMP}
+
+# Reset SPOT_CONTAINMENT_CHECK environment variable if it was modified
+if [ "$forq_found" = true ]; then
+	if [ -n "${original_spot_containment_check}" ]; then
+		export SPOT_CONTAINMENT_CHECK="${original_spot_containment_check}"
+	else
+		unset SPOT_CONTAINMENT_CHECK
+	fi
+fi
 
 exit 0
