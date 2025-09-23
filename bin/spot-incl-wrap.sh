@@ -15,11 +15,13 @@ params=("$@")
 # Check if --forq parameter is present and set environment variable
 original_spot_containment_check="${SPOT_CONTAINMENT_CHECK}"
 forq_found=false
+filtered_params=()
 for param in "${params[@]}"; do
 	if [ "$param" = "--forq" ]; then
 		export SPOT_CONTAINMENT_CHECK=forq
 		forq_found=true
-		break
+	else
+		filtered_params+=("$param")
 	fi
 done
 
@@ -33,7 +35,7 @@ autfilt_version=$(awk '{print $NF}' <<< "${autfilt_first_line}")
 autfilt_str=${autfilt_version}
 
 TMP=$(mktemp)
-"${autfilt_exe}" --included-in="$B" "$A" "${params[@]}" > "${TMP}"
+"${autfilt_exe}" --included-in="$B" "$A" "${filtered_params[@]}" > "${TMP}"
 ret=$?
 
 # print result flag based on exit code while preserving the original exit code
