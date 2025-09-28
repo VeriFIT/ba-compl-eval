@@ -12,7 +12,10 @@ shift
 shift
 params=("$@")
 
-forklift_exe="java -jar bin/FORKLIFT/forklift.jar"
+ABSOLUTE_SCRIPT_PATH=$(readlink -f "$0")
+SCRIPT_DIR=$(dirname "${ABSOLUTE_SCRIPT_PATH}")
+
+forklift_exe="java -jar ${SCRIPT_DIR}/FORKLIFT/forklift.jar"
 forklift_str="forklift"
 
 TMP=$(mktemp)
