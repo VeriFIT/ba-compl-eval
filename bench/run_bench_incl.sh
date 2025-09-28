@@ -58,6 +58,7 @@ done
 shift $((OPTIND - 1))
 
 benchmarks=()
+ba_tools=("forklift" "bait" "rabit")
 
 # If no benchmark is given, run the three omega automata complementation sets
 if [ -z "$1" ]; then
@@ -76,7 +77,17 @@ for benchmark in "${benchmarks[@]}"; do
 	echo "Running benchmark $benchmark"
 	FILE_PREFIX="$benchmark-to${s_value}-$tool-$CUR_DATE"
 	TASKS_FILE="$FILE_PREFIX.tasks"
-	cat "inputs/incl/$benchmark.input" | ./pycobench -c omega-incl.yaml -j $j_value -t $s_value --memout $m_value -m "$tool" -o "$TASKS_FILE"
+    # Select input file based on whether the tool is a BA tool
+    input_suffix=""
+    for ba_tool in "${ba_tools[@]}"; do
+        if [ "$tool" = "$ba_tool" ]; then
+            input_suffix="-ba"
+            break
+        fi
+    done
+    input_file="inputs/incl/${benchmark}${input_suffix}.input"
+
+    cat "$input_file" | ./pycobench -c omega-incl.yaml -j $j_value -t $s_value --memout $m_value -m "$tool" -o "$TASKS_FILE"
 	tasks_files+=("$TASKS_FILE")
 	echo "$TASKS_FILE" >> tasks_names.txt
 done

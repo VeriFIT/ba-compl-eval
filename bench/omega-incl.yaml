@@ -15,3 +15,6 @@ spot:
 
 spot-forq:
   cmd: ../bin/spot-incl-wrap.sh $1 $2 --forq
+
+forklift:
+  cmd: ../bin/forklift-wrap.sh $1 $2

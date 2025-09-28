@@ -15,11 +15,21 @@
 #   - Only emits a pair when both sup and sub variants exist.
 #   - Keeps paths as returned by find (relative if input dir is relative).
 #   - Designed to be POSIX-ish; relies on bash pattern substitution.
+
 set -euo pipefail
 
+# Default mode: look for .aut/.autfilt files. If --ba is supplied, look for .ba files
+BA_MODE=0
+
 if [ "$#" -lt 1 ]; then
-  echo "Usage: $0 <folder_with_aut_files> [output_file] [--both]" >&2
+  echo "Usage: $0 [--ba] <folder_with_aut_files> [output_file] [--both]" >&2
   exit 1
+fi
+
+# Optional first arg --ba
+if [ "$1" = "--ba" ]; then
+  BA_MODE=1
+  shift
 fi
 
 AUT_FOLDER="$1"
@@ -31,7 +41,7 @@ if [ ! -d "$AUT_FOLDER" ]; then
   exit 1
 fi
 
-# Parse optional args
+# Parse optional args (output file and optional --both)
 if [ "$#" -ge 2 ]; then
   if [ "${2:-}" != "--both" ]; then
     OUTPUT_FILE="$2"
@@ -49,21 +59,46 @@ if [ "$#" -ge 3 ]; then
 fi
 
 emit_pairs() {
-  # Limit initial scan to *sup.aut* to avoid duplicates; handle .aut and .autfilt separately.
-  find "$AUT_FOLDER" -type f \( -name "*sup.autfilt" \) -print | LC_ALL=C sort |
+  # Choose name pattern based on mode to limit initial scan to sup variants
+  if [ "$BA_MODE" -eq 1 ]; then
+    name_pattern='*sup.autfilt.ba'
+  else
+    name_pattern='*sup.autfilt'
+  fi
+
+  find "$AUT_FOLDER" -type f -name "$name_pattern" -print | LC_ALL=C sort |
   while IFS= read -r f; do
     partner=""
-    if [[ "$f" == *sup.autfilt ]]; then
-      partner="${f%sup.autfilt}sub.autfilt"
-    elif [[ "$f" == *sup.aut ]]; then
-      partner="${f%sup.aut}sub.aut"
+    emit_partner=""
+    if [ "$BA_MODE" -eq 1 ]; then
+      if [[ "$f" == *sup.autfilt.ba ]]; then
+        partner="${f%sup.autfilt.ba}sub.autfilt.ba"
+        if [ -f "$partner" ]; then
+          emit_partner="$partner"
+        else
+          # Fallback: if sub.autfilt.ba doesn't exist, try sub.autfilt.aligned.ba
+          alt_partner="${f%sup.autfilt.ba}sub.autfilt.aligned.ba"
+          if [ -f "$alt_partner" ]; then
+            emit_partner="$alt_partner"
+          fi
+        fi
+      else
+        continue
+      fi
     else
-      continue
+      if [[ "$f" == *sup.autfilt ]]; then
+        partner="${f%sup.autfilt}sub.autfilt"
+        if [ -f "$partner" ]; then
+          emit_partner="$partner"
+        fi
+      else
+        continue
+      fi
     fi
-    if [ -f "$partner" ]; then
-      printf "%s;%s\n" "$f" "$partner"
+    if [ -n "$emit_partner" ]; then
+      printf "%s;%s\n" "$f" "$emit_partner"
       if [ "$EMIT_BOTH" = "1" ]; then
-        printf "%s;%s\n" "$partner" "$f"
+        printf "%s;%s\n" "$emit_partner" "$f"
       fi
     fi
   done

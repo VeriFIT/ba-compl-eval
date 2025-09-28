@@ -13,10 +13,28 @@
 
 set -euo pipefail
 
+# Default mode: look for .hoa files.
+# If --ba is supplied, look for .ba files (A.ba vs B.ba).
+# If --ba-ah is supplied, look for .hoa.ba files (A.hoa.ba vs B.hoa.ba).
+BA_MODE=0
+BA_AH_MODE=0
+
 if [ "$#" -lt 1 ]; then
-    echo "Usage: $0 <folder_with_hoa_files> [output_file]" >&2
+        echo "Usage: $0 [--ba | --ba-ah] <folder_with_hoa_files> [output_file]" >&2
     exit 1
 fi
+
+# Support optional first arg --ba or --ba-ah
+case "${1:-}" in
+    --ba)
+        BA_MODE=1
+        shift
+        ;;
+    --ba-ah)
+        BA_AH_MODE=1
+        shift
+        ;;
+esac
 
 HOA_FOLDER="$1"
 OUTPUT_FILE="${2:-}"
@@ -26,18 +44,45 @@ if [ ! -d "$HOA_FOLDER" ]; then
     exit 1
 fi
 
-# Generate pairs by scanning only *A*.hoa candidates to avoid duplicates
+# Generate pairs by scanning only *A* candidates to avoid duplicates
 generate_pairs() {
+    # Choose file name patterns based on mode
+    if [ "$BA_MODE" -eq 1 ]; then
+        # look for files ending with A.ba
+        name_pattern='*A.ba'
+    elif [ "$BA_AH_MODE" -eq 1 ]; then
+        # look for files ending with A.hoa.ba
+        name_pattern='*A.hoa.ba'
+    else
+        name_pattern='*A*.hoa'
+    fi
+
     # Use plain newline-delimited listing for portability on macOS (BSD sort)
-    find "$HOA_FOLDER" -type f -name "*A*.hoa" -print | LC_ALL=C sort |
+    find "$HOA_FOLDER" -type f -name "$name_pattern" -print | LC_ALL=C sort |
     while IFS= read -r f; do
         b=""
-        if [[ "$f" == *A.ba.hoa ]]; then
-            b="${f%A.ba.hoa}B.ba.hoa"
-        elif [[ "$f" == *A.hoa ]]; then
-            b="${f%A.hoa}B.hoa"
+        if [ "$BA_MODE" -eq 1 ]; then
+            # Handle A.ba
+            if [[ "$f" == *A.ba ]]; then
+                b="${f%A.ba}B.ba"
+            else
+                continue
+            fi
+        elif [ "$BA_AH_MODE" -eq 1 ]; then
+            # Handle A.hoa.ba
+            if [[ "$f" == *A.hoa.ba ]]; then
+                b="${f%A.hoa.ba}B.hoa.ba"
+            else
+                continue
+            fi
         else
-            continue
+            if [[ "$f" == *A.ba.hoa ]]; then
+                b="${f%A.ba.hoa}B.ba.hoa"
+            elif [[ "$f" == *A.hoa ]]; then
+                b="${f%A.hoa}B.hoa"
+            else
+                continue
+            fi
         fi
 
         if [ -f "$b" ]; then
