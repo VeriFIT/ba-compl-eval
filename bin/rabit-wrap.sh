@@ -16,7 +16,17 @@ ABSOLUTE_SCRIPT_PATH=$(readlink -f "$0")
 SCRIPT_DIR=$(dirname "${ABSOLUTE_SCRIPT_PATH}")
 
 rabit_exe="java -jar ${SCRIPT_DIR}/rabit/RABIT.jar"
-rabit_str="rabit"
+# Parse version from the first line of --help output, e.g., "RABIT v2.5.1." -> "2.5.1"
+# We capture stderr as some Java apps print help to stderr
+rabit_help_first_line=$(${rabit_exe} --help 2>&1 | head -n1)
+# Try to extract the version following a leading 'v'
+rabit_version=$(echo "${rabit_help_first_line}" | sed -n 's/.*v\([0-9][0-9.]*\).*/\1/p')
+# Fallback: extract the first x.y[.z] number pattern if the above failed
+if [ -z "${rabit_version}" ]; then
+	rabit_version=$(echo "${rabit_help_first_line}" | grep -oE '[0-9]+(\.[0-9]+)*' | head -n1)
+fi
+# Use parsed version if available, else default label
+rabit_str=${rabit_version:-rabit}
 
 TMP=$(mktemp)
 ${rabit_exe} "$A" "$B" "${params[@]}" > "${TMP}"
