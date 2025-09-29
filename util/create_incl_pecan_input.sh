@@ -61,12 +61,11 @@ fi
 emit_pairs() {
   # Choose name pattern based on mode to limit initial scan to sup variants
   if [ "$BA_MODE" -eq 1 ]; then
-    name_pattern='*sup.autfilt.ba'
+    # In BA mode, consider both aligned and non-aligned sup variants
+    find "$AUT_FOLDER" -type f \( -name "*sup.autfilt.ba" -o -name "*sup.autfilt.aligned.ba" \) -print
   else
-    name_pattern='*sup.autfilt'
-  fi
-
-  find "$AUT_FOLDER" -type f -name "$name_pattern" -print | LC_ALL=C sort |
+    find "$AUT_FOLDER" -type f -name "*sup.autfilt" -print
+  fi | LC_ALL=C sort |
   while IFS= read -r f; do
     partner=""
     emit_partner=""
@@ -78,6 +77,17 @@ emit_pairs() {
         else
           # Fallback: if sub.autfilt.ba doesn't exist, try sub.autfilt.aligned.ba
           alt_partner="${f%sup.autfilt.ba}sub.autfilt.aligned.ba"
+          if [ -f "$alt_partner" ]; then
+            emit_partner="$alt_partner"
+          fi
+        fi
+      elif [[ "$f" == *sup.autfilt.aligned.ba ]]; then
+        partner="${f%sup.autfilt.aligned.ba}sub.autfilt.aligned.ba"
+        if [ -f "$partner" ]; then
+          emit_partner="$partner"
+        else
+          # Fallback: try non-aligned sub if aligned doesn't exist
+          alt_partner="${f%sup.autfilt.aligned.ba}sub.autfilt.ba"
           if [ -f "$alt_partner" ]; then
             emit_partner="$alt_partner"
           fi

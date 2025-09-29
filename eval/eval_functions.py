@@ -8,6 +8,7 @@ from argparse import Namespace
 import io
 import os
 import sys
+from pathlib import Path
 from enum import Enum
 
 import pyco_proc
@@ -144,6 +145,39 @@ def load_benches_incl(benches, tools, timeout=120):
         df_runtime_result[f"{tool}-runtime"] = pd.to_numeric(df_runtime_result[f"{tool}-runtime"], errors='coerce').astype(float)
 
     return df_runtime_result
+
+def left_join_on_name_benchmark(df_left: pd.DataFrame, df_right: pd.DataFrame, suffixes=("_left", "_right")) -> pd.DataFrame:
+    """Left-join two DataFrames on columns 'name' and 'benchmark'.
+
+    The function preserves all rows from ``df_left`` and matches rows from
+    ``df_right`` where both 'name' and 'benchmark' are equal. If a row from
+    ``df_left`` has no match in ``df_right``, the additional columns coming
+    from ``df_right`` are set to NaN (null).
+
+    Args:
+        df_left (pd.DataFrame): Left dataframe. Must contain columns 'name' and 'benchmark'.
+        df_right (pd.DataFrame): Right dataframe. Must contain columns 'name' and 'benchmark'.
+        suffixes (tuple, optional): Suffixes to apply to overlapping column names
+            (other than 'name' and 'benchmark') in the left and right side, respectively.
+            Defaults to ("_left", "_right").
+
+    Returns:
+        pd.DataFrame: Result of the left join.
+
+    Raises:
+        KeyError: If required key columns are missing from either dataframe.
+    """
+    required = {"name", "benchmark"}
+    missing_left = required - set(df_left.columns)
+    missing_right = required - set(df_right.columns)
+
+    if missing_left:
+        raise KeyError(f"df_left is missing required columns: {sorted(missing_left)}")
+    if missing_right:
+        raise KeyError(f"df_right is missing required columns: {sorted(missing_right)}")
+
+    # Perform the merge. Pandas will fill unmatched right-side columns with NaN.
+    return pd.merge(df_left, df_right, on=["name", "benchmark"], how="left", suffixes=suffixes)
 
 def _prepare_scatter_data(df, x_tool, y_tool, col, xname=None, yname=None):
     """Prepare data for scatter plots by setting up column names and copying dataframe.
@@ -574,6 +608,32 @@ def get_errors_incl(df, tool):
     """
     return df[(df[tool+"-result"].str.strip() == 'ERR')|(df[tool+"-result"].str.strip() == 'MISSING')]
 
+def get_missing_incl(df, tool):
+    """Return rows where both the tool's result and runtime are truly missing (null).
+
+    A row is considered "missing" if:
+      - The column `<tool>-result` is NaN/null, and
+      - The runtime column is NaN/null. We look for `<tool>-time` first (if present),
+        otherwise fall back to `<tool>-runtime`.
+
+    Args:
+        df (pd.DataFrame): DataFrame with inclusion results.
+        tool (str): Tool prefix used in the column names.
+
+    Returns:
+        pd.DataFrame: Subset of `df` where both result and runtime are null.
+                       If required columns are not present, returns an empty slice.
+    """
+    result_col = f"{tool}-result"
+    # Prefer "-time" if it exists, else use "-runtime"
+    time_col = f"{tool}-time" if f"{tool}-time" in df.columns else (f"{tool}-runtime" if f"{tool}-runtime" in df.columns else None)
+
+    if result_col not in df.columns or time_col is None:
+        # Return empty dataframe with same columns if we cannot evaluate the condition
+        return df.iloc[0:0]
+
+    return df[df[result_col].isna() & df[time_col].isna()]
+
 def get_solved(df, tool):
     """Returns dataframe containing rows of df where <tool>-states is numeric (i.e., solved).
 
@@ -722,7 +782,7 @@ def simple_table_incl(df, tools, benches, separately=False, stat_from_solved=Tru
     result = ""
 
     def print_table_from_full_df(df):
-        header = ["tool", "✅", "❌", "time", "time-avg", "time-med", "TO", "ERR"]
+        header = ["tool", "✅", "❌", "time", "time-avg", "time-med", "TO", "ERR", "MISSING"]
         result = ""
         result += f"# of automata: {len(df)}\n"
         result += "----------------------------------------------------------------------------------------------------\n"
@@ -731,6 +791,7 @@ def simple_table_incl(df, tools, benches, separately=False, stat_from_solved=Tru
             valid = len(get_solved_incl(df, tool))
             to = len(get_timeouts_incl(df, tool))
             err = len(get_errors_incl(df, tool))
+            miss = len(get_missing_incl(df, tool))
             runtime_col = df[f"{tool}-runtime"]
             if stat_from_solved:
                 runtime_col = get_solved_incl(df, tool)[f"{tool}-runtime"]
@@ -738,7 +799,7 @@ def simple_table_incl(df, tools, benches, separately=False, stat_from_solved=Tru
             runtime_avg = runtime_col.mean()
             runtime_med = runtime_col.median()
 
-            table.append([tool, valid, to + err, runtime_total, runtime_avg, runtime_med, to, err])
+            table.append([tool, valid, to + err, runtime_total, runtime_avg, runtime_med, to, err, miss])
         result += tab.tabulate(table, headers='firstrow', floatfmt=".2f") + "\n"
         result += "----------------------------------------------------------------------------------------------------\n\n"
         return result
@@ -883,3 +944,152 @@ def parse_classifications_for_benchmarks(benchmark_names):
     combined_df = pd.concat(classification_dfs, ignore_index=True)
     
     return combined_df
+
+def ba_bench_to_hoa(df_ba):
+    """Convert BA benchmark instance names to their HOA counterparts.
+
+    The input dataframe `df_ba` contains a column `name` whose value is a string
+    of one or more file paths separated by '+', e.g. "<file1>+<file2>". This
+    function splits the name, converts each part using `conv_ba_instance(part, bench)`,
+    and joins the converted parts back with '+'.
+
+    Notes:
+      - The `df_hoa` parameter is accepted for compatibility but is not used
+        by this conversion routine.
+
+    Args:
+        df_ba (pd.DataFrame): DataFrame with columns 'name' and optionally 'benchmark'.
+        df_hoa (pd.DataFrame): Unused; kept for API compatibility.
+
+    Returns:
+        pd.DataFrame: Copy of `df_ba` with converted 'name' values.
+    """
+    if 'name' not in df_ba.columns:
+        raise KeyError("df_ba must contain a 'name' column")
+
+    # Work on a copy to avoid mutating the caller's dataframe
+    df_out = df_ba.copy(deep=True)
+
+    def _convert_row(row):
+        bench = row['benchmark'] if 'benchmark' in row and pd.notna(row['benchmark']) else None
+        raw = '' if pd.isna(row['name']) else str(row['name'])
+        parts = [p.strip() for p in raw.split('+') if p.strip() != '']
+        converted_parts = [conv_ba_instance(p, bench) for p in parts]
+        return '+'.join(converted_parts)
+
+    # Replace 'name' with converted HOA name(s), preserving row order
+    df_out['name'] = df_out.apply(_convert_row, axis=1)
+
+    return df_out
+
+def conv_ba_instance(ba_file, bench):
+    """Convert or map a BA filename to the corresponding HOA filename for a
+    given benchmark collection.
+
+    Current minimal behaviour:
+      - For bench == 'rabit' simply change the filename extension from '.ba'
+        to '.hoa' and return the new filename.
+            - For bench == 'termination', remove a trailing '.hoa' from the file name
+                (files are of the form '...ba.hoa') and replace any path directory
+                named 'ba' with 'hoa'.
+            - For bench == 'autohyper', append the '.ba' extension to the file name
+                (files are of the form '... .hoa') and replace directory names as
+                follows: gni -> gni_ba, nusmv -> nusmv_ba, planning -> planning_ba.
+            - For bench == 'pecan', remove the trailing BA extension: if the
+                filename ends with '.aligned.ba' drop that entire suffix; if
+                it ends with just '.ba', drop '.ba'.
+      - For other benches return the original `ba_file` unchanged.
+
+    Args:
+        ba_file (str): input BA filename
+        hoa_files: (unused) placeholder for potential other implementations
+        bench (str): benchmark name
+
+    Returns:
+        str: filename to use as HOA equivalent
+    """
+    
+    if ba_file is None:
+        return ba_file
+
+    # Handle the termination benchmarks
+    if bench == 'termination':
+        p = Path(ba_file)
+        # Remove trailing ".hoa" from the filename if present (e.g., "...ba.hoa" -> "...ba")
+        name = p.name
+        if name.endswith('.ba'):
+            name = name + ".hoa"
+            p = p.with_name(name)
+
+        # Replace any directory component exactly named "ba" with "hoa"
+        parts = list(p.parts)
+        new_parts = [ ('hoa' if part == 'ba' else part) for part in parts ]
+        try:
+            # Rebuild path from parts; this preserves relative vs absolute on POSIX
+            from pathlib import PurePosixPath
+            rebuilt = PurePosixPath(*new_parts)
+            # Convert back to Path to keep original type/semantics
+            p = Path(str(rebuilt))
+        except Exception:
+            # Fallback to a safe string replace on path separators
+            p = Path(str(p).replace('/ba/', '/hoa/'))
+
+        return str(p)
+
+    # Handle the autohyper benchmarks
+    if bench == 'autohyper':
+        p = Path(ba_file)
+
+        # Append ".ba" to the filename (input is of the form "... .hoa")
+        name = p.name
+        if name.endswith('.ba'):
+            name = name[: -len('.ba')]
+            p = p.with_name(name)
+
+        # Replace directory components accordingly: gni->gni_ba, nusmv->nusmv_ba, planning->planning_ba
+        parts = list(p.parts)
+        mapping = {'gni_ba': 'gni', 'nusmv_ba': 'nusmv', 'planning_ba': 'planning'}
+        new_parts = [mapping.get(part, part) for part in parts]
+        try:
+            from pathlib import PurePosixPath
+            rebuilt = PurePosixPath(*new_parts)
+            p = Path(str(rebuilt))
+        except Exception:
+            # Fallback simple string replacements on POSIX-style paths
+            s = str(p)
+            s = s.replace('/gni/', '/gni_ba/')
+            s = s.replace('/nusmv/', '/nusmv_ba/')
+            s = s.replace('/planning/', '/planning_ba/')
+            p = Path(s)
+
+        return str(p)
+
+    if bench == 'rabit':
+        p = Path(ba_file)
+        # If the file ends with '.ba' replace that suffix with '.hoa'
+        if p.suffix == '.ba':
+            return str(p.with_suffix('.hoa'))
+        # If '.ba' appears in the filename (e.g. 'x.ba.hoa'), replace the last
+        # occurrence of '.ba' with '.hoa' while preserving other path parts.
+        name = p.name
+        idx = name.rfind('.ba')
+        if idx != -1:
+            new_name = name[:idx] + '.hoa'
+            return str(p.with_name(new_name))
+        # Fallback: append .hoa as the suffix
+        return str(p.with_suffix('.hoa'))
+
+    # Handle the pecan benchmarks: strip trailing '.aligned.ba' or '.ba'
+    if bench == 'pecan':
+        p = Path(ba_file)
+        name = p.name
+        if name.endswith('.aligned.ba'):
+            new_name = name[: -len('.aligned.ba')]
+            return str(p.with_name(new_name))
+        if name.endswith('.ba'):
+            new_name = name[: -len('.ba')]
+            return str(p.with_name(new_name))
+        return str(p)
+
+    # Default: no conversion
+    return ba_file

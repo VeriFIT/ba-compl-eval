@@ -19,7 +19,7 @@ forklift_exe="java -jar ${SCRIPT_DIR}/FORKLIFT/forklift.jar"
 forklift_str="forklift"
 
 TMP=$(mktemp)
-"${forklift_exe}" "$A" "$B" "${params[@]}" > "${TMP}"
+${forklift_exe} "$A" "$B" "${params[@]}" > "${TMP}"
 ret=$?
 
 # print result flag based on exit code while preserving the original exit code
@@ -27,6 +27,8 @@ if [ "${ret}" -eq 0 ]; then
 	echo "${forklift_str}-result: true"
 elif [ "${ret}" -eq 1 ]; then
 	echo "${forklift_str}-result: false"
+else 
+	echo "${forklift_str}-result: `cat ${TMP}`"
 fi
 
 rm ${TMP}
