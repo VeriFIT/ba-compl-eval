@@ -21,6 +21,8 @@ rabit_exe="java -jar ${SCRIPT_DIR}/rabit/RABIT.jar"
 rabit_help_first_line=$(${rabit_exe} --help 2>&1 | head -n1)
 # Try to extract the version following a leading 'v'
 rabit_version=$(echo "${rabit_help_first_line}" | sed -n 's/.*v\([0-9][0-9.]*\).*/\1/p')
+# Remove a possible trailing dot (e.g., "2.5.1." -> "2.5.1")
+rabit_version=${rabit_version%.}
 # Fallback: extract the first x.y[.z] number pattern if the above failed
 if [ -z "${rabit_version}" ]; then
 	rabit_version=$(echo "${rabit_help_first_line}" | grep -oE '[0-9]+(\.[0-9]+)*' | head -n1)
