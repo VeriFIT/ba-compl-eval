@@ -22,13 +22,16 @@ TMP=$(mktemp)
 ${rabit_exe} "$A" "$B" "${params[@]}" > "${TMP}"
 ret=$?
 
-# print result flag based on exit code while preserving the original exit code
-if [ "${ret}" -eq 0 ]; then
-	echo "${rabit_str}-result: true"
-elif [ "${ret}" -eq 1 ]; then
+# read temporary output and interpret known messages
+result_text=$(cat "${TMP}")
+
+# If the tool prints an explicit inclusion/exclusion message prefer that over exit code
+if echo "${result_text}" | grep -qF "Not included."; then
 	echo "${rabit_str}-result: false"
-else 
-	echo "${rabit_str}-result: `cat ${TMP}`"
+elif echo "${result_text}" | grep -qF "Included"; then
+	echo "${rabit_str}-result: true"
+else
+	echo "${rabit_str}-result: ${result_text}"
 fi
 
 rm ${TMP}
