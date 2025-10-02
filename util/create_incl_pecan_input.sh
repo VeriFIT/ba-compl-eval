@@ -58,53 +58,104 @@ if [ "$#" -ge 3 ]; then
   fi
 fi
 
+deduplicate_files() {
+  # Deduplicate files by base name, preferring aligned versions
+  awk '
+    {
+      # Extract base name by removing the suffix
+      if ($0 ~ /sup\.autfilt\.aligned\.ba$/) {
+        base = $0; sub(/sup\.autfilt\.aligned\.ba$/, "", base)
+        suffix = "sup.autfilt.aligned.ba"
+      } else if ($0 ~ /sup\.autfilt\.ba$/) {
+        base = $0; sub(/sup\.autfilt\.ba$/, "", base)
+        suffix = "sup.autfilt.ba"
+      } else if ($0 ~ /sub\.autfilt\.aligned\.ba$/) {
+        base = $0; sub(/sub\.autfilt\.aligned\.ba$/, "", base)
+        suffix = "sub.autfilt.aligned.ba"
+      } else if ($0 ~ /sub\.autfilt\.ba$/) {
+        base = $0; sub(/sub\.autfilt\.ba$/, "", base)
+        suffix = "sub.autfilt.ba"
+      } else if ($0 ~ /sup\.autfilt\.aligned$/) {
+        base = $0; sub(/sup\.autfilt\.aligned$/, "", base)
+        suffix = "sup.autfilt.aligned"
+      } else if ($0 ~ /sup\.autfilt$/) {
+        base = $0; sub(/sup\.autfilt$/, "", base)
+        suffix = "sup.autfilt"
+      } else if ($0 ~ /sub\.autfilt\.aligned$/) {
+        base = $0; sub(/sub\.autfilt\.aligned$/, "", base)
+        suffix = "sub.autfilt.aligned"
+      } else if ($0 ~ /sub\.autfilt$/) {
+        base = $0; sub(/sub\.autfilt$/, "", base)
+        suffix = "sub.autfilt"
+      }
+      
+      # If we have not seen this base, or if current is aligned and stored is not, update
+      if (!(base in seen)) {
+        seen[base] = $0
+        aligned[base] = (suffix ~ /aligned/)
+      } else if (suffix ~ /aligned/ && !aligned[base]) {
+        # Current is aligned but stored is not, prefer aligned
+        seen[base] = $0
+        aligned[base] = 1
+      }
+      # Otherwise keep the existing entry (already aligned or non-aligned is fine)
+    }
+    END {
+      for (base in seen) {
+        print seen[base]
+      }
+    }
+  '
+}
+
 emit_pairs() {
-  # Choose name pattern based on mode to limit initial scan to sup variants
+  # Choose name pattern based on mode to find and deduplicate sup variants
   if [ "$BA_MODE" -eq 1 ]; then
     # In BA mode, consider both aligned and non-aligned sup variants
     find "$AUT_FOLDER" -type f \( -name "*sup.autfilt.ba" -o -name "*sup.autfilt.aligned.ba" \) -print
   else
-    find "$AUT_FOLDER" -type f -name "*sup.autfilt" -print
-  fi | LC_ALL=C sort |
+    # In HOA mode, consider both aligned and non-aligned sup variants
+    find "$AUT_FOLDER" -type f \( -name "*sup.autfilt" -o -name "*sup.autfilt.aligned" \) -print
+  fi | LC_ALL=C sort | deduplicate_files | LC_ALL=C sort |
   while IFS= read -r f; do
-    partner=""
-    emit_partner=""
+    base=""
+    # Extract base name
     if [ "$BA_MODE" -eq 1 ]; then
-      if [[ "$f" == *sup.autfilt.ba ]]; then
-        partner="${f%sup.autfilt.ba}sub.autfilt.ba"
-        if [ -f "$partner" ]; then
-          emit_partner="$partner"
-        else
-          # Fallback: if sub.autfilt.ba doesn't exist, try sub.autfilt.aligned.ba
-          alt_partner="${f%sup.autfilt.ba}sub.autfilt.aligned.ba"
-          if [ -f "$alt_partner" ]; then
-            emit_partner="$alt_partner"
-          fi
-        fi
-      elif [[ "$f" == *sup.autfilt.aligned.ba ]]; then
-        partner="${f%sup.autfilt.aligned.ba}sub.autfilt.aligned.ba"
-        if [ -f "$partner" ]; then
-          emit_partner="$partner"
-        else
-          # Fallback: try non-aligned sub if aligned doesn't exist
-          alt_partner="${f%sup.autfilt.aligned.ba}sub.autfilt.ba"
-          if [ -f "$alt_partner" ]; then
-            emit_partner="$alt_partner"
-          fi
-        fi
+      if [[ "$f" == *sup.autfilt.aligned.ba ]]; then
+        base="${f%sup.autfilt.aligned.ba}"
+      elif [[ "$f" == *sup.autfilt.ba ]]; then
+        base="${f%sup.autfilt.ba}"
       else
         continue
       fi
     else
-      if [[ "$f" == *sup.autfilt ]]; then
-        partner="${f%sup.autfilt}sub.autfilt"
-        if [ -f "$partner" ]; then
-          emit_partner="$partner"
-        fi
+      if [[ "$f" == *sup.autfilt.aligned ]]; then
+        base="${f%sup.autfilt.aligned}"
+      elif [[ "$f" == *sup.autfilt ]]; then
+        base="${f%sup.autfilt}"
       else
         continue
       fi
     fi
+    
+    # Find matching sub file, preferring aligned version
+    emit_partner=""
+    if [ "$BA_MODE" -eq 1 ]; then
+      # Check for aligned sub first, then non-aligned
+      if [ -f "${base}sub.autfilt.aligned.ba" ]; then
+        emit_partner="${base}sub.autfilt.aligned.ba"
+      elif [ -f "${base}sub.autfilt.ba" ]; then
+        emit_partner="${base}sub.autfilt.ba"
+      fi
+    else
+      # Check for aligned sub first, then non-aligned
+      if [ -f "${base}sub.autfilt.aligned" ]; then
+        emit_partner="${base}sub.autfilt.aligned"
+      elif [ -f "${base}sub.autfilt" ]; then
+        emit_partner="${base}sub.autfilt"
+      fi
+    fi
+    
     if [ -n "$emit_partner" ]; then
       printf "%s;%s\n" "$f" "$emit_partner"
       if [ "$EMIT_BOTH" = "1" ]; then

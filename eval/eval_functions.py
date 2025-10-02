@@ -135,7 +135,7 @@ def load_benches_incl(benches, tools, timeout=120):
     for tool in tools:
         tool_columns.extend([f"{tool}-result", f"{tool}-runtime"])
 
-    df_runtime_result = all_dfs[base_columns + tool_columns]
+    df_runtime_result = all_dfs[base_columns + tool_columns].copy()
 
     # Coerce runtimes to float and replace non-numeric with timeout
     for tool in tools:
@@ -962,13 +962,16 @@ def ba_bench_to_hoa(df_ba):
         df_hoa (pd.DataFrame): Unused; kept for API compatibility.
 
     Returns:
-        pd.DataFrame: Copy of `df_ba` with converted 'name' values.
+        pd.DataFrame: Copy of `df_ba` with converted 'name' values and original BA names stored in 'ba_name' column.
     """
     if 'name' not in df_ba.columns:
         raise KeyError("df_ba must contain a 'name' column")
 
     # Work on a copy to avoid mutating the caller's dataframe
     df_out = df_ba.copy(deep=True)
+
+    # Store original BA instance names in a new column
+    df_out['ba_name'] = df_out['name']
 
     def _convert_row(row):
         bench = row['benchmark'] if 'benchmark' in row and pd.notna(row['benchmark']) else None
