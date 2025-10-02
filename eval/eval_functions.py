@@ -137,12 +137,24 @@ def load_benches_incl(benches, tools, timeout=120):
 
     df_runtime_result = all_dfs[base_columns + tool_columns].copy()
 
-    # Coerce runtimes to float and replace non-numeric with timeout
+    # Coerce runtimes to numeric where possible. Replace non-numeric with timeout value,
+    # then mark any numeric runtime strictly greater than timeout as a timeout ('TO')
     for tool in tools:
-        runtimes = pd.to_numeric(df_runtime_result[f"{tool}-runtime"], errors='coerce')
-        mask_non_numeric = runtimes.isna()
+        runtimes_num = pd.to_numeric(df_runtime_result[f"{tool}-runtime"], errors='coerce')
+        mask_non_numeric = runtimes_num.isna()
+        # For non-numeric runtimes (e.g., 'TO','ERR','MISSING'), set to the timeout so
+        # downstream numeric ops won't fail. We'll later mark true timeouts explicitly.
         df_runtime_result.loc[mask_non_numeric, f"{tool}-runtime"] = float(timeout)
+        # Ensure column is numeric for comparison
         df_runtime_result[f"{tool}-runtime"] = pd.to_numeric(df_runtime_result[f"{tool}-runtime"], errors='coerce').astype(float)
+        # Now find rows where the recorded numeric runtime exceeded the configured timeout.
+        mask_exceeded = df_runtime_result[f"{tool}-runtime"] > float(timeout)
+        if mask_exceeded.any():
+            # Mark runtime as timeout token and also mark result as 'TO' for consistency.
+            df_runtime_result.loc[mask_exceeded, f"{tool}-runtime"] = 'TO'
+            # If result column exists, set to 'TO' as well to indicate timeout.
+            if f"{tool}-result" in df_runtime_result.columns:
+                df_runtime_result.loc[mask_exceeded, f"{tool}-result"] = 'TO'
 
     return df_runtime_result
 
@@ -179,17 +191,21 @@ def left_join_on_name_benchmark(df_left: pd.DataFrame, df_right: pd.DataFrame, s
     # Perform the merge. Pandas will fill unmatched right-side columns with NaN.
     return pd.merge(df_left, df_right, on=["name", "benchmark"], how="left", suffixes=suffixes)
 
-def _prepare_scatter_data(df, x_tool, y_tool, col, xname=None, yname=None):
+def _prepare_scatter_data(df, x_tool, y_tool, col, xname=None, yname=None, treat_errors_as_timeouts=False, timeout=None):
     """Prepare data for scatter plots by setting up column names and copying dataframe.
-    
+
     Args:
         df: Input dataframe
         x_tool: Tool name for x-axis
-        y_tool: Tool name for y-axis  
+        y_tool: Tool name for y-axis
         col: Column type ("runtime" or "states")
         xname: Custom x-axis name (optional)
         yname: Custom y-axis name (optional)
-        
+        treat_errors_as_timeouts: If True and col=='runtime', non-numeric tokens
+            like 'TO','ERR','MISSING' will be treated as timeout and replaced
+            with the numeric value provided in `timeout` before returning.
+        timeout: numeric timeout value used when replacing error tokens.
+
     Returns:
         tuple: (prepared_df, x_col, y_col, xname, yname)
     """
@@ -204,9 +220,22 @@ def _prepare_scatter_data(df, x_tool, y_tool, col, xname=None, yname=None):
     # work on a copy so we don't mutate the caller's dataframe
     df = df.copy(deep=True)
 
-    # coerce plotting columns to numeric floats to avoid discrete/continuous scale errors
-    df[x_col] = pd.to_numeric(df[x_col], errors='coerce').astype(float)
-    df[y_col] = pd.to_numeric(df[y_col], errors='coerce').astype(float)
+    # Handle numeric coercion. For runtimes we optionally replace non-numeric/error
+    # tokens with the provided timeout so they appear as timeouts in plots.
+    if col == 'runtime' and treat_errors_as_timeouts and timeout is not None:
+        # Coerce to numeric, identify non-numeric entries and replace them with timeout
+        x_num = pd.to_numeric(df[x_col], errors='coerce')
+        y_num = pd.to_numeric(df[y_col], errors='coerce')
+        mask_x_na = x_num.isna()
+        mask_y_na = y_num.isna()
+        x_num[mask_x_na] = float(timeout)
+        y_num[mask_y_na] = float(timeout)
+        df[x_col] = x_num.astype(float)
+        df[y_col] = y_num.astype(float)
+    else:
+        # Default behaviour: coerce plotting columns to numeric floats (NaN allowed)
+        df[x_col] = pd.to_numeric(df[x_col], errors='coerce').astype(float)
+        df[y_col] = pd.to_numeric(df[y_col], errors='coerce').astype(float)
 
     return df, x_col, y_col, xname, yname
 
@@ -339,8 +368,9 @@ def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01
     # Make the plot square by setting height equal to width
     height = width
 
-    # Prepare data
-    df, x_col, y_col, xname, yname = _prepare_scatter_data(df, x_tool, y_tool, "runtime", xname, yname)
+    # Prepare data; treat non-numeric runtime tokens (ERR/MISSING/TO) as timeouts so
+    # they are plotted at the timeout boundary.
+    df, x_col, y_col, xname, yname = _prepare_scatter_data(df, x_tool, y_tool, "runtime", xname, yname, treat_errors_as_timeouts=True, timeout=timeout)
 
     # optionally create a legend mapping column
     color_col_used = color_column
@@ -1043,13 +1073,7 @@ def conv_ba_instance(ba_file, bench):
     if bench == 'autohyper':
         p = Path(ba_file)
 
-        # Append ".ba" to the filename (input is of the form "... .hoa")
-        name = p.name
-        if name.endswith('.ba'):
-            name = name[: -len('.ba')]
-            p = p.with_name(name)
-
-        # Replace directory components accordingly: gni->gni_ba, nusmv->nusmv_ba, planning->planning_ba
+        # Replace directory components accordingly (keep existing logic).
         parts = list(p.parts)
         mapping = {'gni_ba': 'gni', 'nusmv_ba': 'nusmv', 'planning_ba': 'planning'}
         new_parts = [mapping.get(part, part) for part in parts]
@@ -1064,6 +1088,10 @@ def conv_ba_instance(ba_file, bench):
             s = s.replace('/nusmv/', '/nusmv_ba/')
             s = s.replace('/planning/', '/planning_ba/')
             p = Path(s)
+
+        # For autohyper just change .ba extension to .hoa (if present)
+        if p.suffix == '.ba':
+            p = p.with_suffix('.hoa')
 
         return str(p)
 
@@ -1086,9 +1114,6 @@ def conv_ba_instance(ba_file, bench):
     if bench == 'pecan':
         p = Path(ba_file)
         name = p.name
-        if name.endswith('.aligned.ba'):
-            new_name = name[: -len('.aligned.ba')]
-            return str(p.with_name(new_name))
         if name.endswith('.ba'):
             new_name = name[: -len('.ba')]
             return str(p.with_name(new_name))
