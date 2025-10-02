@@ -21,3 +21,6 @@ forklift:
 
 rabit:
   cmd: ../bin/rabit-wrap.sh $1 $2 -fast
+
+bait:
+  cmd: ../bin/bait-wrap.sh $1 $2
