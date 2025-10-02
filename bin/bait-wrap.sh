@@ -19,7 +19,7 @@ bait_exe="java -jar ${SCRIPT_DIR}/BAIT/bait.jar"
 bait_str="bait"
 
 TMP=$(mktemp)
-${bait_exe} "$A" "$B" "${params[@]}" > "${TMP}"
+${bait_exe} -a "$A" -b "$B" "${params[@]}" > "${TMP}"
 ret=$?
 
 # print result flag based on exit code while preserving the original exit code
