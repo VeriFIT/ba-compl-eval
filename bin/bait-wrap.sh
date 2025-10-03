@@ -22,14 +22,15 @@ TMP=$(mktemp)
 ${bait_exe} -a "$A" -b "$B" "${params[@]}" > "${TMP}"
 ret=$?
 
-# print result flag based on exit code while preserving the original exit code
-if [ "${ret}" -eq 0 ]; then
+# Prefer to detect explicit inclusion result strings in the tool output
+# and print a normalized `result: true` / `result: false`. 
+if grep -qF "Inclusion holds: true" "${TMP}" 2>/dev/null; then
 	echo "${bait_str}-result: true"
-elif [ "${ret}" -eq 1 ]; then
+elif grep -qF "Inclusion holds: false" "${TMP}" 2>/dev/null; then
 	echo "${bait_str}-result: false"
-else 
-	echo "${bait_str}-result: `cat ${TMP}`"
+else
+	echo "${bait_str}-result: $(cat "${TMP}")"
 fi
 
-rm ${TMP}
+rm "${TMP}"
 exit 0
