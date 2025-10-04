@@ -1,0 +1,52 @@
+execute;bait-bait;../automata/rabit/included/bakery/bakeryA.ba;../automata/rabit/included/bakery/bakeryB.ba
+execute;bait-bait;../automata/rabit/included/bakery/bakeryB.ba;../automata/rabit/included/bakery/bakeryA.ba
+execute;bait-bait;../automata/rabit/included/bakeryv2/bakeryV2A.ba;../automata/rabit/included/bakeryv2/bakeryV2B.ba
+execute;bait-bait;../automata/rabit/included/bakeryv2/bakeryV2B.ba;../automata/rabit/included/bakeryv2/bakeryV2A.ba
+execute;bait-bait;../automata/rabit/included/fischer/fischerA.ba;../automata/rabit/included/fischer/fischerB.ba
+execute;bait-bait;../automata/rabit/included/fischer/fischerB.ba;../automata/rabit/included/fischer/fischerA.ba
+execute;bait-bait;../automata/rabit/included/fischerv2/fischerV2A.ba;../automata/rabit/included/fischerv2/fischerV2B.ba
+execute;bait-bait;../automata/rabit/included/fischerv2/fischerV2B.ba;../automata/rabit/included/fischerv2/fischerV2A.ba
+execute;bait-bait;../automata/rabit/included/fischerv3/fischerV3A.ba;../automata/rabit/included/fischerv3/fischerV3B.ba
+execute;bait-bait;../automata/rabit/included/fischerv3/fischerV3B.ba;../automata/rabit/included/fischerv3/fischerV3A.ba
+execute;bait-bait;../automata/rabit/included/fischerv4/fischerV4A.ba;../automata/rabit/included/fischerv4/fischerV4B.ba
+execute;bait-bait;../automata/rabit/included/fischerv4/fischerV4B.ba;../automata/rabit/included/fischerv4/fischerV4A.ba
+execute;bait-bait;../automata/rabit/included/peterson/petersonA.ba;../automata/rabit/included/peterson/petersonB.ba
+execute;bait-bait;../automata/rabit/included/peterson/petersonB.ba;../automata/rabit/included/peterson/petersonA.ba
+execute;bait-bait;../automata/rabit/included/phils/philsA.ba;../automata/rabit/included/phils/philsB.ba
+execute;bait-bait;../automata/rabit/included/phils/philsB.ba;../automata/rabit/included/phils/philsA.ba
+execute;bait-bait;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba
+execute;bait-bait;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba
+execute;bait-bait;../automata/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/rabit/notincluded/fischerv5/fischerV5B.ba
+execute;bait-bait;../automata/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/rabit/notincluded/fischerv5/fischerV5A.ba
+execute;bait-bait;../automata/rabit/notincluded/philsv2/philsV2A.ba;../automata/rabit/notincluded/philsv2/philsV2B.ba
+execute;bait-bait;../automata/rabit/notincluded/philsv2/philsV2B.ba;../automata/rabit/notincluded/philsv2/philsV2A.ba
+execute;bait-bait;../automata/rabit/notincluded/philsv3/philsV3A.ba;../automata/rabit/notincluded/philsv3/philsV3B.ba
+execute;bait-bait;../automata/rabit/notincluded/philsv3/philsV3B.ba;../automata/rabit/notincluded/philsv3/philsV3A.ba
+execute;bait-bait;../automata/rabit/notincluded/philsv4/philsV4A.ba;../automata/rabit/notincluded/philsv4/philsV4B.ba
+execute;bait-bait;../automata/rabit/notincluded/philsv4/philsV4B.ba;../automata/rabit/notincluded/philsv4/philsV4A.ba
+timeout;bait-bait;../automata/rabit/included/bakery/bakeryB.ba;../automata/rabit/included/bakery/bakeryA.ba
+timeout;bait-bait;../automata/rabit/included/bakery/bakeryA.ba;../automata/rabit/included/bakery/bakeryB.ba
+timeout;bait-bait;../automata/rabit/included/bakeryv2/bakeryV2A.ba;../automata/rabit/included/bakeryv2/bakeryV2B.ba
+timeout;bait-bait;../automata/rabit/included/bakeryv2/bakeryV2B.ba;../automata/rabit/included/bakeryv2/bakeryV2A.ba
+finished;bait-bait;../automata/rabit/included/fischerv2/fischerV2B.ba;../automata/rabit/included/fischerv2/fischerV2A.ba;0;result: true;;0.55
+finished;bait-bait;../automata/rabit/included/fischerv2/fischerV2A.ba;../automata/rabit/included/fischerv2/fischerV2B.ba;0;result: true;;0.58
+finished;bait-bait;../automata/rabit/included/fischer/fischerB.ba;../automata/rabit/included/fischer/fischerA.ba;0;result: Running bait###Computing the language inclusion between ../automata/rabit/included/fischer/fischerB.ba and ../automata/rabit/included/fischer/fischerA.ba;Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space###	at java.base/java.util.HashMap$KeySet.iterator(HashMap.java:991)###	at java.base/java.util.HashSet.iterator(HashSet.java:182)###	at java.base/java.util.AbstractCollection.addAll(AbstractCollection.java:337)###	at bait.algorithm.YVectorEntry.getNewSnd(YVectorEntry.java:54)###	at bait.algorithm.YVectorEntry.getNewElement(YVectorEntry.java:29)###	at bait.algorithm.YVectorEntry.getNewElement(YVectorEntry.java:13)###	at bait.algorithm.BAIncVectorEntry.updateWrtPredecessorElementAtPreviousIteration(BAIncVectorEntry.java:88)###	at bait.algorithm.BAIncVectorEntry.updateWrtPredecessor(BAIncVectorEntry.java:79)###	at bait.algorithm.BAIncVectorEntry.applyIteration(BAIncVectorEntry.java:53)###	at bait.algorithm.BAIncVector.iterate(BAIncVector.java:82)###	at bait.algorithm.BAInc.kleene(BAInc.java:162)###	at bait.algorithm.BAInc.computeY(BAInc.java:120)###	at bait.algorithm.BAInc.run(BAInc.java:76)###	at bait.algorithm.Runner.inclusionHolds(Runner.java:32)###	at bait.Main.main(Main.java:16);236.33
+timeout;bait-bait;../automata/rabit/included/fischer/fischerA.ba;../automata/rabit/included/fischer/fischerB.ba
+timeout;bait-bait;../automata/rabit/included/fischerv3/fischerV3A.ba;../automata/rabit/included/fischerv3/fischerV3B.ba
+finished;bait-bait;../automata/rabit/included/fischerv4/fischerV4B.ba;../automata/rabit/included/fischerv4/fischerV4A.ba;0;result: false;;0.8
+timeout;bait-bait;../automata/rabit/included/fischerv3/fischerV3B.ba;../automata/rabit/included/fischerv3/fischerV3A.ba
+finished;bait-bait;../automata/rabit/included/peterson/petersonB.ba;../automata/rabit/included/peterson/petersonA.ba;0;result: false;;0.12
+finished;bait-bait;../automata/rabit/included/peterson/petersonA.ba;../automata/rabit/included/peterson/petersonB.ba;0;result: true;;0.21
+finished;bait-bait;../automata/rabit/included/phils/philsB.ba;../automata/rabit/included/phils/philsA.ba;0;result: false;;0.27
+finished;bait-bait;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba;0;result: false;;6.0
+finished;bait-bait;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba;0;result: false;;27.63
+timeout;bait-bait;../automata/rabit/included/fischerv4/fischerV4A.ba;../automata/rabit/included/fischerv4/fischerV4B.ba
+finished;bait-bait;../automata/rabit/notincluded/philsv2/philsV2A.ba;../automata/rabit/notincluded/philsv2/philsV2B.ba;0;result: false;;1.34
+timeout;bait-bait;../automata/rabit/included/phils/philsA.ba;../automata/rabit/included/phils/philsB.ba
+finished;bait-bait;../automata/rabit/notincluded/philsv3/philsV3A.ba;../automata/rabit/notincluded/philsv3/philsV3B.ba;0;result: false;;1.31
+timeout;bait-bait;../automata/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/rabit/notincluded/fischerv5/fischerV5B.ba
+timeout;bait-bait;../automata/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/rabit/notincluded/fischerv5/fischerV5A.ba
+finished;bait-bait;../automata/rabit/notincluded/philsv4/philsV4A.ba;../automata/rabit/notincluded/philsv4/philsV4B.ba;0;result: false;;35.43
+timeout;bait-bait;../automata/rabit/notincluded/philsv2/philsV2B.ba;../automata/rabit/notincluded/philsv2/philsV2A.ba
+timeout;bait-bait;../automata/rabit/notincluded/philsv3/philsV3B.ba;../automata/rabit/notincluded/philsv3/philsV3A.ba
+timeout;bait-bait;../automata/rabit/notincluded/philsv4/philsV4B.ba;../automata/rabit/notincluded/philsv4/philsV4A.ba
