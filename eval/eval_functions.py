@@ -844,6 +844,272 @@ def simple_table_incl(df, tools, benches, separately=False, stat_from_solved=Tru
     return result
 
 
+def build_inclusion_stats_df(df, tools, benches, stat_from_solved=True, numeric_timeout_fallback=True):
+    """Return a DataFrame with the same statistics as printed by simple_table_incl.
+
+    This simplified version always aggregates across all provided benches (no per-benchmark
+    breakdown). The resulting DataFrame columns replicate the header used in
+    simple_table_incl:
+        ["tool", "✅", "❌", "time", "time-avg", "time-med", "TO", "ERR", "MISSING"].
+
+    Column semantics:
+        ✅ (solved): count of rows where <tool>-result in {'true','false'}.
+        ❌ (not-solved): TO + ERR counts (MISSING reported separately).
+        time / time-avg / time-med: aggregate runtime statistics either over solved rows
+            (stat_from_solved=True) or all rows. Non-numeric tokens ('TO','ERR','MISSING', etc.)
+            are coerced to NaN and ignored. If all values are NaN, total is 0.0 and avg/median NaN.
+        TO / ERR / MISSING: counts derived via helper functions.
+
+    Args:
+        df (pd.DataFrame): Inclusion results containing at least 'benchmark' and tool columns.
+        tools (list[str]): Tool prefixes to summarize.
+        benches (list[str]): Benchmarks to include (rows filtered by df['benchmark'].isin(benches)).
+        stat_from_solved (bool): If True, restrict runtime aggregates to solved instances.
+        numeric_timeout_fallback (bool): Retained for backwards compatibility; when False no
+            special handling (non-numerics already dropped). Currently both code paths behave identically.
+
+    Returns:
+        pd.DataFrame: One row per tool with the described statistics.
+    """
+
+    # Guard: ensure required columns exist for each tool; if missing, create empty ones to avoid KeyErrors
+    needed_cols = []
+    for tool in tools:
+        needed_cols.extend([f"{tool}-result", f"{tool}-runtime"])
+    missing = [c for c in needed_cols if c not in df.columns]
+    if missing:
+        # Create the columns with NaN so helper functions just yield zero counts
+        for col in missing:
+            df[col] = pd.NA
+
+    def _one_scope(scope_df, scope_name=None):
+        rows = []
+        for tool in tools:
+            solved_cnt = len(get_solved_incl(scope_df, tool))
+            to_cnt = len(get_timeouts_incl(scope_df, tool))
+            err_cnt = len(get_errors_incl(scope_df, tool))
+            miss_cnt = len(get_missing_incl(scope_df, tool))
+
+            # Runtime selection
+            if stat_from_solved:
+                runtime_series = get_solved_incl(scope_df, tool)[f"{tool}-runtime"]
+            else:
+                runtime_series = scope_df[f"{tool}-runtime"]
+
+            # Coerce to numeric; drop non-numeric (timeouts/errors) naturally via NaN
+            runtime_numeric = pd.to_numeric(runtime_series, errors='coerce')
+            # If desired, optionally replace NaN that came from non-numeric tokens with the timeout value –
+            # but current semantics (like simple_table_incl) effectively ignored string tokens in sums.
+            if not numeric_timeout_fallback:
+                # Keep numeric only; nothing else to do (already NaN for non-numeric)
+                pass
+
+            time_total = runtime_numeric.sum(min_count=1)  # min_count ensures empty sum -> NaN
+            time_avg = runtime_numeric.mean()
+            time_med = runtime_numeric.median()
+
+            # For consistency with old behaviour, if there were simply no numeric entries (all NaN),
+            # treat total as 0 (optional design choice).
+            if pd.isna(time_total):
+                time_total = 0.0
+
+            row = {
+                'tool': tool,
+                'solved': solved_cnt,
+                'time': time_total,
+                'avg': time_avg,
+                'med': time_med,
+                'OOR': to_cnt + err_cnt,
+                'missing': miss_cnt,
+            }
+            if scope_name is not None:
+                row['benchmark'] = scope_name
+            rows.append(row)
+        columns = ['tool', 'solved', 'time', 'avg', 'med', 'OOR', 'missing']
+        if scope_name is not None:
+            columns = ['benchmark'] + columns
+        return pd.DataFrame(rows, columns=columns)
+
+    benches = list(benches)
+    scope_df = df[df['benchmark'].isin(benches)]
+    return _one_scope(scope_df)
+
+
+def build_complement_stats_df(df, tools, benches, stat_from_solved=True):
+    """Build a statistics DataFrame for complementation benchmarks (no time columns).
+
+    This mirrors the logic of simple_table (non-inclusion) but omits every time-based
+    column. It summarizes state-related measures per tool across the selected benches.
+
+    Output columns (one row per tool):
+        tool          : tool name
+        solved        : number of solved instances (numeric <tool>-states)
+        total         : sum of states over considered instances
+        max           : maximum number of states
+        avg           : average number of states
+        med           : median number of states
+        OOR           : count of out-of-result instances (timeouts + errors)
+
+    Args:
+        df (pd.DataFrame): Complementation results containing per-tool '<tool>-states' columns.
+        tools (list[str]): Tool prefixes.
+        benches (list[str]): Benchmarks to include.
+        stat_from_solved (bool): If True (default) compute state aggregates (sum/avg/med/max)
+            over solved instances only; otherwise attempt to include all numeric entries
+            (non-numeric tokens are ignored via NaN coercion).
+
+    Returns:
+        pd.DataFrame: Summary statistics per tool.
+    """
+
+    # Filter relevant benches
+    scope_df = df[df['benchmark'].isin(benches)]
+
+    rows = []
+    for tool in tools:
+        # Identify solved / timeout / error counts
+        solved_df = get_solved(scope_df, tool)
+        solved_cnt = len(solved_df)
+        to_cnt = len(get_timeouts(scope_df, tool))
+        err_cnt = len(get_errors(scope_df, tool))
+        oor_cnt = to_cnt + err_cnt
+
+        # Choose data for state statistics
+        if stat_from_solved:
+            state_series = solved_df[f"{tool}-states"]
+        else:
+            # Use any numeric states (coerce errors/timeouts to NaN and drop)
+            state_series = pd.to_numeric(scope_df[f"{tool}-states"], errors='coerce')
+            state_series = state_series.dropna()
+
+        # If there are no numeric entries, produce zeros/NaN appropriately
+        if len(state_series) == 0:
+            states_total = 0
+            states_max = 0
+            states_avg = float('nan')
+            states_med = float('nan')
+        else:
+            # Ensure numeric dtype
+            state_series = pd.to_numeric(state_series, errors='coerce')
+            states_total = state_series.sum()
+            states_max = state_series.max()
+            states_avg = state_series.mean()
+            states_med = state_series.median()
+
+        rows.append({
+            'tool': tool,
+            'solved': solved_cnt,
+            'total': states_total,
+            'max': states_max,
+            'avg': states_avg,
+            'med': states_med,
+            'OOR': oor_cnt,
+        })
+
+    columns = ['tool', 'solved', 'total', 'max', 'avg', 'med', 'OOR']
+    return pd.DataFrame(rows, columns=columns)
+
+
+def complement_stats_to_latex(stats_df, index_column='tool', float_format="{:.2f}", caption=None, label=None,
+                              column_format=None, escape=True):
+    """Convert a complementation statistics DataFrame to LaTeX (no bolding logic).
+
+    The input should be produced by build_complement_stats_df. All numeric columns are
+    formatted uniformly; no emphasis (bold) is applied.
+
+    Args:
+        stats_df (pd.DataFrame): DataFrame with columns like 'states-total','states-max', etc.
+        index_column (str): Column to set as index prior to LaTeX export (default 'tool').
+        float_format (str): Format for floating point columns (avg/med/max). Total is rendered
+            as integer if it is integral; otherwise same float format.
+        caption (str|None): Optional LaTeX caption.
+        label (str|None): Optional LaTeX label (added as tab:<label> if provided).
+        column_format (str|None): Optional LaTeX column format passed through to pandas.
+        escape (bool): Whether to escape LaTeX special characters.
+
+    Returns:
+        str: LaTeX tabular string.
+    """
+    df_latex = stats_df.copy()
+
+    # Identify numeric columns we expect
+    numeric_cols = [c for c in ['total', 'max', 'avg', 'med'] if c in df_latex.columns]
+    for col in numeric_cols:
+        df_latex[col] = pd.to_numeric(df_latex[col], errors='coerce')
+
+    # Format totals as integers when possible; otherwise use float_format
+    if 'total' in df_latex.columns:
+        df_latex['total'] = df_latex['total'].map(
+            lambda v: ('' if pd.isna(v) else (str(int(v)) if float(v).is_integer() else float_format.format(v)))
+        )
+    # Format remaining float columns uniformly
+    for col in ['max', 'avg', 'med']:
+        if col in df_latex.columns:
+            df_latex[col] = df_latex[col].map(lambda v: (float_format.format(v) if pd.notna(v) else ''))
+
+    if index_column in df_latex.columns:
+        df_latex = df_latex.set_index(index_column)
+
+    return df_latex.to_latex(escape=escape, caption=caption, label=(f"tab:{label}" if label else None), column_format=column_format)
+
+
+def inclusion_stats_to_latex(stats_df, index_column='tool', float_format="{:.2f}", caption=None, label=None,
+                              column_format=None, escape=True, bold_best_time=False):
+    """Convert an inclusion statistics DataFrame to a LaTeX tabular string.
+
+    Expects a DataFrame produced by build_inclusion_stats_df. The function can optionally
+    set an index column (default 'tool'), format floating point numbers, and (optionally)
+    bold the best (minimum) value in the 'time' column per *benchmark* segment if that
+    column exists.
+
+    Args:
+        stats_df (pd.DataFrame): Summary statistics (possibly including 'benchmark').
+        index_column (str): Column to move to index before conversion (ignored if missing).
+        float_format (str): Format spec used for float values.
+        caption (str|None): Optional LaTeX caption.
+        label (str|None): Optional LaTeX label (without leading 'tab:').
+        column_format (str|None): Optional column format passed to pandas to_latex.
+        escape (bool): Whether to escape LaTeX special chars.
+        bold_best_time (bool): If True, bold the minimum 'time' per benchmark (or globally
+            if no benchmark column) before export.
+
+    Returns:
+        str: Complete LaTeX table code (including tabular environment).
+    """
+    df_latex = stats_df.copy()
+
+    # Optionally bold best times
+    if bold_best_time and 'time' in df_latex.columns:
+        def _bold_min(group):
+            numeric = pd.to_numeric(group['time'], errors='coerce')
+            if numeric.notna().any():
+                min_val = numeric.min()
+                # apply bold formatting using LaTeX \textbf{}
+                group.loc[numeric == min_val, 'time'] = group.loc[numeric == min_val, 'time'].map(lambda v: f"\\textbf{{{float_format.format(v)}}}")
+                # Format non-min numeric 'time' entries as plain numbers
+                group.loc[numeric != min_val, 'time'] = group.loc[numeric != min_val, 'time'].map(lambda v: float_format.format(v))
+            return group
+
+        if 'benchmark' in df_latex.columns:
+            df_latex = df_latex.groupby('benchmark', group_keys=False).apply(_bold_min)
+        else:
+            df_latex = _bold_min(df_latex)
+
+    # Format other float columns (excluding 'time' already formatted if bolded)
+    float_cols = [c for c in ['time', 'time-avg', 'time-med'] if c in df_latex.columns]
+    for col in float_cols:
+        # Skip if already string (e.g., bold formatted)
+        if df_latex[col].dtype != object or not df_latex[col].astype(str).str.startswith('\\textbf').any():
+            df_latex[col] = pd.to_numeric(df_latex[col], errors='coerce').map(lambda v: (float_format.format(v) if pd.notna(v) else ''))
+
+    # Move index column if present
+    if index_column in df_latex.columns:
+        df_latex = df_latex.set_index(index_column)
+
+    latex = df_latex.to_latex(escape=escape, caption=caption, label=(f"tab:{label}" if label else None), column_format=column_format)
+    return latex
+
+
 def add_vbs(df, tools_list, name = None):
     """Adds virtual best solvers from tools in tool_list
 
