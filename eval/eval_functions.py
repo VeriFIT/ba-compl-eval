@@ -337,7 +337,7 @@ def _add_scatter_reference_lines(scatter, clamp_domain, dash_pattern=(0, (6, 2))
     scatter += p9.geom_hline(yintercept=clamp_domain[1], linetype=dash_pattern)  # horizontal rule
     return scatter
 
-def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01, 120], xname=None, yname=None, log=True, width=6, height=6, show_legend=True, legend_width=2, file_name_to_save=None, transparent=False, color_by_benchmark=True, color_column="benchmark", legend_name_map=None):
+def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01, 120], xname=None, yname=None, log=True, width=6, height=6, show_legend=True, legend_width=2, file_name_to_save=None, transparent=False, color_by_benchmark=True, color_column="benchmark", legend_name_map=None, tool_name_map=None):
     """Returns scatter plot for runtime comparison between two tools.
 
     Args:
@@ -359,14 +359,23 @@ def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01
         color_by_benchmark (bool, optional): Whether the dots should be colored based on the benchmark. Defaults to True.
         color_column (str, optional): Name of the column to use for coloring. Defaults to 'benchmark'.
         legend_name_map (dict, optional): Optional dict mapping original benchmark names to labels shown in legend.
+        tool_name_map (dict, optional): Optional dict mapping tool identifiers to display names. If provided
+            and xname / yname are None, the axis labels will use tool_name_map[x_tool] / tool_name_map[y_tool]
+            when available.
     """
     assert len(clamp_domain) == 2
 
-    POINT_SIZE = 2.0
+    POINT_SIZE = 3.0
     DASH_PATTERN = (0, (6, 2))
 
     # Make the plot square by setting height equal to width
     height = width
+
+    # Apply automatic axis name mapping if explicit names not given
+    if xname is None and tool_name_map and x_tool in tool_name_map:
+        xname = tool_name_map[x_tool]
+    if yname is None and tool_name_map and y_tool in tool_name_map:
+        yname = tool_name_map[y_tool]
 
     # Prepare data; treat non-numeric runtime tokens (ERR/MISSING/TO) as timeouts so
     # they are plotted at the timeout boundary.
@@ -405,12 +414,22 @@ def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01
     scatter = _apply_scatter_theme(scatter, width, height, transparent, show_legend, legend_width, color_by_benchmark, color_labels=color_labels)
     scatter = _add_scatter_reference_lines(scatter, clamp_domain, DASH_PATTERN)
 
+    # When the legend is hidden, the plotting panel may become slightly rectangular due to
+    # default margin calculations. Enforce a square panel (useful for diagonal comparison)
+    # by setting an equal coordinate system.
+    if not show_legend:
+        try:
+            scatter += p9.coord_equal()  # keeps aspect ratio 1:1 in data units
+        except Exception:
+            # Fallback: enforce panel aspect ratio via theme (in case coord_equal not available)
+            scatter += p9.theme(aspect_ratio=1)
+
     if file_name_to_save != None:
         scatter.save(filename=f"{file_name_to_save}.pdf", dpi=500, verbose=False)
 
     return scatter
 
-def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname=None, yname=None, log=True, width=6, height=6, show_legend=True, legend_width=2, file_name_to_save=None, transparent=False, color_by_benchmark=True, color_column="benchmark", legend_name_map=None):
+def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname=None, yname=None, log=True, width=6, height=6, show_legend=True, legend_width=2, file_name_to_save=None, transparent=False, color_by_benchmark=True, color_column="benchmark", legend_name_map=None, tool_name_map=None):
     """Returns scatter plot for state space size comparison between two tools.
 
     Args:
@@ -431,12 +450,21 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
         color_by_benchmark (bool, optional): Whether the dots should be colored based on the benchmark. Defaults to True.
         color_column (str, optional): Name of the column to use for coloring. Defaults to 'benchmark'.
         legend_name_map (dict, optional): Optional dict mapping original benchmark names to labels shown in legend.
+        tool_name_map (dict, optional): Optional dict mapping tool identifiers to display names. If provided
+            and xname / yname are None, the axis labels will use tool_name_map[x_tool] / tool_name_map[y_tool]
+            when available.
     """
     POINT_SIZE = 2.0
     DASH_PATTERN = (0, (6, 2))
 
     # Make the plot square by setting height equal to width
     height = width
+
+    # Apply automatic axis name mapping if explicit names not given
+    if xname is None and tool_name_map and x_tool in tool_name_map:
+        xname = tool_name_map[x_tool]
+    if yname is None and tool_name_map and y_tool in tool_name_map:
+        yname = tool_name_map[y_tool]
 
     # Prepare data
     df, x_col, y_col, xname, yname = _prepare_scatter_data(df, x_tool, y_tool, "states", xname, yname)
@@ -513,6 +541,13 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
 
     scatter = _apply_scatter_theme(scatter, width, height, transparent, show_legend, legend_width, color_by_benchmark, color_labels=color_labels)
     scatter = _add_scatter_reference_lines(scatter, clamp_domain, DASH_PATTERN)
+
+    # Maintain a square panel when legend is suppressed for clearer state comparisons.
+    if not show_legend:
+        try:
+            scatter += p9.coord_equal()
+        except Exception:
+            scatter += p9.theme(aspect_ratio=1)
 
     if file_name_to_save != None:
         scatter.save(filename=f"{file_name_to_save}.pdf", dpi=500, verbose=False)
