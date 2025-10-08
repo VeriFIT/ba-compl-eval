@@ -42,3 +42,6 @@ kofola-tacas23:
 
 cola:
   cmd: ../bin/cola-wrap.sh $1 --determinize=ba --parity --acd --complement --simulation --use-scc
+
+ranker:
+  cmd: ../bin/ranker-wrap.sh $1 --best
