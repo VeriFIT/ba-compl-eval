@@ -2,26 +2,28 @@
 
 # Check the number of command-line arguments
 if [ \( "$#" -lt 1 \) ] ; then
-	echo "usage: ${0} <input-ba> [params]"
+	echo "usage: ${0} <input-ba> [<params>]"
 	exit 1
 fi
 
+ABSOLUTE_SCRIPT_PATH=$(readlink -f "$0")
+SCRIPT_DIR=$(dirname "${ABSOLUTE_SCRIPT_PATH}")
+
 INPUT=$1
 shift
-params="$*"
+# preserve argument boundaries and spacing
+params=("$@")
 
+ranker_exe="${SCRIPT_DIR}/ranker/build/ranker"
+ranker_str="ranker"
+
+# for the backoff
+export SPOTEXE="/usr/local/bin/autfilt"
 TMP=$(mktemp)
-TMP_STAT=$(mktemp)
-./bin/ranker --stats ${params} ${INPUT} > ${TMP} 2> ${TMP_STAT} || exit 1
+"${ranker_exe}" "${params[@]}" "${INPUT}" > "${TMP}" || exit 1
 
-set -o pipefail
-autfilt_out=$(./bin/autfilt --high ${TMP} | grep "^States:" | sed 's/^States/autfilt-States/')
-ret=$?
-rm ${TMP}
+cat "${TMP}" | grep "^States:" | sed "s/^States/${ranker_str}-states/"
 
-cat ${TMP_STAT} | sed 's/^Generated states:/nopost-States:/' | sed 's/^Generated trans:/nopost-Transitions:/'
-echo ${autfilt_out}
-
-rm ${TMP_STAT}
+rm -f "${TMP}"
 
 exit ${ret}
