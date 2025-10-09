@@ -1,0 +1,144 @@
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_1bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_1bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_3bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_3bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_4bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_4bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p2_1bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p2_1bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p3_1bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p3_1bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p3_3bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p3_3bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p4_1bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p4_1bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p4_3bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p4_3bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p1_1bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p1_1bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_1bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_1bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_2bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_2bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_4bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_4bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p3_1bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p3_1bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p3_3bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p3_3bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p4_1bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p4_1bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p4_3bit_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p4_3bit_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_S2_3proc_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_S2_3proc_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_S3_3proc_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_S3_3proc_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_sym1_3proc_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_sym1_3proc_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_sym2_3proc_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_sym2_3proc_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_5procs_bakery_formula_sym1_5proc_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_5procs_bakery_formula_sym1_5proc_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_5procs_bakery_formula_sym2_5proc_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_5procs_bakery_formula_sym2_5proc_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/mutation_testing_mutation_testing_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/mutation_testing_mutation_testing_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NI_correct_NI_formula_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NI_correct_NI_formula_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NI_incorrect_NI_formula_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NI_incorrect_NI_formula_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NRP_correct_NRP_formula_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NRP_correct_NRP_formula_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NRP_incorrect_NRP_formula_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NRP_incorrect_NRP_formula_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/snark1_M1_concurrent_snark1_M2_sequential_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/snark1_M1_concurrent_snark1_M2_sequential_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_100_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_100_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_1600_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_1600_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_3600_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_3600_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_400_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_400_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_100_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_100_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_1600_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_1600_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_3600_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_3600_B.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_400_A.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_400_B.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_3bit_A.hoa;1;;Cannot open file \"__tmp__ranker_639652108\";0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_1bit_B.hoa;0;states: 16;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_1bit_A.hoa;0;states: 16;;0.02
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_4bit_B.hoa;1;;Cannot open file \"__tmp__ranker_639652108\";0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p2_1bit_B.hoa;0;states: 28;;0.07
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p3_1bit_A.hoa;0;states: 16;;0.29
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p3_1bit_B.hoa;0;states: 16;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_4bit_A.hoa;0;states: 16;;0.37
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p3_3bit_A.hoa;1;;Cannot open file \"__tmp__ranker_639652108\";0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p3_3bit_B.hoa;1;;Parser error:###line 24: Unsupported format of transitions.;0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p4_1bit_A.hoa;1;;Cannot open file \"__tmp__ranker_639652108\";0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p4_1bit_B.hoa;0;states: 19;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p4_3bit_A.hoa;0;states: 19;;0.3
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p4_3bit_B.hoa;0;states: 19;;0.3
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p1_1bit_A.hoa;0;states: 6;;0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p1_1bit_B.hoa;0;states: 6;;0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_1bit_A.hoa;0;states: 11;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_1bit_B.hoa;0;states: 11;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_2bit_B.hoa;0;states: 11;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_2bit_A.hoa;0;states: 11;;2.08
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_4bit_B.hoa;0;states: 11;;2.24
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p3_1bit_A.hoa;0;states: 16;;0.3
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p3_1bit_B.hoa;0;states: 16;;0.02
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p2_1bit_A.hoa;0;states: 28;;7.14
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p3_3bit_B.hoa;0;states: 16;;1.21
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p4_1bit_A.hoa;0;states: 15;;0.66
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p4_1bit_B.hoa;0;states: 15;;0.02
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_concur_p1_3bit_B.hoa;0;states: 16;;17.94
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p4_3bit_B.hoa;0;states: 15;;0.94
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_S2_3proc_A.hoa;0;states: 100;;5.22
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_S2_3proc_B.hoa;0;states: 193;;95.0
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p2_4bit_A.hoa
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p3_3bit_A.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_S3_3proc_A.hoa;0;states: 100;;7.83
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/gni/gni_lmcs_p4_3bit_A.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_sym1_3proc_B.hoa;0;states: 6;;4.26
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_sym2_3proc_B.hoa;0;states: 2;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_S3_3proc_B.hoa;0;states: 100;;10.15
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_sym1_3proc_A.hoa;0;states: 100;;8.22
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_3procs_bakery_formula_sym2_3proc_A.hoa;0;states: 100;;8.08
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_5procs_bakery_formula_sym1_5proc_A.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/mutation_testing_mutation_testing_A.hoa;0;states: 10;;0.14
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_5procs_bakery_formula_sym1_5proc_B.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NI_correct_NI_formula_A.hoa;0;states: 63;;0.33
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_5procs_bakery_formula_sym2_5proc_A.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/mutation_testing_mutation_testing_B.hoa;0;states: 63;;0.88
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/bakery_5procs_bakery_formula_sym2_5proc_B.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NRP_correct_NRP_formula_A.hoa;1;;Cannot open file \"__tmp__ranker_639652108\";0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NI_correct_NI_formula_B.hoa;1;;Parser error:###line 118097: Unsupported format of transitions.;2.41
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NRP_incorrect_NRP_formula_A.hoa;0;states: 15;;0.41
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NI_incorrect_NI_formula_A.hoa;0;states: 363;;54.18
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NI_incorrect_NI_formula_B.hoa
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NRP_correct_NRP_formula_B.hoa
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/NRP_incorrect_NRP_formula_B.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_100_A.hoa;0;states: 457;;4.04
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/snark1_M1_concurrent_snark1_M2_sequential_A.hoa
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/nusmv/snark1_M1_concurrent_snark1_M2_sequential_B.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_1600_A.hoa;0;states: 1718;;112.5
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_100_B.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_400_A.hoa;0;states: 858;;21.72
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_1600_B.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_100_A.hoa;0;states: 18;;0.2
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_100_B.hoa;0;states: 34;;2.42
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_1600_A.hoa;0;states: 18;;1.96
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_1600_B.hoa;0;states: 34;;26.22
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_3600_A.hoa;0;states: 18;;1.95
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_3600_B.hoa;0;states: 34;;25.4
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_400_A.hoa;0;states: 18;;0.36
+finished;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_sp_400_B.hoa;0;states: 34;;4.54
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_3600_A.hoa
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_3600_B.hoa
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/autohyper/planning/planning_robotic_robustness_400_B.hoa
