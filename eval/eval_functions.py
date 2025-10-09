@@ -31,6 +31,64 @@ def read_latest_result_file(bench, method, tool, timeout):
         return latest_file.read()
 
 
+def count_unsupported_instances(benches, tools, timeout=120):
+    """Count unsupported instances for given benchmarks and tools.
+    
+    For each tool and benchmark, this function reads the latest result file
+    and searches for error patterns indicating unsupported automaton types.
+    The following error patterns are counted:
+    - "Unsupported automaton type"
+    - "cola requires Buchi condition on input"
+    
+    Args:
+        benches (list): List of benchmark names to analyze
+        tools (list): List of tool names to analyze
+        timeout (int, optional): Timeout value for filtering result files. Defaults to 120.
+    
+    Returns:
+        dict: A nested dictionary with structure:
+              {tool: {benchmark: count}}
+              where count is the number of unsupported instances found.
+    
+    Example:
+        >>> results = count_unsupported_instances(['pecan', 's1s'], ['cola-cola', 'ranker-ranker'])
+        >>> print(results)
+        {'cola-cola': {'pecan': 150, 's1s': 0}, 'ranker-ranker': {'pecan': 0, 's1s': 5}}
+    """
+    import re
+    
+    # Define error patterns to search for
+    error_patterns = [
+        r"Unsupported automaton type",
+        r"cola requires Buchi condition on input"
+    ]
+    
+    # Compile patterns for efficient searching
+    compiled_patterns = [re.compile(pattern) for pattern in error_patterns]
+    
+    results = {}
+    
+    for tool in tools:
+        results[tool] = {}
+        for bench in benches:
+            # Read the result file content
+            content = read_latest_result_file(bench, "compl", tool, timeout)
+            
+            if not content:
+                results[tool][bench] = 0
+                continue
+            
+            # Count occurrences of each error pattern
+            total_count = 0
+            for pattern in compiled_patterns:
+                matches = pattern.findall(content)
+                total_count += len(matches)
+            
+            results[tool][bench] = total_count
+    
+    return results
+
+
 def load_benches(benches, tools, timeout = 120):
     dfs = dict()
     for bench in benches:
@@ -337,6 +395,39 @@ def _add_scatter_reference_lines(scatter, clamp_domain, dash_pattern=(0, (6, 2))
     scatter += p9.geom_hline(yintercept=clamp_domain[1], linetype=dash_pattern)  # horizontal rule
     return scatter
 
+
+def get_ax_formatter(log: bool):
+    """Return an axis tick formatter.
+
+    For log=True returns a function that formats values into LaTeX-style
+    scientific notation (e.g. $10^{3}$ or $2.5\times10^{3}$). For log=False
+    returns a mizani numeric formatter.
+    """
+    if log:
+        def ax_formatter(values):
+            def _fmt(v):
+                try:
+                    v = float(v)
+                except Exception:
+                    return ''
+                if v <= 0 or np.isnan(v):
+                    return str(v)
+                exp = int(np.round(np.log10(v)))
+                pow10 = 10 ** exp
+                if abs(v - pow10) <= 1e-12 * max(1.0, v):
+                    return f"$10^{{{exp}}}$"
+                mant = v / pow10
+                return f"${{0:g}}\\times10^{{{exp}}}$".format(mant)
+
+            try:
+                return [_fmt(val) for val in values]
+            except TypeError:
+                return _fmt(values)
+
+        return ax_formatter
+    else:
+        return mizani.custom_format('{:n}')
+
 def scatter_plot(df, x_tool, y_tool, timeout=120, clamp=True, clamp_domain=[0.01, 120], xname=None, yname=None, log=True, width=6, height=6, show_legend=True, legend_width=2, file_name_to_save=None, transparent=False, color_by_benchmark=True, color_column="benchmark", legend_name_map=None, tool_name_map=None):
     """Returns scatter plot for runtime comparison between two tools.
 
@@ -454,7 +545,7 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
             and xname / yname are None, the axis labels will use tool_name_map[x_tool] / tool_name_map[y_tool]
             when available.
     """
-    POINT_SIZE = 2.0
+    POINT_SIZE = 3.0
     DASH_PATTERN = (0, (6, 2))
 
     # Make the plot square by setting height equal to width
@@ -494,8 +585,8 @@ def scatter_plot_states(df, x_tool, y_tool, clamp=True, clamp_domain=None, xname
 
     assert len(clamp_domain) == 2
 
-    # formatter for axes' labels
-    ax_formatter = mizani.custom_format('{:n}')
+    # formatter for axes' labels (shared helper)
+    ax_formatter = get_ax_formatter(log)
 
     # Replace timeout/missing values with the maximum value (where dashed line is rendered)
     # Consider true missing (NaN) and empty strings as missing as well
@@ -1422,3 +1513,157 @@ def conv_ba_instance(ba_file, bench):
 
     # Default: no conversion
     return ba_file
+
+def filter_inclusion_pairs_unique(df: pd.DataFrame,
+                                   name_column: str = "name",
+                                   prefer_patterns=None,
+                                   keep_debug_cols: bool = False) -> pd.DataFrame:
+    """Filter inclusion results to keep only one direction per unordered pair.
+
+    Rows are identified by a "pair" encoded in the ``name`` column as
+    "<file1>+<file2>". Datasets often contain both directions (``A+B`` and
+    ``B+A``). This function keeps exactly one row per unordered pair, with a
+    preference for rows where the first file matches certain filename patterns.
+
+    Preference (from highest to lowest):
+      1) *sup.autfilt.aligned
+      2) *sup.autfilt
+      3) *A.ba.hoa
+      4) *A.hoa
+
+    If none of the patterns match (or there's a tie), a deterministic
+    tiebreaker is applied: prefer the direction where ``file1 <= file2``
+    lexicographically; if still tied, the lexicographically smallest full
+    ``name`` is chosen.
+
+    Grouping scope: Filtering is performed globally (no per-benchmark grouping),
+    i.e. at most one row remains per unordered pair across the whole dataframe.
+
+    Args:
+        df (pd.DataFrame): Input dataframe containing a column with pair names.
+        name_column (str): Column containing pairs in the form "f1+f2". Default "name".
+        prefer_patterns (list[str]|None): Optional override of preference patterns
+            (ordered, highest priority first). If None, defaults to the list above.
+        keep_debug_cols (bool): When True, keep helper columns used for selection.
+
+    Returns:
+        tuple(pd.DataFrame, pd.DataFrame):
+            - filtered: dataframe with at most one row per unordered pair (current behaviour)
+            - excluded: dataframe containing the rows that were not kept
+    """
+    import fnmatch
+
+    if name_column not in df.columns:
+        # Nothing to do if there's no name column
+        return df, df.iloc[0:0]
+
+    if prefer_patterns is None:
+        # Order from most to least specific to avoid overshadowing (aligned before autfilt)
+        prefer_patterns = [
+            "*sup.autfilt.aligned",
+            "*sup.autfilt",
+            "*A.ba.hoa",
+            "*A.hoa",
+        ]
+
+    # Work on a copy to avoid mutating the caller's dataframe
+    work = df.copy(deep=True)
+
+    # Split name column into file1 and file2 using a robust rule:
+    # choose the '+' that directly precedes the start of the second path (usually '.' or '/').
+    # If no such separator is found, fall back to the last '+' in the string.
+    import re
+
+    def _split_pair_name(name: str):
+        s = str(name) if name is not None else ""
+        if not s:
+            return ("", "")
+        # Prefer '+' that is PRECEDED by an accepted file ending on the left side.
+        # Accepted endings (from most specific to general):
+        endings = [
+            ".autfilt.aligned.ba",
+            ".autfilt.aligned",
+            ".autfilt.ba",
+            ".autfilt",
+            ".ba.hoa",
+            ".hoa",
+        ]
+        best_idx = -1
+        i = s.find("+")
+        while i != -1:
+            left = s[:i]
+            if any(left.endswith(end) for end in endings):
+                best_idx = i  # keep rightmost valid split
+            i = s.find("+", i + 1)
+        if best_idx != -1:
+            return (s[:best_idx], s[best_idx + 1:])
+        # Fallback: split at the last '+' (still better than the first)
+        j = s.rfind("+")
+        if j != -1:
+            return (s[:j], s[j+1:])
+        # No plus at all
+        return (s, "")
+
+    parts = work[name_column].apply(_split_pair_name)
+    work["_file1"] = parts.map(lambda t: t[0])
+    work["_file2"] = parts.map(lambda t: t[1])
+
+    # Build an unordered key for the pair
+    # Keep grouping per-benchmark when available to avoid cross-benchmark collapses
+    a = work["_file1"]
+    b = work["_file2"]
+    ab_min = a.where(a <= b, b)
+    ab_max = b.where(a <= b, a)
+    work["_pair_key"] = ab_min + "||" + ab_max
+
+    # Group key is the unordered pair only (global filtering)
+    work["_group_key"] = work["_pair_key"]
+
+    # Scoring: higher is better, based on which pattern the first file matches.
+    # Additionally, prefer files that contain 'sup' over those that contain 'sub'
+    # when the same pattern tier applies.
+    def score_first(fname: str) -> tuple:
+        tier = 0
+        for idx, pat in enumerate(prefer_patterns):
+            if fnmatch.fnmatch(fname, pat):
+                tier = len(prefer_patterns) - idx
+                break
+        # Secondary bonus for 'sup' vs 'sub' in the first filename. Use contains check,
+        # since full paths include these segments.
+        sup_bonus = 1 if 'sup' in fname and 'sub' not in fname else 0
+        sub_penalty = -1 if 'sub' in fname and 'sup' not in fname else 0
+        return (tier, sup_bonus + sub_penalty)
+
+    work["_pref_score"] = work["_file1"].map(score_first)
+
+    # Direction preference tiebreaker (prefer lexicographically ordered direction)
+    work["_dir_pref"] = (work["_file1"] <= work["_file2"]).astype(int)
+
+    # Stable final tiebreaker on name for determinism
+    work["_name_str"] = work[name_column].astype(str)
+
+    # Within each group, select the single best row by our priority rules
+    # Sort so the first row per group is the keeper
+    sort_cols = ["_group_key", "_pref_score", "_dir_pref", "_name_str"]
+    sort_ascending = [True, False, False, True]
+    work_sorted = work.sort_values(by=sort_cols, ascending=sort_ascending, kind="mergesort")
+
+    keep_mask = ~work_sorted["_group_key"].duplicated(keep="first")
+    filtered = work_sorted.loc[keep_mask].copy()
+    # Build excluded from original order for easier inspection
+    excluded_indices = work_sorted.index[~keep_mask]
+    excluded = work.loc[excluded_indices].copy()
+
+    if not keep_debug_cols:
+        # Drop helper cols from both
+        dbg_cols = [c for c in filtered.columns if c.startswith("_")]
+        if dbg_cols:
+            filtered = filtered.drop(columns=dbg_cols)
+        dbg_cols_ex = [c for c in excluded.columns if c.startswith("_")]
+        if dbg_cols_ex:
+            excluded = excluded.drop(columns=dbg_cols_ex)
+        # Preserve original column order
+        filtered = filtered[df.columns]
+        excluded = excluded[df.columns]
+
+    return filtered, excluded
