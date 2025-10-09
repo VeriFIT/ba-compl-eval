@@ -19,11 +19,12 @@ ranker_str="ranker"
 
 # for the backoff
 export SPOTEXE="/usr/local/bin/autfilt"
-#TMP=$(mktemp)
-cat "${INPUT}" | "${SPOTEXE}" --split-edges | "${ranker_exe}" "${params[@]}" | grep "^States:" | sed "s/^States/${ranker_str}-states/" || exit 1
+TMP=$(mktemp)
+cat "${INPUT}" | "${SPOTEXE}" --split-edges > "${TMP}" 
+"${ranker_exe}" "${params[@]}" "${TMP}"  | grep "^States:" | sed "s/^States/${ranker_str}-states/" || exit 1
 
 #cat "${TMP}" | grep "^States:" | sed "s/^States/${ranker_str}-states/"
 
-#rm -f "${TMP}"
+rm -f "${TMP}"
 
 exit ${ret}
