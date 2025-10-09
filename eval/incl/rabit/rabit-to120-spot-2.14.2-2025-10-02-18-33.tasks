@@ -1,52 +1,52 @@
-execute;spot-2.14.2;../automata/rabit/included/bakery/bakeryA.hoa;../automata/rabit/included/bakery/bakeryB.hoa
-execute;spot-2.14.2;../automata/rabit/included/bakery/bakeryB.hoa;../automata/rabit/included/bakery/bakeryA.hoa
-execute;spot-2.14.2;../automata/rabit/included/bakeryv2/bakeryV2A.hoa;../automata/rabit/included/bakeryv2/bakeryV2B.hoa
-execute;spot-2.14.2;../automata/rabit/included/bakeryv2/bakeryV2B.hoa;../automata/rabit/included/bakeryv2/bakeryV2A.hoa
-execute;spot-2.14.2;../automata/rabit/included/fischer/fischerA.hoa;../automata/rabit/included/fischer/fischerB.hoa
-execute;spot-2.14.2;../automata/rabit/included/fischer/fischerB.hoa;../automata/rabit/included/fischer/fischerA.hoa
-execute;spot-2.14.2;../automata/rabit/included/fischerv2/fischerV2A.hoa;../automata/rabit/included/fischerv2/fischerV2B.hoa
-execute;spot-2.14.2;../automata/rabit/included/fischerv2/fischerV2B.hoa;../automata/rabit/included/fischerv2/fischerV2A.hoa
-execute;spot-2.14.2;../automata/rabit/included/fischerv3/fischerV3A.hoa;../automata/rabit/included/fischerv3/fischerV3B.hoa
-execute;spot-2.14.2;../automata/rabit/included/fischerv3/fischerV3B.hoa;../automata/rabit/included/fischerv3/fischerV3A.hoa
-execute;spot-2.14.2;../automata/rabit/included/fischerv4/fischerV4A.hoa;../automata/rabit/included/fischerv4/fischerV4B.hoa
-execute;spot-2.14.2;../automata/rabit/included/fischerv4/fischerV4B.hoa;../automata/rabit/included/fischerv4/fischerV4A.hoa
-execute;spot-2.14.2;../automata/rabit/included/peterson/petersonA.hoa;../automata/rabit/included/peterson/petersonB.hoa
-execute;spot-2.14.2;../automata/rabit/included/peterson/petersonB.hoa;../automata/rabit/included/peterson/petersonA.hoa
-execute;spot-2.14.2;../automata/rabit/included/phils/philsA.hoa;../automata/rabit/included/phils/philsB.hoa
-execute;spot-2.14.2;../automata/rabit/included/phils/philsB.hoa;../automata/rabit/included/phils/philsA.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/bakeryv3/bakeryV3A.hoa;../automata/rabit/notincluded/bakeryv3/bakeryV3B.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/bakeryv3/bakeryV3B.hoa;../automata/rabit/notincluded/bakeryv3/bakeryV3A.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/fischerv5/fischerV5A.hoa;../automata/rabit/notincluded/fischerv5/fischerV5B.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/fischerv5/fischerV5B.hoa;../automata/rabit/notincluded/fischerv5/fischerV5A.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/philsv2/philsV2A.hoa;../automata/rabit/notincluded/philsv2/philsV2B.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/philsv2/philsV2B.hoa;../automata/rabit/notincluded/philsv2/philsV2A.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/philsv3/philsV3A.hoa;../automata/rabit/notincluded/philsv3/philsV3B.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/philsv3/philsV3B.hoa;../automata/rabit/notincluded/philsv3/philsV3A.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/philsv4/philsV4A.hoa;../automata/rabit/notincluded/philsv4/philsV4B.hoa
-execute;spot-2.14.2;../automata/rabit/notincluded/philsv4/philsV4B.hoa;../automata/rabit/notincluded/philsv4/philsV4A.hoa
-finished;spot-2.14.2;../automata/rabit/included/bakeryv2/bakeryV2A.hoa;../automata/rabit/included/bakeryv2/bakeryV2B.hoa;0;result: true;;2.15
-finished;spot-2.14.2;../automata/rabit/included/bakeryv2/bakeryV2B.hoa;../automata/rabit/included/bakeryv2/bakeryV2A.hoa;0;result: true;;2.38
-finished;spot-2.14.2;../automata/rabit/included/fischer/fischerB.hoa;../automata/rabit/included/fischer/fischerA.hoa;0;result: false;;0.02
-finished;spot-2.14.2;../automata/rabit/included/fischerv2/fischerV2A.hoa;../automata/rabit/included/fischerv2/fischerV2B.hoa;0;result: true;;0.01
-finished;spot-2.14.2;../automata/rabit/included/fischerv2/fischerV2B.hoa;../automata/rabit/included/fischerv2/fischerV2A.hoa;0;result: true;;0.01
-finished;spot-2.14.2;../automata/rabit/included/fischerv3/fischerV3A.hoa;../automata/rabit/included/fischerv3/fischerV3B.hoa;0;result: true;;0.01
-finished;spot-2.14.2;../automata/rabit/included/fischerv3/fischerV3B.hoa;../automata/rabit/included/fischerv3/fischerV3A.hoa;0;result: true;;0.02
-finished;spot-2.14.2;../automata/rabit/included/bakery/bakeryA.hoa;../automata/rabit/included/bakery/bakeryB.hoa;0;result: false;;2.77
-finished;spot-2.14.2;../automata/rabit/included/fischerv4/fischerV4B.hoa;../automata/rabit/included/fischerv4/fischerV4A.hoa;0;result: false;;0.01
-finished;spot-2.14.2;../automata/rabit/included/fischer/fischerA.hoa;../automata/rabit/included/fischer/fischerB.hoa;0;result: true;;0.58
-finished;spot-2.14.2;../automata/rabit/included/peterson/petersonA.hoa;../automata/rabit/included/peterson/petersonB.hoa;0;result: true;;0.0
-finished;spot-2.14.2;../automata/rabit/included/peterson/petersonB.hoa;../automata/rabit/included/peterson/petersonA.hoa;0;result: false;;0.0
-finished;spot-2.14.2;../automata/rabit/included/phils/philsB.hoa;../automata/rabit/included/phils/philsA.hoa;0;result: false;;0.0
-finished;spot-2.14.2;../automata/rabit/included/phils/philsA.hoa;../automata/rabit/included/phils/philsB.hoa;0;result: true;;0.03
-finished;spot-2.14.2;../automata/rabit/included/bakery/bakeryB.hoa;../automata/rabit/included/bakery/bakeryA.hoa;0;result: false;;2.92
-finished;spot-2.14.2;../automata/rabit/notincluded/fischerv5/fischerV5A.hoa;../automata/rabit/notincluded/fischerv5/fischerV5B.hoa;0;result: false;;0.01
-finished;spot-2.14.2;../automata/rabit/notincluded/bakeryv3/bakeryV3A.hoa;../automata/rabit/notincluded/bakeryv3/bakeryV3B.hoa;0;result: false;;0.23
-finished;spot-2.14.2;../automata/rabit/notincluded/philsv2/philsV2A.hoa;../automata/rabit/notincluded/philsv2/philsV2B.hoa;0;result: false;;0.0
-finished;spot-2.14.2;../automata/rabit/notincluded/philsv2/philsV2B.hoa;../automata/rabit/notincluded/philsv2/philsV2A.hoa;0;result: true;;0.03
-finished;spot-2.14.2;../automata/rabit/notincluded/philsv3/philsV3A.hoa;../automata/rabit/notincluded/philsv3/philsV3B.hoa;0;result: false;;0.01
-finished;spot-2.14.2;../automata/rabit/notincluded/philsv3/philsV3B.hoa;../automata/rabit/notincluded/philsv3/philsV3A.hoa;0;result: true;;0.04
-finished;spot-2.14.2;../automata/rabit/notincluded/philsv4/philsV4A.hoa;../automata/rabit/notincluded/philsv4/philsV4B.hoa;0;result: false;;0.04
-finished;spot-2.14.2;../automata/rabit/notincluded/philsv4/philsV4B.hoa;../automata/rabit/notincluded/philsv4/philsV4A.hoa;0;result: true;;0.03
-finished;spot-2.14.2;../automata/rabit/notincluded/fischerv5/fischerV5B.hoa;../automata/rabit/notincluded/fischerv5/fischerV5A.hoa;0;result: true;;0.54
-finished;spot-2.14.2;../automata/rabit/notincluded/bakeryv3/bakeryV3B.hoa;../automata/rabit/notincluded/bakeryv3/bakeryV3A.hoa;0;result: false;;2.17
-finished;spot-2.14.2;../automata/rabit/included/fischerv4/fischerV4A.hoa;../automata/rabit/included/fischerv4/fischerV4B.hoa;0;;autfilt: Too many acceptance sets used.  The limit is 32.######If you do not mind a slowdown, you could try recompiling Spot with a larger limit.###See the --enable-max-accsets=N configure option.######If you believe Spot could be improved to solve your problem###using the current limit, please email <spot@lrde.epita.fr>.;2.72
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.hoa;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.hoa;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.hoa;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.hoa;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.hoa;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.hoa;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.hoa;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.hoa;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.hoa;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.hoa;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.hoa
+execute;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.hoa
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.hoa;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.hoa;0;result: true;;2.15
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.hoa;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.hoa;0;result: true;;2.38
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.hoa;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.hoa;0;result: false;;0.02
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.hoa;0;result: true;;0.01
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.hoa;0;result: true;;0.01
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.hoa;0;result: true;;0.01
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.hoa;0;result: true;;0.02
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.hoa;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.hoa;0;result: false;;2.77
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.hoa;0;result: false;;0.01
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.hoa;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.hoa;0;result: true;;0.58
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.hoa;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.hoa;0;result: true;;0.0
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.hoa;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.hoa;0;result: false;;0.0
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.hoa;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.hoa;0;result: false;;0.0
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.hoa;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.hoa;0;result: true;;0.03
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.hoa;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.hoa;0;result: false;;2.92
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.hoa;0;result: false;;0.01
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.hoa;0;result: false;;0.23
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.hoa;0;result: false;;0.0
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.hoa;0;result: true;;0.03
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.hoa;0;result: false;;0.01
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.hoa;0;result: true;;0.04
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.hoa;0;result: false;;0.04
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.hoa;0;result: true;;0.03
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.hoa;0;result: true;;0.54
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.hoa;0;result: false;;2.17
+finished;spot-2.14.2;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.hoa;0;;autfilt: Too many acceptance sets used.  The limit is 32.######If you do not mind a slowdown, you could try recompiling Spot with a larger limit.###See the --enable-max-accsets=N configure option.######If you believe Spot could be improved to solve your problem###using the current limit, please email <spot@lrde.epita.fr>.;2.72

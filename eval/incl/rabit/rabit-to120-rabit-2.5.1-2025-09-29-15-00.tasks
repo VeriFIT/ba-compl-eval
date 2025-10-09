@@ -1,52 +1,52 @@
-execute;rabit-2.5.1;../automata/rabit/included/bakery/bakeryA.ba;../automata/rabit/included/bakery/bakeryB.ba
-execute;rabit-2.5.1;../automata/rabit/included/bakery/bakeryB.ba;../automata/rabit/included/bakery/bakeryA.ba
-execute;rabit-2.5.1;../automata/rabit/included/bakeryv2/bakeryV2A.ba;../automata/rabit/included/bakeryv2/bakeryV2B.ba
-execute;rabit-2.5.1;../automata/rabit/included/bakeryv2/bakeryV2B.ba;../automata/rabit/included/bakeryv2/bakeryV2A.ba
-execute;rabit-2.5.1;../automata/rabit/included/fischer/fischerA.ba;../automata/rabit/included/fischer/fischerB.ba
-execute;rabit-2.5.1;../automata/rabit/included/fischer/fischerB.ba;../automata/rabit/included/fischer/fischerA.ba
-execute;rabit-2.5.1;../automata/rabit/included/fischerv2/fischerV2A.ba;../automata/rabit/included/fischerv2/fischerV2B.ba
-execute;rabit-2.5.1;../automata/rabit/included/fischerv2/fischerV2B.ba;../automata/rabit/included/fischerv2/fischerV2A.ba
-execute;rabit-2.5.1;../automata/rabit/included/fischerv3/fischerV3A.ba;../automata/rabit/included/fischerv3/fischerV3B.ba
-execute;rabit-2.5.1;../automata/rabit/included/fischerv3/fischerV3B.ba;../automata/rabit/included/fischerv3/fischerV3A.ba
-execute;rabit-2.5.1;../automata/rabit/included/fischerv4/fischerV4A.ba;../automata/rabit/included/fischerv4/fischerV4B.ba
-execute;rabit-2.5.1;../automata/rabit/included/fischerv4/fischerV4B.ba;../automata/rabit/included/fischerv4/fischerV4A.ba
-execute;rabit-2.5.1;../automata/rabit/included/peterson/petersonA.ba;../automata/rabit/included/peterson/petersonB.ba
-execute;rabit-2.5.1;../automata/rabit/included/peterson/petersonB.ba;../automata/rabit/included/peterson/petersonA.ba
-execute;rabit-2.5.1;../automata/rabit/included/phils/philsA.ba;../automata/rabit/included/phils/philsB.ba
-execute;rabit-2.5.1;../automata/rabit/included/phils/philsB.ba;../automata/rabit/included/phils/philsA.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/rabit/notincluded/fischerv5/fischerV5B.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/rabit/notincluded/fischerv5/fischerV5A.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/philsv2/philsV2A.ba;../automata/rabit/notincluded/philsv2/philsV2B.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/philsv2/philsV2B.ba;../automata/rabit/notincluded/philsv2/philsV2A.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/philsv3/philsV3A.ba;../automata/rabit/notincluded/philsv3/philsV3B.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/philsv3/philsV3B.ba;../automata/rabit/notincluded/philsv3/philsV3A.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/philsv4/philsV4A.ba;../automata/rabit/notincluded/philsv4/philsV4B.ba
-execute;rabit-2.5.1;../automata/rabit/notincluded/philsv4/philsV4B.ba;../automata/rabit/notincluded/philsv4/philsV4A.ba
-finished;rabit-2.5.1;../automata/rabit/included/bakeryv2/bakeryV2B.ba;../automata/rabit/included/bakeryv2/bakeryV2A.ba;0;result: true;;0.88
-finished;rabit-2.5.1;../automata/rabit/included/bakery/bakeryA.ba;../automata/rabit/included/bakery/bakeryB.ba;0;result: true;;1.15
-finished;rabit-2.5.1;../automata/rabit/included/bakeryv2/bakeryV2A.ba;../automata/rabit/included/bakeryv2/bakeryV2B.ba;0;result: true;;2.44
-finished;rabit-2.5.1;../automata/rabit/included/fischerv2/fischerV2A.ba;../automata/rabit/included/fischerv2/fischerV2B.ba;0;result: true;;0.12
-finished;rabit-2.5.1;../automata/rabit/included/fischer/fischerA.ba;../automata/rabit/included/fischer/fischerB.ba;0;result: true;;1.04
-finished;rabit-2.5.1;../automata/rabit/included/fischerv2/fischerV2B.ba;../automata/rabit/included/fischerv2/fischerV2A.ba;0;result: true;;0.12
-finished;rabit-2.5.1;../automata/rabit/included/bakery/bakeryB.ba;../automata/rabit/included/bakery/bakeryA.ba;0;result: true;;3.45
-finished;rabit-2.5.1;../automata/rabit/included/fischerv3/fischerV3B.ba;../automata/rabit/included/fischerv3/fischerV3A.ba;0;result: true;;0.79
-finished;rabit-2.5.1;../automata/rabit/included/fischerv4/fischerV4A.ba;../automata/rabit/included/fischerv4/fischerV4B.ba;0;result: true;;1.1
-finished;rabit-2.5.1;../automata/rabit/included/peterson/petersonA.ba;../automata/rabit/included/peterson/petersonB.ba;0;result: true;;0.08
-finished;rabit-2.5.1;../automata/rabit/included/fischerv3/fischerV3A.ba;../automata/rabit/included/fischerv3/fischerV3B.ba;0;result: true;;2.35
-finished;rabit-2.5.1;../automata/rabit/included/peterson/petersonB.ba;../automata/rabit/included/peterson/petersonA.ba;0;result: false;;0.08
-finished;rabit-2.5.1;../automata/rabit/included/phils/philsA.ba;../automata/rabit/included/phils/philsB.ba;0;result: true;;0.16
-finished;rabit-2.5.1;../automata/rabit/included/phils/philsB.ba;../automata/rabit/included/phils/philsA.ba;0;result: false;;0.18
-finished;rabit-2.5.1;../automata/rabit/included/fischer/fischerB.ba;../automata/rabit/included/fischer/fischerA.ba;0;result: false;;4.91
-finished;rabit-2.5.1;../automata/rabit/included/fischerv4/fischerV4B.ba;../automata/rabit/included/fischerv4/fischerV4A.ba;0;result: false;;4.32
-finished;rabit-2.5.1;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba;0;result: false;;1.14
-finished;rabit-2.5.1;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba;0;result: false;;1.19
-finished;rabit-2.5.1;../automata/rabit/notincluded/philsv2/philsV2A.ba;../automata/rabit/notincluded/philsv2/philsV2B.ba;0;result: false;;0.27
-finished;rabit-2.5.1;../automata/rabit/notincluded/philsv2/philsV2B.ba;../automata/rabit/notincluded/philsv2/philsV2A.ba;0;result: true;;0.2
-finished;rabit-2.5.1;../automata/rabit/notincluded/philsv3/philsV3A.ba;../automata/rabit/notincluded/philsv3/philsV3B.ba;0;result: false;;0.26
-finished;rabit-2.5.1;../automata/rabit/notincluded/philsv3/philsV3B.ba;../automata/rabit/notincluded/philsv3/philsV3A.ba;0;result: true;;0.21
-finished;rabit-2.5.1;../automata/rabit/notincluded/philsv4/philsV4A.ba;../automata/rabit/notincluded/philsv4/philsV4B.ba;0;result: false;;0.34
-finished;rabit-2.5.1;../automata/rabit/notincluded/philsv4/philsV4B.ba;../automata/rabit/notincluded/philsv4/philsV4A.ba;0;result: true;;0.26
-finished;rabit-2.5.1;../automata/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/rabit/notincluded/fischerv5/fischerV5A.ba;0;result: true;;1.1
-finished;rabit-2.5.1;../automata/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/rabit/notincluded/fischerv5/fischerV5B.ba;0;result: false;;5.15
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.ba;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.ba;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.ba;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.ba;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.ba;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.ba;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.ba;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.ba;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.ba;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.ba;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.ba
+execute;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.ba
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.ba;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.ba;0;result: true;;0.88
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.ba;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.ba;0;result: true;;1.15
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.ba;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.ba;0;result: true;;2.44
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.ba;0;result: true;;0.12
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.ba;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.ba;0;result: true;;1.04
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.ba;0;result: true;;0.12
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.ba;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.ba;0;result: true;;3.45
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.ba;0;result: true;;0.79
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.ba;0;result: true;;1.1
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.ba;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.ba;0;result: true;;0.08
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.ba;0;result: true;;2.35
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.ba;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.ba;0;result: false;;0.08
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.ba;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.ba;0;result: true;;0.16
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.ba;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.ba;0;result: false;;0.18
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.ba;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.ba;0;result: false;;4.91
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.ba;0;result: false;;4.32
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.ba;0;result: false;;1.14
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.ba;0;result: false;;1.19
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.ba;0;result: false;;0.27
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.ba;0;result: true;;0.2
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.ba;0;result: false;;0.26
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.ba;0;result: true;;0.21
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.ba;0;result: false;;0.34
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.ba;0;result: true;;0.26
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.ba;0;result: true;;1.1
+finished;rabit-2.5.1;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.ba;0;result: false;;5.15

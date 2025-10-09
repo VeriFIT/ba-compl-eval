@@ -1,52 +1,52 @@
-execute;forklift-forklift;../automata/rabit/included/bakery/bakeryA.ba;../automata/rabit/included/bakery/bakeryB.ba
-execute;forklift-forklift;../automata/rabit/included/bakery/bakeryB.ba;../automata/rabit/included/bakery/bakeryA.ba
-execute;forklift-forklift;../automata/rabit/included/bakeryv2/bakeryV2A.ba;../automata/rabit/included/bakeryv2/bakeryV2B.ba
-execute;forklift-forklift;../automata/rabit/included/bakeryv2/bakeryV2B.ba;../automata/rabit/included/bakeryv2/bakeryV2A.ba
-execute;forklift-forklift;../automata/rabit/included/fischer/fischerA.ba;../automata/rabit/included/fischer/fischerB.ba
-execute;forklift-forklift;../automata/rabit/included/fischer/fischerB.ba;../automata/rabit/included/fischer/fischerA.ba
-execute;forklift-forklift;../automata/rabit/included/fischerv2/fischerV2A.ba;../automata/rabit/included/fischerv2/fischerV2B.ba
-execute;forklift-forklift;../automata/rabit/included/fischerv2/fischerV2B.ba;../automata/rabit/included/fischerv2/fischerV2A.ba
-execute;forklift-forklift;../automata/rabit/included/fischerv3/fischerV3A.ba;../automata/rabit/included/fischerv3/fischerV3B.ba
-execute;forklift-forklift;../automata/rabit/included/fischerv3/fischerV3B.ba;../automata/rabit/included/fischerv3/fischerV3A.ba
-execute;forklift-forklift;../automata/rabit/included/fischerv4/fischerV4A.ba;../automata/rabit/included/fischerv4/fischerV4B.ba
-execute;forklift-forklift;../automata/rabit/included/fischerv4/fischerV4B.ba;../automata/rabit/included/fischerv4/fischerV4A.ba
-execute;forklift-forklift;../automata/rabit/included/peterson/petersonA.ba;../automata/rabit/included/peterson/petersonB.ba
-execute;forklift-forklift;../automata/rabit/included/peterson/petersonB.ba;../automata/rabit/included/peterson/petersonA.ba
-execute;forklift-forklift;../automata/rabit/included/phils/philsA.ba;../automata/rabit/included/phils/philsB.ba
-execute;forklift-forklift;../automata/rabit/included/phils/philsB.ba;../automata/rabit/included/phils/philsA.ba
-execute;forklift-forklift;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba
-execute;forklift-forklift;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba
-execute;forklift-forklift;../automata/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/rabit/notincluded/fischerv5/fischerV5B.ba
-execute;forklift-forklift;../automata/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/rabit/notincluded/fischerv5/fischerV5A.ba
-execute;forklift-forklift;../automata/rabit/notincluded/philsv2/philsV2A.ba;../automata/rabit/notincluded/philsv2/philsV2B.ba
-execute;forklift-forklift;../automata/rabit/notincluded/philsv2/philsV2B.ba;../automata/rabit/notincluded/philsv2/philsV2A.ba
-execute;forklift-forklift;../automata/rabit/notincluded/philsv3/philsV3A.ba;../automata/rabit/notincluded/philsv3/philsV3B.ba
-execute;forklift-forklift;../automata/rabit/notincluded/philsv3/philsV3B.ba;../automata/rabit/notincluded/philsv3/philsV3A.ba
-execute;forklift-forklift;../automata/rabit/notincluded/philsv4/philsV4A.ba;../automata/rabit/notincluded/philsv4/philsV4B.ba
-execute;forklift-forklift;../automata/rabit/notincluded/philsv4/philsV4B.ba;../automata/rabit/notincluded/philsv4/philsV4A.ba
-timeout;forklift-forklift;../automata/rabit/included/bakeryv2/bakeryV2B.ba;../automata/rabit/included/bakeryv2/bakeryV2A.ba
-timeout;forklift-forklift;../automata/rabit/included/bakeryv2/bakeryV2A.ba;../automata/rabit/included/bakeryv2/bakeryV2B.ba
-timeout;forklift-forklift;../automata/rabit/included/bakery/bakeryB.ba;../automata/rabit/included/bakery/bakeryA.ba
-timeout;forklift-forklift;../automata/rabit/included/bakery/bakeryA.ba;../automata/rabit/included/bakery/bakeryB.ba
-finished;forklift-forklift;../automata/rabit/included/fischerv2/fischerV2B.ba;../automata/rabit/included/fischerv2/fischerV2A.ba;0;result: true;;0.58
-finished;forklift-forklift;../automata/rabit/included/fischerv2/fischerV2A.ba;../automata/rabit/included/fischerv2/fischerV2B.ba;0;result: true;;0.58
-finished;forklift-forklift;../automata/rabit/included/fischer/fischerB.ba;../automata/rabit/included/fischer/fischerA.ba;0;result: false;;5.2
-finished;forklift-forklift;../automata/rabit/included/fischer/fischerA.ba;../automata/rabit/included/fischer/fischerB.ba;0;result: false;Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space###	at java.base/java.util.HashMap.newNode(HashMap.java:1909)###	at java.base/java.util.HashMap.putVal(HashMap.java:648)###	at java.base/java.util.HashMap.put(HashMap.java:618)###	at java.base/java.util.HashSet.add(HashSet.java:229)###	at engine.StateRelation.add(StateRelation.java:14)###	at engine.SetOfContexts.add(SetOfContexts.java:24)###	at engine.PostF.post(PostF.java:39)###	at engine.PostF.post(PostF.java:8)###	at engine.Post.apply(Post.java:28)###	at Main.inclusion(Main.java:164)###	at Main.main(Main.java:102);160.94
-finished;forklift-forklift;../automata/rabit/included/fischerv4/fischerV4B.ba;../automata/rabit/included/fischerv4/fischerV4A.ba;0;result: false;;0.7
-finished;forklift-forklift;../automata/rabit/included/peterson/petersonA.ba;../automata/rabit/included/peterson/petersonB.ba;0;result: true;;0.11
-finished;forklift-forklift;../automata/rabit/included/peterson/petersonB.ba;../automata/rabit/included/peterson/petersonA.ba;0;result: false;;0.09
-finished;forklift-forklift;../automata/rabit/included/phils/philsA.ba;../automata/rabit/included/phils/philsB.ba;0;result: true;;13.35
-finished;forklift-forklift;../automata/rabit/included/phils/philsB.ba;../automata/rabit/included/phils/philsA.ba;0;result: false;;0.17
-finished;forklift-forklift;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba;0;result: false;;0.39
-finished;forklift-forklift;../automata/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/rabit/notincluded/bakeryv3/bakeryV3A.ba;0;result: false;;0.36
-finished;forklift-forklift;../automata/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/rabit/notincluded/fischerv5/fischerV5B.ba;0;result: false;;5.01
-timeout;forklift-forklift;../automata/rabit/included/fischerv3/fischerV3A.ba;../automata/rabit/included/fischerv3/fischerV3B.ba
-timeout;forklift-forklift;../automata/rabit/included/fischerv3/fischerV3B.ba;../automata/rabit/included/fischerv3/fischerV3A.ba
-finished;forklift-forklift;../automata/rabit/notincluded/philsv2/philsV2A.ba;../automata/rabit/notincluded/philsv2/philsV2B.ba;0;result: false;;0.22
-finished;forklift-forklift;../automata/rabit/notincluded/philsv3/philsV3A.ba;../automata/rabit/notincluded/philsv3/philsV3B.ba;0;result: false;;0.32
-timeout;forklift-forklift;../automata/rabit/included/fischerv4/fischerV4A.ba;../automata/rabit/included/fischerv4/fischerV4B.ba
-finished;forklift-forklift;../automata/rabit/notincluded/philsv4/philsV4A.ba;../automata/rabit/notincluded/philsv4/philsV4B.ba;0;result: false;;0.81
-finished;forklift-forklift;../automata/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/rabit/notincluded/fischerv5/fischerV5A.ba;0;result: false;Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space###	at java.base/java.util.HashMap.newNode(HashMap.java:1909)###	at java.base/java.util.HashMap.putVal(HashMap.java:637)###	at java.base/java.util.HashMap.put(HashMap.java:618)###	at java.base/java.util.HashSet.add(HashSet.java:229)###	at engine.StateRelation.add(StateRelation.java:14)###	at engine.SetOfContexts.add(SetOfContexts.java:25)###	at engine.PostF.post(PostF.java:39)###	at engine.PostF.post(PostF.java:8)###	at engine.Post.apply(Post.java:28)###	at Main.inclusion(Main.java:164)###	at Main.main(Main.java:102);189.24
-timeout;forklift-forklift;../automata/rabit/notincluded/philsv2/philsV2B.ba;../automata/rabit/notincluded/philsv2/philsV2A.ba
-timeout;forklift-forklift;../automata/rabit/notincluded/philsv3/philsV3B.ba;../automata/rabit/notincluded/philsv3/philsV3A.ba
-timeout;forklift-forklift;../automata/rabit/notincluded/philsv4/philsV4B.ba;../automata/rabit/notincluded/philsv4/philsV4A.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.ba;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.ba;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.ba;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.ba;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.ba;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.ba;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.ba;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.ba;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.ba;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.ba;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.ba
+execute;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.ba
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.ba;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.ba
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.ba;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.ba
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.ba;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.ba
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.ba;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.ba
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.ba;0;result: true;;0.58
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.ba;0;result: true;;0.58
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.ba;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.ba;0;result: false;;5.2
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.ba;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.ba;0;result: false;Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space###	at java.base/java.util.HashMap.newNode(HashMap.java:1909)###	at java.base/java.util.HashMap.putVal(HashMap.java:648)###	at java.base/java.util.HashMap.put(HashMap.java:618)###	at java.base/java.util.HashSet.add(HashSet.java:229)###	at engine.StateRelation.add(StateRelation.java:14)###	at engine.SetOfContexts.add(SetOfContexts.java:24)###	at engine.PostF.post(PostF.java:39)###	at engine.PostF.post(PostF.java:8)###	at engine.Post.apply(Post.java:28)###	at Main.inclusion(Main.java:164)###	at Main.main(Main.java:102);160.94
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.ba;0;result: false;;0.7
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.ba;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.ba;0;result: true;;0.11
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.ba;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.ba;0;result: false;;0.09
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.ba;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.ba;0;result: true;;13.35
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.ba;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.ba;0;result: false;;0.17
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.ba;0;result: false;;0.39
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.ba;0;result: false;;0.36
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.ba;0;result: false;;5.01
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.ba
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.ba
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.ba;0;result: false;;0.22
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.ba;0;result: false;;0.32
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.ba;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.ba
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.ba;0;result: false;;0.81
+finished;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.ba;0;result: false;Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space###	at java.base/java.util.HashMap.newNode(HashMap.java:1909)###	at java.base/java.util.HashMap.putVal(HashMap.java:637)###	at java.base/java.util.HashMap.put(HashMap.java:618)###	at java.base/java.util.HashSet.add(HashSet.java:229)###	at engine.StateRelation.add(StateRelation.java:14)###	at engine.SetOfContexts.add(SetOfContexts.java:25)###	at engine.PostF.post(PostF.java:39)###	at engine.PostF.post(PostF.java:8)###	at engine.Post.apply(Post.java:28)###	at Main.inclusion(Main.java:164)###	at Main.main(Main.java:102);189.24
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.ba
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.ba
+timeout;forklift-forklift;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.ba;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.ba
