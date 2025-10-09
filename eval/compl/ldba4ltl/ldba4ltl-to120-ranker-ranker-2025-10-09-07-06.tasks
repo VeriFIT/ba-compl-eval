@@ -1,0 +1,36 @@
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp10.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp11.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp12.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp13.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp14.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp15.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp16.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp17.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp18.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp1.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp2.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp3.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp4.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp5.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp6.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp7.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp8.hoa
+execute;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp9.hoa
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp10.hoa;1;;Error occurred: Nonzero return code;13.08
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp12.hoa;1;;Error occurred: Nonzero return code;13.08
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp14.hoa;1;;Parser error:###line 565: Unsupported format of transitions.;0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp15.hoa;1;;Cannot open file \"__tmp__ranker_639652108\";0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp17.hoa;1;;Cannot open file \"__tmp__ranker_639652108\";0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp16.hoa;0;states: 6;;0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp18.hoa;0;states: 9;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp1.hoa;0;states: 16;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp11.hoa;1;;Error occurred: Nonzero return code;13.21
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp13.hoa;0;states: 701;;17.87
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp5.hoa;0;states: 488;;1.38
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp2.hoa;0;states: 1397;;36.23
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp7.hoa;0;states: 6;;0.0
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp8.hoa;0;states: 12;;0.01
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp9.hoa;0;states: 33;;0.02
+finished;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp3.hoa;0;states: 1397;;36.57
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp4.hoa
+timeout;ranker-ranker;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp6.hoa
