@@ -1022,7 +1022,7 @@ def simple_table_incl(df, tools, benches, separately=False, stat_from_solved=Tru
     return result
 
 
-def build_inclusion_stats_df(df, tools, benches, stat_from_solved=True, numeric_timeout_fallback=True):
+def build_inclusion_stats_df(df, tools, benches, stat_from_solved=True, numeric_timeout_fallback=True, tool_for_comparison=None):
     """Return a DataFrame with the same statistics as printed by simple_table_incl.
 
     This simplified version always aggregates across all provided benches (no per-benchmark
@@ -1037,6 +1037,9 @@ def build_inclusion_stats_df(df, tools, benches, stat_from_solved=True, numeric_
             (stat_from_solved=True) or all rows. Non-numeric tokens ('TO','ERR','MISSING', etc.)
             are coerced to NaN and ignored. If all values are NaN, total is 0.0 and avg/median NaN.
         TO / ERR / MISSING: counts derived via helper functions.
+        wins / loses: If tool_for_comparison is provided, counts instances where this tool's
+            runtime is strictly better (wins) or worse (loses) than tool_for_comparison.
+            Only instances where both tools have numeric runtimes are considered.
 
     Args:
         df (pd.DataFrame): Inclusion results containing at least 'benchmark' and tool columns.
@@ -1045,6 +1048,8 @@ def build_inclusion_stats_df(df, tools, benches, stat_from_solved=True, numeric_
         stat_from_solved (bool): If True, restrict runtime aggregates to solved instances.
         numeric_timeout_fallback (bool): Retained for backwards compatibility; when False no
             special handling (non-numerics already dropped). Currently both code paths behave identically.
+        tool_for_comparison (str, optional): Tool to compare against for wins/loses statistics.
+            If None, wins and loses columns are omitted.
 
     Returns:
         pd.DataFrame: One row per tool with the described statistics.
@@ -1100,10 +1105,51 @@ def build_inclusion_stats_df(df, tools, benches, stat_from_solved=True, numeric_
                 'OOR': to_cnt + err_cnt,
                 'missing': miss_cnt,
             }
+            
+            # Compute wins and loses if tool_for_comparison is provided
+            if tool_for_comparison is not None:
+                # Get indices of missing rows for both tools (to exclude from comparison)
+                tool_missing_indices = get_missing_incl(scope_df, tool).index
+                comp_missing_indices = get_missing_incl(scope_df, tool_for_comparison).index
+                
+                # Create a mask to exclude rows where either tool has missing data
+                not_missing_mask = ~scope_df.index.isin(tool_missing_indices) & ~scope_df.index.isin(comp_missing_indices)
+                
+                # Filter the dataframe to exclude missing rows
+                comparison_df = scope_df[not_missing_mask]
+                
+                # Get numeric runtimes for both tools (only for non-missing rows)
+                tool_runtime = pd.to_numeric(comparison_df[f"{tool}-runtime"], errors='coerce')
+                comp_runtime = pd.to_numeric(comparison_df[f"{tool_for_comparison}-runtime"], errors='coerce')
+                
+                # Identify valid numeric runtimes for each tool
+                tool_has_runtime = tool_runtime.notna()
+                comp_has_runtime = comp_runtime.notna()
+                
+                # Wins: 
+                # 1. Both have numeric runtime and this tool is strictly faster
+                # 2. This tool has numeric runtime but comparison tool doesn't (ERR/TO)
+                wins_both_valid = (tool_has_runtime & comp_has_runtime & (tool_runtime < comp_runtime)).sum()
+                wins_comp_failed = (tool_has_runtime & ~comp_has_runtime).sum()
+                wins = wins_both_valid + wins_comp_failed
+                
+                # Loses: 
+                # 1. Both have numeric runtime and this tool is strictly slower
+                # 2. Comparison tool has numeric runtime but this tool doesn't (ERR/TO)
+                loses_both_valid = (tool_has_runtime & comp_has_runtime & (tool_runtime > comp_runtime)).sum()
+                loses_tool_failed = (~tool_has_runtime & comp_has_runtime).sum()
+                loses = loses_both_valid + loses_tool_failed
+                
+                row['wins'] = loses
+                row['loses'] = wins
+            
             if scope_name is not None:
                 row['benchmark'] = scope_name
             rows.append(row)
-        columns = ['tool', 'solved', 'time', 'avg', 'med', 'OOR', 'missing']
+        columns = ['tool', 'solved', 'time', 'avg', 'med', 'OOR']
+        if tool_for_comparison is not None:
+            columns.extend(['wins', 'loses'])
+        columns.extend(['missing'])
         if scope_name is not None:
             columns = ['benchmark'] + columns
         return pd.DataFrame(rows, columns=columns)
