@@ -214,7 +214,7 @@ def load_benches_incl(benches, tools, timeout=120):
             if f"{tool}-result" in df_runtime_result.columns:
                 df_runtime_result.loc[mask_exceeded, f"{tool}-result"] = 'TO'
 
-    return df_runtime_result
+    return normalize_inclusion_timeouts(df_runtime_result, tools)
 
 def left_join_on_name_benchmark(df_left: pd.DataFrame, df_right: pd.DataFrame, suffixes=("_left", "_right")) -> pd.DataFrame:
     """Left-join two DataFrames on columns 'name' and 'benchmark'.
@@ -735,6 +735,58 @@ def get_solved_incl(df, tool):
         row order and other columns are preserved.
     """
     return df[(df[tool+"-result"].str.strip() == 'true')|(df[tool+"-result"].str.strip() == 'false')]
+
+def normalize_inclusion_timeouts(df, tools):
+    """Normalize inclusion timeouts by setting runtime to 'TO' for unsolved instances.
+    
+    For each tool in the provided list, this function:
+    1. Sets '<tool>-runtime' to 'TO' for rows where:
+       - The tool did not produce a definitive result (i.e., rows not in get_solved_incl(df, tool))
+       - AND the current '<tool>-runtime' value is numeric
+    2. Sets '<tool>-result' to 'ERR' for rows where '<tool>-result' is NaN
+    
+    This preserves existing non-numeric values like 'ERR' or 'MISSING' while only
+    converting numeric runtimes for unsolved instances to 'TO'.
+    
+    Args:
+        df (pd.DataFrame): Dataframe containing inclusion results with columns
+            '<tool>-result' and '<tool>-runtime' for each tool.
+        tools (list): List of tool name prefixes to normalize.
+    
+    Returns:
+        pd.DataFrame: Modified dataframe with normalized runtime values. 
+        The function modifies the dataframe in place and also returns it.
+    
+    Example:
+        >>> df = normalize_inclusion_timeouts(df, ['kofola-c729572', 'spot-2.14.2'])
+    """
+    for tool in tools:
+        result_col = f"{tool}-result"
+        runtime_col = f"{tool}-runtime"
+        
+        # Skip if columns don't exist
+        if result_col not in df.columns or runtime_col not in df.columns:
+            continue
+        
+        # Set result to 'ERR' where it is NaN
+        result_nan_mask = df[result_col].isna()
+        df.loc[result_nan_mask, result_col] = 'ERR'
+        
+        # Get indices of solved instances
+        solved_indices = get_solved_incl(df, tool).index
+        
+        # Identify unsolved rows
+        unsolved_mask = ~df.index.isin(solved_indices)
+        
+        # Check which runtime values are numeric
+        runtime_numeric = pd.to_numeric(df[runtime_col], errors='coerce')
+        is_numeric_mask = runtime_numeric.notna()
+        
+        # Set runtime to 'TO' only for rows that are unsolved AND have numeric runtime
+        mask_to_normalize = unsolved_mask & is_numeric_mask
+        df.loc[mask_to_normalize, runtime_col] = 'TO'
+    
+    return df
 
 def get_timeouts_incl(df, tool):
     """Return rows where the inclusion tool timed out.
