@@ -1,0 +1,52 @@
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.hoa;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.hoa;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.hoa;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.hoa;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.hoa;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.hoa;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.hoa;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.hoa;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.hoa;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.hoa;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.hoa
+execute;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.hoa
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.hoa;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.hoa;1;result: false;;0.19
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryB.hoa;../automata/automata-benchmarks/omega/rabit/included/bakery/bakeryA.hoa;1;result: false;;0.19
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.hoa;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.hoa;1;result: false;;0.38
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.hoa;0;result: true;;0.81
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv2/fischerV2A.hoa;0;result: true;;0.68
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.hoa;0;result: true;;0.12
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv3/fischerV3A.hoa;0;result: true;;0.12
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.hoa;0;result: true;;33.79
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4B.hoa;../automata/automata-benchmarks/omega/rabit/included/fischerv4/fischerV4A.hoa;1;result: false;;0.01
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.hoa;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.hoa;0;result: true;;0.0
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonB.hoa;../automata/automata-benchmarks/omega/rabit/included/peterson/petersonA.hoa;1;result: false;;0.0
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.hoa;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.hoa;0;result: true;;0.02
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/phils/philsB.hoa;../automata/automata-benchmarks/omega/rabit/included/phils/philsA.hoa;1;result: false;;0.0
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.hoa;1;result: false;;0.1
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/bakeryv3/bakeryV3A.hoa;1;result: false;;0.09
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.hoa;1;result: false;;0.38
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerA.hoa;../automata/automata-benchmarks/omega/rabit/included/fischer/fischerB.hoa;0;result: true;;115.7
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.hoa;1;result: false;;0.01
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv2/philsV2A.hoa;0;result: true;;0.03
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.hoa;1;result: false;;0.0
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv3/philsV3A.hoa;0;result: true;;0.03
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.hoa;1;result: false;;0.04
+finished;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/philsv4/philsV4A.hoa;0;result: true;;0.34
+timeout;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.hoa;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.hoa
+timeout;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2B.hoa;../automata/automata-benchmarks/omega/rabit/included/bakeryv2/bakeryV2A.hoa
+timeout;kofola_early-a27ace8;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5B.hoa;../automata/automata-benchmarks/omega/rabit/notincluded/fischerv5/fischerV5A.hoa
