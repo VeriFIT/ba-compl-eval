@@ -1,6 +1,9 @@
 spot:
   cmd: ../bin/spot-wrap.sh $1 --complement
 
+spot-ba:
+  cmd: ../bin/spot-wrap.sh $1 --complement --buchi
+
 spot-red:
   cmd: ../bin/spot-wrap.sh $1 --complement --high
 
