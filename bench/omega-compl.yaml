@@ -51,3 +51,9 @@ kofola-tela-inductive:
 
 kofola-tela-inductive-check:
   cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive' --check
+
+kofola-tela-inductive-shb:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_sh_break=yes'
+
+kofola-tela-inductive-shb-check:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_sh_break=yes' --check
