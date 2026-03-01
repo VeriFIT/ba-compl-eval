@@ -15,6 +15,9 @@ show_help() {
 	echo "  -j N      How many processes to run in parallel (default=4)"
 	echo "  -m N      Memory limit of each process in GB (default=8)"
 	echo "  -s N      Timeout for each process in seconds (default=120)"
+	echo "  --tela    Run tela evaluation: tools kofola-tela-inductive, kofola-tela-inductive-check,"
+	echo "            kofola-tela-inductive-shb, kofola-tela-inductive-shb-check on benchmarks"
+	echo "            ltl_tela and ltl_tela_elevator"
 	
 	echo "Note: positional arguments are treated as benchmark names and are not"
 	echo "expanded into groups. Provide multiple benchmark names to run them all."
@@ -28,6 +31,22 @@ tool="kofola"
 j_value="4"
 m_value="8"
 s_value="120"
+tela_mode=false
+
+# Pre-process long options
+args=()
+for arg in "$@"; do
+  case "$arg" in
+    --tela)
+      tela_mode=true
+      ;;
+    *)
+      args+=("$arg")
+      ;;
+  esac
+done
+set -- "${args[@]}"
+
 while getopts "ht:j:m:s:" option; do
     case $option in
         h)
@@ -58,6 +77,30 @@ done
 shift $((OPTIND - 1))
 
 benchmarks=()
+
+# If --tela is set, override tools and benchmarks
+if [ "$tela_mode" = true ]; then
+  tela_tools=("kofola-tela-inductive" "kofola-tela-inductive-check" "kofola-tela-inductive-shb" "kofola-tela-inductive-shb-check")
+  tela_benchmarks=("ltl_tela" "ltl_tela_elevator")
+
+  tasks_files=()
+  CUR_DATE=$(date +%Y-%m-%d-%H-%M)
+  for tela_tool in "${tela_tools[@]}"; do
+    for benchmark in "${tela_benchmarks[@]}"; do
+      echo "Running benchmark $benchmark with tool $tela_tool"
+      FILE_PREFIX="$benchmark-to${s_value}-$tela_tool-$CUR_DATE"
+      TASKS_FILE="$FILE_PREFIX.tasks"
+      cat "inputs/compl/$benchmark.input" | ./pycobench -c omega-compl.yaml -j $j_value -t $s_value --memout $m_value -m "$tela_tool" -o "$TASKS_FILE"
+      tasks_files+=("$TASKS_FILE")
+      echo "$TASKS_FILE" >> tasks_names.txt
+    done
+  done
+
+  for tasks_file in "${tasks_files[@]}"; do
+    echo "$tasks_file"
+  done
+  exit 0
+fi
 
 # If no benchmark is given, run the three omega automata complementation sets
 if [ -z "$1" ]; then
