@@ -80,7 +80,7 @@ benchmarks=()
 
 # If --tela is set, override tools and benchmarks
 if [ "$tela_mode" = true ]; then
-  tela_tools=("kofola-tela-inductive" "kofola-tela-inductive-check" "kofola-tela-inductive-shb" "kofola-tela-inductive-shb-check")
+  tela_tools=("kofola-tela-inductive" "kofola-tela-inductive-check" "kofola-tela-inductive-shb" "kofola-tela-inductive-shb-check" "kofola-tela-inductive-for" "kofola-tela-inductive-for-check")
   tela_benchmarks=("ltl_tela" "ltl_tela_elevator")
 
   tasks_files=()
