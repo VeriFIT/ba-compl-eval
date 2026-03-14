@@ -1,0 +1,630 @@
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000008.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000015.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000019.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000023.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000030.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000037.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000057.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000080.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000087.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000090.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000097.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000107.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000112.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000119.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000125.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000135.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000137.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000141.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000143.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000156.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000160.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000163.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000165.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000169.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000174.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000177.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000185.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000199.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000202.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000210.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000211.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000213.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000215.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000219.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000224.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000225.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000233.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000237.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000240.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000253.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000254.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000263.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000269.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000279.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000281.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000285.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000286.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000289.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000294.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000300.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000301.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000302.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000303.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000318.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000344.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000345.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000348.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000352.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000354.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000361.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000374.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000375.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000381.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000383.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000392.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000396.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000399.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000410.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000416.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000422.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000427.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000440.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000446.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000453.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000459.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000465.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000487.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000490.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000512.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000513.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000515.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000523.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000526.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000529.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000535.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000536.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000540.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000561.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000566.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000568.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000577.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000582.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000587.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000590.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000596.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000600.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000604.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000606.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000610.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000622.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000624.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000625.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000627.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000628.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000639.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000642.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000650.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000656.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000677.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000685.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000703.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000712.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000716.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000717.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000718.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000719.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000732.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000749.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000750.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000755.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000764.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000770.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000774.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000779.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000787.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000795.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000800.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000810.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000817.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000826.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000828.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000833.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000843.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000847.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000854.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000860.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000871.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000872.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000875.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000876.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000878.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000880.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000882.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000885.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000887.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000892.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000894.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000901.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000912.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000923.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000929.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000932.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000943.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000947.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000952.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000963.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000965.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000977.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000981.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000990.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000992.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000994.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001009.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001013.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001022.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001025.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001030.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001031.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001052.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001053.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001059.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001066.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001068.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001071.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001077.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001083.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001085.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001099.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001114.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001129.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001153.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001170.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001176.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001183.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001185.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001189.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001190.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001195.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001215.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001219.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001226.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001230.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001233.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001244.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001258.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001263.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001271.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001272.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001277.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001284.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001299.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001301.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001304.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001306.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001312.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001321.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001342.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001343.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001354.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001357.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001372.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001374.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001378.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001381.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001409.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001411.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001412.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001417.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001431.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001436.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001437.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001449.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001454.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001456.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001461.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001462.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001463.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001475.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001476.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001484.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001485.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001494.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001496.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001499.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001506.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001512.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001515.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001524.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001531.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001544.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001549.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001550.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001562.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001569.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001576.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001583.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001587.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001589.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001605.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001611.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001618.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001624.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001637.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001642.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001644.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001646.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001657.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001659.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001667.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001690.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001691.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001693.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001711.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001714.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001715.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001718.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001720.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001730.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001732.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001736.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001739.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001741.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001752.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001757.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001758.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001759.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001760.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001763.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001764.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001768.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001774.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001797.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001803.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001809.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001815.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001816.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001826.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001827.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001835.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001841.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001842.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001849.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001856.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001858.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001859.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001862.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001864.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001869.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001874.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001878.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001886.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001911.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001914.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001916.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001929.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001934.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001940.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001964.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001966.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001967.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001968.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001975.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001982.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001995.hoa
+execute;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001997.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000023.hoa;0;states: 649;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000008.hoa;0;states: 2027;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000030.hoa;0;states: 103;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000019.hoa;0;states: 32226;;0.17
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000080.hoa;0;states: 248;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000087.hoa;1;;autfilt: std::bad_alloc;69.37
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000090.hoa;0;states: 1032;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000097.hoa;0;states: 443;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000015.hoa;1;;autfilt: std::bad_alloc;70.58
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000057.hoa;1;;autfilt: std::bad_alloc;78.39
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000119.hoa;0;states: 114404;;0.81
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000125.hoa;0;states: 347;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000037.hoa;1;;autfilt: std::bad_alloc;93.28
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000107.hoa;1;;autfilt: std::bad_alloc;81.45
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000135.hoa;1;;autfilt: std::bad_alloc;88.38
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000112.hoa;1;;autfilt: std::bad_alloc;100.83
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000156.hoa;0;states: 658;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000137.hoa;1;;autfilt: std::bad_alloc;93.1
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000163.hoa;0;states: 2097;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000141.hoa;1;;autfilt: std::bad_alloc;80.31
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000160.hoa;1;;autfilt: std::bad_alloc;104.84
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000143.hoa
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000165.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000185.hoa;0;states: 3097588;;24.36
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000169.hoa;1;;autfilt: std::bad_alloc;97.54
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000174.hoa;1;;autfilt: std::bad_alloc;91.6
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000210.hoa;0;states: 519;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000211.hoa;0;states: 557;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000177.hoa;1;;autfilt: std::bad_alloc;88.16
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000202.hoa;1;;autfilt: std::bad_alloc;84.58
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000219.hoa;0;states: 132;;0.01
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000199.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000225.hoa;0;states: 199;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000215.hoa;1;;autfilt: std::bad_alloc;81.36
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000237.hoa;0;states: 71;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000240.hoa;0;states: 25727;;0.14
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000213.hoa;1;;autfilt: std::bad_alloc;88.6
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000254.hoa;0;states: 82;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000263.hoa;0;states: 27;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000269.hoa;0;states: 97;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000224.hoa;1;;autfilt: std::bad_alloc;99.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000233.hoa;1;;autfilt: std::bad_alloc;98.72
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000279.hoa;1;;autfilt: std::bad_alloc;97.79
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000253.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000289.hoa;0;states: 44;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000281.hoa;0;states: 6875362;;74.11
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000285.hoa;1;;autfilt: std::bad_alloc;85.4
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000301.hoa;0;states: 26;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000302.hoa;0;states: 13340;;0.08
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000286.hoa;1;;autfilt: std::bad_alloc;83.47
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000318.hoa;0;states: 307;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000344.hoa;0;states: 187;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000345.hoa;0;states: 82701;;0.51
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000348.hoa;0;states: 37;;0.01
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000294.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000354.hoa;0;states: 89;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000300.hoa;1;;autfilt: std::bad_alloc;111.44
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000352.hoa;1;;autfilt: std::bad_alloc;95.49
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000375.hoa;0;states: 57174;;0.26
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000381.hoa;0;states: 21911;;0.09
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000303.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000383.hoa;0;states: 1649797;;10.73
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000361.hoa;1;;autfilt: std::bad_alloc;89.14
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000374.hoa;1;;autfilt: std::bad_alloc;92.77
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000399.hoa;1;;autfilt: std::bad_alloc;75.15
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000396.hoa;1;;autfilt: std::bad_alloc;104.79
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000422.hoa;0;states: 57;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000427.hoa;0;states: 3036;;0.02
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000392.hoa
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000410.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000416.hoa;1;;autfilt: std::bad_alloc;89.52
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000459.hoa;0;states: 49;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000465.hoa;0;states: 85351;;0.47
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000487.hoa;0;states: 1651;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000446.hoa;1;;autfilt: std::bad_alloc;85.63
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000512.hoa;0;states: 5510;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000440.hoa;1;;autfilt: std::bad_alloc;105.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000515.hoa;0;states: 14;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000523.hoa;0;states: 84;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000526.hoa;0;states: 946;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000529.hoa;0;states: 25453;;0.12
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000453.hoa;1;;autfilt: std::bad_alloc;102.67
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000536.hoa;0;states: 291132;;3.28
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000540.hoa;0;states: 442;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000490.hoa;1;;autfilt: std::bad_alloc;97.09
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000566.hoa;0;states: 24215;;0.14
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000568.hoa;0;states: 112883;;0.62
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000577.hoa;0;states: 33;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000513.hoa;1;;autfilt: std::bad_alloc;106.79
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000535.hoa;1;;autfilt: std::bad_alloc;91.68
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000590.hoa;0;states: 28117;;0.14
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000561.hoa;1;;autfilt: std::bad_alloc;102.5
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000600.hoa;0;states: 365;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000604.hoa;0;states: 6261;;0.04
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000606.hoa;0;states: 2994;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000582.hoa;1;;autfilt: std::bad_alloc;95.42
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000622.hoa;0;states: 2689;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000624.hoa;0;states: 713;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000625.hoa;0;states: 31;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000596.hoa;1;;autfilt: std::bad_alloc;88.17
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000628.hoa;0;states: 91139;;0.53
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000639.hoa;0;states: 200;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000587.hoa;1;;autfilt: std::bad_alloc;105.53
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000642.hoa;0;states: 1486513;;40.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000627.hoa;1;;autfilt: std::bad_alloc;84.16
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000610.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000685.hoa;0;states: 9315;;0.04
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000703.hoa;0;states: 147;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000712.hoa;0;states: 27345;;0.14
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000650.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000717.hoa;0;states: 298;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000718.hoa;0;states: 23676;;0.1
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000656.hoa;1;;autfilt: std::bad_alloc;100.45
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000677.hoa;1;;autfilt: std::bad_alloc;99.79
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000716.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000750.hoa;0;states: 64;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000755.hoa;0;states: 138;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000719.hoa;1;;autfilt: std::bad_alloc;86.56
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000732.hoa;1;;autfilt: std::bad_alloc;80.6
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000749.hoa;1;;autfilt: std::bad_alloc;85.69
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000779.hoa;0;states: 62;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000774.hoa;1;;autfilt: std::bad_alloc;69.46
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000795.hoa;0;states: 413;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000800.hoa;0;states: 42;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000764.hoa;1;;autfilt: std::bad_alloc;100.39
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000770.hoa;1;;autfilt: std::bad_alloc;106.47
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000826.hoa;0;states: 27;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000828.hoa;0;states: 2536;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000833.hoa;0;states: 89;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000843.hoa;0;states: 686733;;8.36
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000787.hoa;1;;autfilt: std::bad_alloc;103.53
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000817.hoa;1;;autfilt: std::bad_alloc;92.76
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000810.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000871.hoa;0;states: 63144;;0.36
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000872.hoa;0;states: 174;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000875.hoa;0;states: 416;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000876.hoa;0;states: 47;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000847.hoa;1;;autfilt: std::bad_alloc;87.84
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000880.hoa;0;states: 85;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000882.hoa;0;states: 57;;0.01
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000854.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000878.hoa;1;;autfilt: std::bad_alloc;86.51
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000885.hoa;1;;autfilt: std::bad_alloc;91.81
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000860.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000887.hoa;1;;autfilt: std::bad_alloc;104.49
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000912.hoa;0;states: 774;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000923.hoa;0;states: 58;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000892.hoa;1;;autfilt: std::bad_alloc;97.8
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000932.hoa;0;states: 940;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000894.hoa;1;;autfilt: std::bad_alloc;82.14
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000947.hoa;0;states: 894088;;11.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000901.hoa;1;;autfilt: std::bad_alloc;91.44
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000963.hoa;0;states: 192;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000965.hoa;0;states: 256;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000929.hoa;0;states: 4687379;;34.07
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000981.hoa;0;states: 33878;;0.19
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000990.hoa;0;states: 663009;;5.85
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000943.hoa;1;;autfilt: std::bad_alloc;106.38
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000977.hoa;1;;autfilt: std::bad_alloc;99.76
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000952.hoa;1;;autfilt: std::bad_alloc;109.35
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000992.hoa;1;;autfilt: std::bad_alloc;101.13
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001022.hoa;0;states: 379;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001025.hoa;0;states: 4003;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001030.hoa;0;states: 25;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001031.hoa;0;states: 106381;;0.59
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001009.hoa;1;;autfilt: std::bad_alloc;85.28
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001053.hoa;0;states: 396006;;3.1
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001059.hoa;0;states: 596;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001066.hoa;0;states: 1607;;0.02
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000994.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001068.hoa;0;states: 1161436;;19.18
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001077.hoa;0;states: 126967;;1.06
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001083.hoa;0;states: 3292;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001085.hoa;0;states: 37207;;0.15
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001099.hoa;0;states: 35124;;0.14
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001013.hoa
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001052.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001153.hoa;0;states: 28606;;0.17
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001170.hoa;0;states: 101347;;0.71
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001176.hoa;0;states: 25;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001183.hoa;0;states: 296;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001185.hoa;0;states: 267389;;1.96
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001114.hoa;1;;autfilt: std::bad_alloc;88.28
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001190.hoa;0;states: 21;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001071.hoa;1;;autfilt: std::bad_alloc;99.55
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001215.hoa;0;states: 68;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001129.hoa;1;;autfilt: std::bad_alloc;88.17
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001226.hoa;0;states: 119185;;0.89
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001219.hoa;0;states: 1185920;;11.23
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001189.hoa;1;;autfilt: std::bad_alloc;77.83
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001244.hoa;0;states: 17202;;0.07
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001258.hoa;0;states: 701;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001263.hoa;0;states: 4424;;0.03
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001271.hoa;0;states: 282;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001272.hoa;0;states: 190;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001277.hoa;1;;autfilt: std::bad_alloc;71.88
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001284.hoa;0;states: 860;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001299.hoa;0;states: 22;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001301.hoa;0;states: 122100;;0.98
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001230.hoa;1;;autfilt: std::bad_alloc;90.25
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001195.hoa;1;;autfilt: std::bad_alloc;98.77
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001233.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001321.hoa;0;states: 34025;;0.19
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001342.hoa;0;states: 39951;;0.16
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001306.hoa;1;;autfilt: std::bad_alloc;104.82
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001312.hoa;1;;autfilt: std::bad_alloc;108.49
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001304.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001372.hoa;0;states: 1216635;;7.84
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001374.hoa;0;states: 2917;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001343.hoa;1;;autfilt: std::bad_alloc;101.46
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001354.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001409.hoa;0;states: 633;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001411.hoa;0;states: 34;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001412.hoa;0;states: 9251;;0.03
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001357.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001381.hoa;1;;autfilt: std::bad_alloc;93.1
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001436.hoa;0;states: 1883;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001437.hoa;0;states: 157;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001431.hoa;0;states: 231332;;1.88
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001454.hoa;0;states: 281;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001449.hoa;0;states: 103797;;0.6
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001461.hoa;0;states: 31;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001462.hoa;0;states: 100;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001463.hoa;0;states: 73246;;0.52
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001475.hoa;0;states: 177;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001476.hoa;0;states: 64;;0.0
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001378.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001485.hoa;0;states: 10446;;0.04
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001417.hoa;1;;autfilt: std::bad_alloc;84.88
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001496.hoa;0;states: 30;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001499.hoa;0;states: 46;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001506.hoa;0;states: 6;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001484.hoa;1;;autfilt: std::bad_alloc;82.04
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001515.hoa;0;states: 54;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001524.hoa;1;;autfilt: robin_hood::map overflow;10.67
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001456.hoa;1;;autfilt: std::bad_alloc;95.49
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001544.hoa;0;states: 22714;;0.11
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001549.hoa;0;states: 215;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001550.hoa;0;states: 1337;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001494.hoa;1;;autfilt: std::bad_alloc;98.75
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001569.hoa;0;states: 26;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001531.hoa;1;;autfilt: std::bad_alloc;88.99
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001583.hoa;0;states: 1711;;0.02
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001587.hoa;0;states: 104;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001589.hoa;0;states: 426260;;4.95
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001605.hoa;0;states: 363;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001611.hoa;0;states: 280;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001562.hoa;1;;autfilt: std::bad_alloc;98.55
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001624.hoa;0;states: 4007;;0.03
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001637.hoa;0;states: 178;;0.01
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001512.hoa
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001576.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001646.hoa;0;states: 80834;;0.52
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001618.hoa;1;;autfilt: std::bad_alloc;91.67
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001659.hoa;0;states: 263519;;1.41
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001644.hoa;1;;autfilt: std::bad_alloc;100.97
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001690.hoa;0;states: 184246;;0.95
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001691.hoa;0;states: 38440;;0.19
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001693.hoa;0;states: 80328;;0.72
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001711.hoa;0;states: 6253;;0.04
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001714.hoa;0;states: 1255;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001715.hoa;0;states: 629;;0.01
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001642.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001720.hoa;0;states: 352128;;2.19
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001657.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001732.hoa;0;states: 366;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001736.hoa;0;states: 380769;;3.3
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001730.hoa;1;;autfilt: std::bad_alloc;81.39
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001741.hoa;0;states: 1867;;0.01
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001667.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001718.hoa;1;;autfilt: std::bad_alloc;113.39
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001758.hoa;0;states: 46;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001759.hoa;0;states: 4040;;0.03
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001760.hoa;0;states: 40704;;0.23
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001763.hoa;0;states: 67;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001764.hoa;0;states: 2059;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001739.hoa;1;;autfilt: std::bad_alloc;95.27
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001774.hoa;0;states: 1245;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001797.hoa;0;states: 378882;;3.57
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001803.hoa;0;states: 17;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001809.hoa;0;states: 7374;;0.03
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001757.hoa;1;;autfilt: std::bad_alloc;89.56
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001816.hoa;0;states: 32938;;0.19
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001826.hoa;0;states: 91;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001752.hoa;1;;autfilt: std::bad_alloc;102.22
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001768.hoa
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001815.hoa;1;;autfilt: std::bad_alloc;87.58
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001842.hoa;0;states: 711;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001849.hoa;0;states: 41;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001856.hoa;0;states: 201;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001841.hoa;0;states: 89651;;0.39
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001827.hoa;1;;autfilt: std::bad_alloc;91.67
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001862.hoa;0;states: 297;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001864.hoa;0;states: 210;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001869.hoa;0;states: 660;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001874.hoa;0;states: 310;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001835.hoa;1;;autfilt: std::bad_alloc;87.2
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001886.hoa;0;states: 14;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001911.hoa;0;states: 8677;;0.04
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001858.hoa;1;;autfilt: std::bad_alloc;96.13
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001916.hoa;0;states: 73;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001929.hoa;0;states: 73;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001859.hoa;1;;autfilt: std::bad_alloc;114.29
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001878.hoa;1;;autfilt: std::bad_alloc;85.22
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001964.hoa;0;states: 59924;;0.33
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001966.hoa;0;states: 697;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001967.hoa;0;states: 20;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001968.hoa;0;states: 30;;0.0
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001914.hoa;1;;autfilt: std::bad_alloc;100.89
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001982.hoa;0;states: 27;;0.01
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001934.hoa;1;;autfilt: std::bad_alloc;67.23
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001940.hoa;1;;autfilt: std::bad_alloc;75.65
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001997.hoa;1;;autfilt: std::bad_alloc;78.4
+finished;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001995.hoa;1;;autfilt: std::bad_alloc;90.16
+timeout;spot-2.14.5;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001975.hoa
