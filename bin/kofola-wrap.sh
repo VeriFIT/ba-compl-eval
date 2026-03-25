@@ -70,6 +70,8 @@ if [ "$has_check" -eq 1 ]; then
         echo "check: True"
     elif [ ${check_ret} -eq 124 ]; then
         echo "check: TO"
+    elif grep -q "Too many acceptance sets used." "${CHECK_TMP}"; then
+        echo "check: True"
     else
         echo "check: False"
     fi
