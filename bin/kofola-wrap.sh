@@ -71,9 +71,11 @@ if [ "$has_check" -eq 1 ]; then
     elif [ ${check_ret} -eq 124 ]; then
         echo "check: TO"
     elif grep -q "Too many acceptance sets used." "${CHECK_TMP}"; then
-        echo "check: True"
-    else
+        echo "check: NA"
+    elif grep -q "both automata accept the infinite word" "${CHECK_TMP}"; then
         echo "check: False"
+    else
+        echo "check: NA"
     fi
     
     rm -f "${CHECK_TMP}"
