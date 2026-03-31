@@ -1,0 +1,36 @@
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp10.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp11.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp12.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp13.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp14.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp15.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp16.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp17.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp18.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp1.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp2.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp3.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp4.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp5.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp6.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp7.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp8.hoa
+execute;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp9.hoa
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp10.hoa;0;states: 51;;0.04
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp11.hoa;0;states: 156;;0.09
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp13.hoa;0;states: 393;;0.3
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp16.hoa;0;states: 3;;0.02
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp17.hoa;0;states: 7;;0.03
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp18.hoa;0;states: 5;;0.02
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp1.hoa;0;states: 6;;0.02
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp2.hoa;0;states: 40;;0.05
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp14.hoa;0;states: 1031;;1.04
+timeout;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp12.hoa
+timeout;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp15.hoa
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp5.hoa;0;states: 61;;0.07
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp7.hoa;0;states: 5;;0.02
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp8.hoa;0;states: 8;;0.02
+finished;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp9.hoa;0;states: 10;;0.02
+timeout;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp3.hoa
+timeout;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp4.hoa
+timeout;owl-owl-21.0;../automata/automata-benchmarks/omega/ldba4ltl/hoa/exp6.hoa
