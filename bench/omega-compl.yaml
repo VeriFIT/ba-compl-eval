@@ -10,6 +10,9 @@ spot-red:
 kofola:
   cmd: ../bin/kofola-wrap.sh $1 --complement
 
+kofola-raw:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='raw=yes'
+
 kofola-sim-prune:
   cmd: ../bin/kofola-wrap.sh $1 --complement --params='sim-ms-prune=yes'
 
@@ -63,3 +66,6 @@ kofola-tela-inductive-for:
 
 kofola-tela-inductive-for-check:
   cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_or_opt=yes' --check
+
+owl:
+  cmd: ../bin/owl-wrap.sh $1
