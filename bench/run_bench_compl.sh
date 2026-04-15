@@ -33,9 +33,10 @@ m_value="8"
 s_value="120"
 tela_mode=false
 tela_bench_mode=false
+tool_specified=false
 
 tela_tools=("kofola-tela-inductive" "kofola-tela-inductive-check" "kofola-tela-inductive-shb" "kofola-tela-inductive-shb-check" "kofola-tela-inductive-for" "kofola-tela-inductive-for-check")
-tela_default_benchmarks=("ltl_tela" "ltl_tela_elevator")
+tela_default_benchmarks=("ltl_tela" "ltl_tela_elevator" "elevator_generalized_rabin_pair_tela" "random_ltl_elevators")
 
 # Run all tela tools on the given benchmarks (passed as arguments).
 run_tela_tools() {
@@ -83,6 +84,7 @@ while getopts "ht:j:m:s:" option; do
             ;;
         t)
             tool=$OPTARG
+            tool_specified=true
             ;;
         j)
             j_value=$OPTARG
@@ -108,7 +110,23 @@ benchmarks=()
 
 # If --tela is set, run tela tools on the default tela benchmarks
 if [ "$tela_mode" = true ]; then
-  run_tela_tools "${tela_default_benchmarks[@]}"
+  if [ "$tool_specified" = true ]; then
+    tasks_files=()
+    CUR_DATE=$(date +%Y-%m-%d-%H-%M)
+    for benchmark in "${tela_default_benchmarks[@]}"; do
+      echo "Running benchmark $benchmark with tool $tool"
+      FILE_PREFIX="$benchmark-to${s_value}-$tool-$CUR_DATE"
+      TASKS_FILE="$FILE_PREFIX.tasks"
+      cat "inputs/compl/$benchmark.input" | ./pycobench -c omega-compl.yaml -j $j_value -t $s_value --memout $m_value -m "$tool" -o "$TASKS_FILE"
+      tasks_files+=("$TASKS_FILE")
+      echo "$TASKS_FILE" >> tasks_names.txt
+    done
+    for tasks_file in "${tasks_files[@]}"; do
+      echo "$tasks_file"
+    done
+  else
+    run_tela_tools "${tela_default_benchmarks[@]}"
+  fi
   exit 0
 fi
 
