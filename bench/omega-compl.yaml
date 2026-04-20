@@ -55,11 +55,17 @@ kofola-tela-inductive:
 kofola-tela-inductive-check:
   cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive' --check
 
-kofola-tela-inductive-shb:
-  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_sh_break=yes'
+kofola-tela-inductive-shb-subtree:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_sh_break=inf_tree'
 
-kofola-tela-inductive-shb-check:
-  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_sh_break=yes' --check
+kofola-tela-inductive-shb-subtree-check:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_sh_break=inf_tree' --check
+
+kofola-tela-inductive-shb-root:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_sh_break=root'
+
+kofola-tela-inductive-shb-root-check:
+  cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_sh_break=root' --check
 
 kofola-tela-inductive-for:
   cmd: ../bin/kofola-wrap.sh $1 --complement --params='tela=yes;tela_det_alg=inductive;sd_ind_or_opt=yes'

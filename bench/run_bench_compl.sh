@@ -35,7 +35,7 @@ tela_mode=false
 tela_bench_mode=false
 tool_specified=false
 
-tela_tools=("kofola-tela-inductive" "kofola-tela-inductive-check" "kofola-tela-inductive-shb" "kofola-tela-inductive-shb-check" "kofola-tela-inductive-for" "kofola-tela-inductive-for-check")
+tela_tools=("kofola-tela-inductive" "kofola-tela-inductive-check" "kofola-tela-inductive-shb-root" "kofola-tela-inductive-shb-subtree" "kofola-tela-inductive-shb-root-check" "kofola-tela-inductive-shb-subtree-check" "kofola-tela-inductive-for" "kofola-tela-inductive-for-check")
 tela_default_benchmarks=("ltl_tela" "ltl_tela_elevator" "elevator_generalized_rabin_pair_tela" "random_ltl_elevators")
 
 # Run all tela tools on the given benchmarks (passed as arguments).
