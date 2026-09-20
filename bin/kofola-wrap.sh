@@ -14,13 +14,20 @@ shift
 # preserve argument boundaries and spacing
 params=("$@")
 
-# Remove any parameter that contains --high or --check (kofola doesn't accept them)
+# Remove any parameter that contains --high, --check, or --check-det (kofola doesn't accept them)
 kofola_params=()
 has_high=0
 has_check=0
+has_check_det=0
 for p in "${params[@]}"; do
     if [[ "$p" == *--high* ]]; then
         has_high=1
+        # skip this parameter when invoking kofola
+        continue
+    fi
+    # --check-det has to be tested before --check (it contains it as a substring)
+    if [[ "$p" == *--check-det* ]]; then
+        has_check_det=1
         # skip this parameter when invoking kofola
         continue
     fi
@@ -56,29 +63,73 @@ ret=$?
 # prefix the States header with the short git hash and print the full output
 cat "${TMP}" | grep "^States:" | sed "s/^States/$kofola_str-states/"
 
-# if --check is specified, check correctness using autcross
-if [ "$has_check" -eq 1 ]; then
-    TIMEOUT=100
-    AUTCROSS_CMD="autcross"
-    CHECK_TMP=$(mktemp)
-    
-    # Use autcross to compare kofola output with autfilt --complement
-    cat "${INPUT}" | timeout ${TIMEOUT} ${AUTCROSS_CMD} "a=%H; cat ${TMP} > %O" 'autfilt --complement %H > %O' > "${CHECK_TMP}" 2>&1
+TIMEOUT=100
+AUTCROSS_CMD="autcross"
 
-    check_ret=$?
+# Compares the obtained automaton (${TMP}) with the automaton produced by the
+# reference command given as the first argument (a shell command using the
+# autcross placeholders %H and %O). The verdict (True/False/TO/NA) is stored
+# in CHECK_RESULT.
+check_against() {
+    local reference="$1"
+    local CHECK_TMP=$(mktemp)
+
+    cat "${INPUT}" | timeout ${TIMEOUT} ${AUTCROSS_CMD} "a=%H; cat ${TMP} > %O" "${reference}" > "${CHECK_TMP}" 2>&1
+
+    local check_ret=$?
     if [ ${check_ret} -eq 0 ]; then
-        echo "check: True"
+        CHECK_RESULT="True"
     elif [ ${check_ret} -eq 124 ]; then
-        echo "check: TO"
+        CHECK_RESULT="TO"
     elif grep -q "Too many acceptance sets used." "${CHECK_TMP}"; then
-        echo "check: NA"
+        CHECK_RESULT="NA"
     elif grep -q "both automata accept the infinite word" "${CHECK_TMP}"; then
-        echo "check: False"
+        CHECK_RESULT="False"
     else
-        echo "check: NA"
+        CHECK_RESULT="NA"
     fi
-    
+
     rm -f "${CHECK_TMP}"
+}
+
+# Checks whether all the automata in ${TMP} are deterministic; the verdict
+# (True/False/NA) is stored in DET_RESULT.
+check_deterministic() {
+    local num_aut=$(autfilt --count "${TMP}" 2>/dev/null)
+    local num_det=$(autfilt --count --is-deterministic "${TMP}" 2>/dev/null)
+
+    if [ -z "${num_aut}" ] || [ "${num_aut}" -eq 0 ]; then
+        DET_RESULT="NA"
+    elif [ "${num_aut}" -eq "${num_det}" ]; then
+        DET_RESULT="True"
+    else
+        DET_RESULT="False"
+    fi
+}
+
+# if --check is specified, check correctness of the complementation using autcross
+if [ "$has_check" -eq 1 ]; then
+    check_against 'autfilt --complement %H > %O'
+    echo "check: ${CHECK_RESULT}"
+fi
+
+# if --check-det is specified, check that the result is a correctly determinised
+# automaton, i.e., (i) it is equivalent to the input and (ii) it is deterministic.
+# "check" gives the overall verdict (as for --check), "det" the determinism alone.
+if [ "$has_check_det" -eq 1 ]; then
+    # (i) equivalence with the input automaton (the reference tool is the identity)
+    check_against 'autfilt %H > %O'
+    # (ii) determinism of the result
+    check_deterministic
+
+    # the overall verdict is True only if the language is right AND the result
+    # is deterministic (DET_RESULT is False or NA in the branch below)
+    if [ "${CHECK_RESULT}" == "True" ] && [ "${DET_RESULT}" != "True" ]; then
+        CHECK_RESULT="${DET_RESULT}"
+    fi
+
+    echo "check: ${CHECK_RESULT}"
+    echo "det: ${DET_RESULT}"
 fi
 
 rm -f "${TMP}"
