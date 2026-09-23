@@ -89,6 +89,81 @@ def count_unsupported_instances(benches, tools, timeout=120):
     return results
 
 
+# Output keys of a run that are not correctness indicators (they carry metrics,
+# not a verdict). Everything else a tool prints (e.g. 'check', 'det') is taken
+# as a boolean indicator and folded into the single '<tool>-check' column.
+NON_CHECK_OUTPUTS = {"states", "runtime", "result"}
+
+
+def get_check_columns(df, tool):
+    """Returns the list of correctness-indicator columns of `tool` present in `df`.
+
+    A tool may report several indicators for a single instance (e.g.
+    'states: 6###check: True###det: True' gives the columns '<tool>-check' and
+    '<tool>-det'). Columns listed in NON_CHECK_OUTPUTS are not indicators.
+    """
+    cols = []
+    for col in df.columns:
+        if not col.startswith(f"{tool}-"):
+            continue
+        out = col[len(tool) + 1:]
+        if out in NON_CHECK_OUTPUTS:
+            continue
+        cols.append(col)
+    return cols
+
+
+def combine_check_columns(df, tools):
+    """Folds all correctness indicators of every tool into one '<tool>-check' column.
+
+    The resulting check of an instance is the conjunction of all indicators the
+    tool reported for it: it is False whenever at least one indicator is False,
+    True when all of them are True, and otherwise the first non-boolean token
+    (e.g. 'NA', 'TO', 'ERR', 'MISSING') is kept, so that an undecided check is
+    not silently reported as a passing one.
+
+    Args:
+        df (Dataframe): data (modified in place)
+        tools (list): List of tools whose indicators should be combined.
+
+    Returns:
+        Dataframe: `df` with the combined '<tool>-check' column set for every
+        tool that reported at least one indicator; the individual indicator
+        columns (e.g. '<tool>-det') are left untouched.
+    """
+    for tool in tools:
+        check_cols = get_check_columns(df, tool)
+        if not check_cols:
+            continue
+
+        normalized = {
+            col: df[col].astype(str).str.strip().str.lower()
+            for col in check_cols
+        }
+
+        any_false = None
+        all_true = None
+        for col in check_cols:
+            is_false = normalized[col] == 'false'
+            is_true = normalized[col] == 'true'
+            any_false = is_false if any_false is None else (any_false | is_false)
+            all_true = is_true if all_true is None else (all_true & is_true)
+
+        # the first non-boolean token of the row (used when the check is undecided)
+        other = pd.Series([pd.NA] * len(df), index=df.index, dtype='object')
+        for col in reversed(check_cols):
+            is_bool = normalized[col].isin(['true', 'false'])
+            other = other.mask(~is_bool, df[col])
+
+        combined = other
+        combined = combined.mask(all_true, "True")
+        combined = combined.mask(any_false, "False")
+
+        # the individual indicators are kept so that it stays visible which one failed
+        df[f"{tool}-check"] = combined
+    return df
+
+
 def load_benches(benches, tools, timeout = 120):
     dfs = dict()
     for bench in benches:
@@ -120,16 +195,21 @@ def load_benches(benches, tools, timeout = 120):
 
     # Collect all available columns to include check columns if present
     all_dfs = pd.concat(dfs, ignore_index=True)
+    # a tool may report several correctness indicators (check, det, ...); fold
+    # them into a single '<tool>-check' column holding their conjunction
+    all_dfs = combine_check_columns(all_dfs, tools)
     base_columns = ["benchmark", "name"]
     tool_columns = []
     
     for tool in tools:
         tool_columns.extend([f"{tool}-states", f"{tool}-runtime"])
-        # Include check column if it exists
+        # Include the combined check column (if any) plus the individual indicators
         if f"{tool}-check" in all_dfs.columns:
             tool_columns.append(f"{tool}-check")
+        tool_columns.extend(c for c in get_check_columns(all_dfs, tool)
+                            if c != f"{tool}-check")
     
-    df_runtime_result = all_dfs[base_columns + tool_columns]
+    df_runtime_result = all_dfs[base_columns + tool_columns].copy()
     
     for tool in tools:
         states_ser = pd.to_numeric(df_runtime_result[f"{tool}-states"], errors='coerce')
