@@ -1,0 +1,630 @@
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000008.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000015.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000019.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000023.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000030.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000037.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000057.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000080.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000087.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000090.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000097.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000107.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000112.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000119.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000125.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000135.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000137.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000141.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000143.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000156.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000160.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000163.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000165.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000169.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000174.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000177.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000185.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000199.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000202.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000210.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000211.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000213.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000215.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000219.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000224.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000225.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000233.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000237.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000240.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000253.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000254.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000263.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000269.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000279.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000281.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000285.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000286.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000289.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000294.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000300.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000301.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000302.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000303.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000318.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000344.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000345.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000348.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000352.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000354.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000361.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000374.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000375.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000381.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000383.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000392.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000396.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000399.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000410.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000416.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000422.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000427.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000440.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000446.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000453.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000459.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000465.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000487.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000490.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000512.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000513.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000515.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000523.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000526.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000529.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000535.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000536.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000540.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000561.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000566.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000568.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000577.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000582.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000587.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000590.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000596.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000600.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000604.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000606.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000610.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000622.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000624.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000625.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000627.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000628.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000639.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000642.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000650.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000656.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000677.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000685.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000703.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000712.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000716.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000717.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000718.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000719.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000732.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000749.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000750.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000755.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000764.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000770.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000774.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000779.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000787.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000795.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000800.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000810.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000817.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000826.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000828.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000833.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000843.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000847.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000854.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000860.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000871.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000872.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000875.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000876.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000878.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000880.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000882.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000885.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000887.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000892.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000894.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000901.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000912.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000923.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000929.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000932.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000943.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000947.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000952.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000963.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000965.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000977.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000981.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000990.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000992.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000994.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001009.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001013.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001022.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001025.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001030.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001031.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001052.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001053.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001059.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001066.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001068.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001071.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001077.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001083.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001085.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001099.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001114.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001129.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001153.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001170.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001176.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001183.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001185.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001189.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001190.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001195.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001215.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001219.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001226.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001230.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001233.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001244.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001258.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001263.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001271.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001272.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001277.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001284.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001299.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001301.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001304.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001306.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001312.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001321.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001342.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001343.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001354.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001357.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001372.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001374.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001378.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001381.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001409.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001411.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001412.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001417.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001431.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001436.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001437.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001449.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001454.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001456.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001461.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001462.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001463.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001475.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001476.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001484.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001485.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001494.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001496.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001499.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001506.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001512.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001515.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001524.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001531.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001544.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001549.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001550.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001562.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001569.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001576.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001583.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001587.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001589.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001605.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001611.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001618.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001624.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001637.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001642.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001644.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001646.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001657.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001659.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001667.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001690.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001691.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001693.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001711.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001714.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001715.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001718.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001720.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001730.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001732.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001736.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001739.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001741.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001752.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001757.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001758.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001759.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001760.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001763.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001764.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001768.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001774.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001797.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001803.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001809.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001815.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001816.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001826.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001827.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001835.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001841.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001842.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001849.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001856.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001858.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001859.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001862.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001864.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001869.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001874.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001878.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001886.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001911.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001914.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001916.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001929.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001934.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001940.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001964.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001966.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001967.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001968.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001975.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001982.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001995.hoa
+execute;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001997.hoa
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000023.hoa;0;states: 40###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000008.hoa;0;states: 100###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000030.hoa;0;states: 107###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000019.hoa;0;states: 291###check: True###det: True;;0.22
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000080.hoa;0;states: 211###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000015.hoa;0;states: 1081###check: NA###det: True;;80.42
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000090.hoa;0;states: 1096###check: True###det: True;;0.14
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000097.hoa;0;states: 677###check: True###det: True;;0.26
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000087.hoa;0;states: 1747###check: NA###det: True;;85.16
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000057.hoa;0;states: 657###check: NA###det: True;;86.76
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000119.hoa;0;states: 124###check: True###det: True;;1.11
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000125.hoa;0;states: 49###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000037.hoa;0;states: 956###check: TO###det: True;;93.49
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000107.hoa;0;states: 9566###check: NA###det: True;;94.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000112.hoa;0;states: 305###check: TO###det: True;;92.36
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000135.hoa;0;states: 12787###check: TO###det: True;;95.24
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000156.hoa;0;states: 138###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000137.hoa;0;states: 19771###check: TO###det: True;;94.3
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000163.hoa;0;states: 1819###check: True###det: True;;0.35
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000141.hoa;0;states: 4952###check: NA###det: True;;92.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000143.hoa;0;states: 1514###check: TO###det: True;;95.66
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000160.hoa;0;states: 6957###check: TO###det: True;;94.37
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000165.hoa;0;states: 2863###check: TO###det: True;;96.46
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000185.hoa;0;states: 546###check: True###det: True;;46.81
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000174.hoa;0;states: 7978###check: TO###det: True;;95.38
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000177.hoa;0;states: 2183###check: TO###det: True;;95.12
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000210.hoa;0;states: 548###check: True###det: True;;0.11
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000211.hoa;0;states: 30###check: True###det: True;;0.01
+timeout;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000169.hoa
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000199.hoa;0;states: 1457###check: TO###det: True;;93.69
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000219.hoa;0;states: 28###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000202.hoa;0;states: 1340###check: TO###det: True;;94.68
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000225.hoa;0;states: 36###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000213.hoa;0;states: 8218###check: TO###det: True;;95.43
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000237.hoa;0;states: 58###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000215.hoa;0;states: 13121###check: TO###det: True;;95.74
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000224.hoa;0;states: 1673###check: TO###det: True;;94.87
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000254.hoa;0;states: 96###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000263.hoa;0;states: 27###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000269.hoa;0;states: 48###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000240.hoa;0;states: 25282###check: True###det: True;;85.65
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000233.hoa;0;states: 3354###check: TO###det: True;;95.7
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000253.hoa;0;states: 3755###check: TO###det: True;;95.0
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000279.hoa;0;states: 1293###check: TO###det: True;;94.3
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000289.hoa;0;states: 37###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000281.hoa;0;states: 178###check: TO###det: True;;94.54
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000285.hoa;0;states: 912###check: TO###det: True;;94.36
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000301.hoa;0;states: 29###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000302.hoa;0;states: 437###check: True###det: True;;1.67
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000286.hoa;0;states: 16091###check: TO###det: True;;95.5
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000318.hoa;0;states: 316###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000344.hoa;0;states: 203###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000345.hoa;0;states: 478###check: True###det: True;;0.89
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000348.hoa;0;states: 31###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000294.hoa;0;states: 776###check: TO###det: True;;94.82
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000354.hoa;0;states: 70###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000300.hoa;0;states: 362###check: TO###det: True;;92.78
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000303.hoa;0;states: 842###check: TO###det: True;;94.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000375.hoa;0;states: 159###check: True###det: True;;0.36
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000381.hoa;0;states: 87###check: True###det: True;;0.11
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000352.hoa;0;states: 3268###check: TO###det: True;;94.61
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000383.hoa;0;states: 344###check: True###det: True;;22.69
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000361.hoa;0;states: 2257###check: TO###det: True;;94.73
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000374.hoa;0;states: 7412###check: TO###det: True;;95.49
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000392.hoa;0;states: 1615###check: TO###det: True;;93.97
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000396.hoa;0;states: 1584###check: TO###det: True;;93.76
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000422.hoa;0;states: 63###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000427.hoa;0;states: 348###check: True###det: True;;0.07
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000399.hoa;0;states: 862###check: NA###det: True;;89.64
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000410.hoa;0;states: 1174###check: TO###det: True;;93.5
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000416.hoa;0;states: 11891###check: TO###det: True;;93.91
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000459.hoa;0;states: 37###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000465.hoa;0;states: 238###check: True###det: True;;0.62
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000487.hoa;0;states: 61###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000440.hoa;0;states: 2179###check: TO###det: True;;94.12
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000512.hoa;0;states: 179###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000446.hoa;0;states: 15213###check: TO###det: True;;95.48
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000515.hoa;0;states: 11###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000523.hoa;0;states: 66###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000526.hoa;0;states: 93###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000529.hoa;0;states: 507###check: True###det: True;;0.29
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000453.hoa;1;check: TO###det: NA;Error: Too many acceptance sets used.  The limit is 128.######If you do not mind a slowdown, you could try recompiling Spot with a larger limit.###See the --enable-max-accsets=N configure option.######If you believe Spot could be improved to solve your problem###using the current limit, please email <spot@lrde.epita.fr>.;94.35
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000490.hoa;0;states: 3299###check: TO###det: True;;96.91
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000540.hoa;0;states: 425###check: True###det: True;;0.07
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000513.hoa;0;states: 4752###check: TO###det: True;;95.22
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000566.hoa;0;states: 722###check: True###det: True;;0.32
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000568.hoa;0;states: 92###check: True###det: True;;0.72
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000577.hoa;0;states: 28###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000536.hoa;0;states: 3676###check: True###det: True;;59.41
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000535.hoa;0;states: 6034###check: TO###det: True;;95.53
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000590.hoa;0;states: 325###check: True###det: True;;0.19
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000561.hoa;0;states: 1364###check: TO###det: True;;93.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000600.hoa;0;states: 344###check: True###det: True;;0.17
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000604.hoa;0;states: 225###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000606.hoa;0;states: 2933###check: True###det: True;;0.91
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000582.hoa;0;states: 10192###check: TO###det: True;;94.65
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000622.hoa;0;states: 2769###check: True###det: True;;1.84
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000624.hoa;0;states: 101###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000625.hoa;0;states: 27###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000587.hoa;0;states: 9246###check: TO###det: True;;94.46
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000628.hoa;0;states: 870###check: True###det: True;;1.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000639.hoa;0;states: 44###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000596.hoa;0;states: 11729###check: TO###det: True;;94.41
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000642.hoa;0;states: 1435###check: True###det: True;;47.19
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000610.hoa;0;states: 1347###check: TO###det: True;;94.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000627.hoa;0;states: 6253###check: TO###det: True;;94.5
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000685.hoa;0;states: 105###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000703.hoa;0;states: 159###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000650.hoa;0;states: 577###check: TO###det: True;;98.66
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000712.hoa;0;states: 27221###check: True###det: True;;47.63
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000717.hoa;0;states: 83###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000718.hoa;0;states: 227###check: True###det: True;;0.14
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000656.hoa;0;states: 2131###check: TO###det: True;;96.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000677.hoa;0;states: 559###check: TO###det: True;;93.38
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000716.hoa;0;states: 912###check: TO###det: True;;98.08
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000750.hoa;0;states: 66###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000755.hoa;0;states: 160###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000719.hoa;0;states: 3531###check: TO###det: True;;95.66
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000732.hoa;0;states: 1495###check: TO###det: True;;94.19
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000749.hoa;0;states: 1741###check: TO###det: True;;94.78
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000779.hoa;0;states: 60###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000764.hoa;0;states: 3249###check: TO###det: True;;94.97
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000795.hoa;0;states: 389###check: True###det: True;;0.09
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000800.hoa;0;states: 25###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000770.hoa;0;states: 15471###check: TO###det: True;;93.92
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000774.hoa;0;states: 255###check: NA###det: True;;81.15
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000826.hoa;0;states: 27###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000828.hoa;0;states: 195###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000833.hoa;0;states: 83###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000843.hoa;0;states: 503###check: True###det: True;;9.53
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000787.hoa;0;states: 11310###check: TO###det: True;;95.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000810.hoa;0;states: 959###check: TO###det: True;;95.63
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000817.hoa;1;check: TO###det: NA;Error: Too many acceptance sets used.  The limit is 128.######If you do not mind a slowdown, you could try recompiling Spot with a larger limit.###See the --enable-max-accsets=N configure option.######If you believe Spot could be improved to solve your problem###using the current limit, please email <spot@lrde.epita.fr>.;95.18
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000871.hoa;0;states: 269###check: True###det: True;;0.45
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000872.hoa;0;states: 177###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000875.hoa;0;states: 383###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000876.hoa;0;states: 39###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000847.hoa;0;states: 1507###check: NA###det: True;;91.1
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000880.hoa;0;states: 64###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000882.hoa;0;states: 34###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000854.hoa;0;states: 2514###check: TO###det: True;;96.3
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000860.hoa;0;states: 5261###check: TO###det: True;;95.35
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000878.hoa;0;states: 20055###check: TO###det: True;;95.65
+timeout;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000885.hoa
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000887.hoa;0;states: 49440###check: TO###det: True;;96.8
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000912.hoa;0;states: 815###check: True###det: True;;0.16
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000923.hoa;0;states: 52###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000892.hoa;0;states: 1423###check: TO###det: True;;94.72
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000932.hoa;0;states: 96###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000894.hoa;0;states: 5657###check: NA###det: True;;87.98
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000947.hoa;0;states: 313###check: True###det: True;;12.32
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000901.hoa;0;states: 11489###check: TO###det: True;;94.86
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000963.hoa;0;states: 120###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000965.hoa;0;states: 231###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000929.hoa;0;states: 485###check: TO###det: True;;97.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000981.hoa;0;states: 619###check: True###det: True;;0.49
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000990.hoa;0;states: 734###check: True###det: True;;10.52
+timeout;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000943.hoa
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000952.hoa;0;states: 11784###check: TO###det: True;;95.58
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000977.hoa;0;states: 16259###check: TO###det: True;;95.13
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000992.hoa;0;states: 4234###check: TO###det: True;;95.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001022.hoa;0;states: 277###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001025.hoa;0;states: 114###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001030.hoa;0;states: 23###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001031.hoa;0;states: 179###check: True###det: True;;0.76
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00000994.hoa;0;states: 552###check: TO###det: True;;98.74
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001053.hoa;0;states: 533###check: True###det: True;;3.55
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001059.hoa;0;states: 64###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001066.hoa;0;states: 112###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001009.hoa;0;states: 3855###check: TO###det: True;;95.4
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001068.hoa;0;states: 1186###check: True###det: True;;21.45
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001077.hoa;0;states: 1430###check: True###det: True;;2.48
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001083.hoa;0;states: 94###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001085.hoa;0;states: 510###check: True###det: True;;0.25
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001099.hoa;0;states: 148###check: True###det: True;;0.19
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001013.hoa;0;states: 1629###check: TO###det: True;;96.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001052.hoa;0;states: 26011###check: TO###det: True;;95.45
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001153.hoa;0;states: 26899###check: True###det: True;;16.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001170.hoa;0;states: 1040###check: True###det: True;;1.27
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001176.hoa;0;states: 18###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001183.hoa;0;states: 47###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001185.hoa;0;states: 755###check: True###det: True;;2.83
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001071.hoa;0;states: 8412###check: TO###det: True;;93.61
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001190.hoa;0;states: 19###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001114.hoa;0;states: 529###check: TO###det: True;;91.77
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001215.hoa;0;states: 63###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001129.hoa;0;states: 8918###check: TO###det: True;;95.25
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001226.hoa;0;states: 260###check: True###det: True;;1.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001219.hoa;0;states: 638###check: True###det: True;;16.12
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001189.hoa;0;states: 466###check: NA###det: True;;90.77
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001244.hoa;0;states: 202###check: True###det: True;;0.12
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001258.hoa;0;states: 658###check: True###det: True;;0.1
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001263.hoa;0;states: 4441###check: True###det: True;;0.69
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001271.hoa;0;states: 246###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001272.hoa;0;states: 255###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001195.hoa;0;states: 1063###check: TO###det: True;;95.12
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001284.hoa;0;states: 118###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001299.hoa;0;states: 17###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001301.hoa;0;states: 954###check: True###det: True;;2.43
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001230.hoa;0;states: 910###check: TO###det: True;;94.78
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001233.hoa;0;states: 7101###check: TO###det: True;;94.81
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001277.hoa;0;states: 2241###check: NA###det: True;;84.32
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001321.hoa;0;states: 504###check: True###det: True;;0.3
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001342.hoa;0;states: 384###check: True###det: True;;0.27
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001304.hoa;0;states: 12072###check: TO###det: True;;95.2
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001306.hoa;0;states: 743###check: TO###det: True;;93.08
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001312.hoa;0;states: 3713###check: TO###det: True;;96.4
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001372.hoa;0;states: 802###check: True###det: True;;12.13
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001374.hoa;0;states: 173###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001343.hoa;0;states: 18721###check: TO###det: True;;95.53
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001354.hoa;0;states: 648###check: TO###det: True;;94.61
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001409.hoa;0;states: 634###check: True###det: True;;0.13
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001411.hoa;0;states: 34###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001412.hoa;0;states: 170###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001357.hoa;0;states: 348###check: TO###det: True;;96.39
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001431.hoa;0;states: 229###check: True###det: True;;2.0
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001436.hoa;0;states: 335###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001437.hoa;0;states: 182###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001449.hoa;0;states: 1130###check: True###det: True;;1.1
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001454.hoa;0;states: 41###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001381.hoa;0;states: 2935###check: TO###det: True;;95.49
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001461.hoa;0;states: 20###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001462.hoa;0;states: 62###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001463.hoa;0;states: 1144###check: True###det: True;;0.85
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001475.hoa;0;states: 139###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001476.hoa;0;states: 62###check: True###det: True;;0.02
+timeout;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001378.hoa
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001485.hoa;0;states: 279###check: True###det: True;;0.08
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001417.hoa;0;states: 1589###check: TO###det: True;;94.88
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001496.hoa;0;states: 23###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001499.hoa;0;states: 43###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001506.hoa;0;states: 5###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001456.hoa;0;states: 87197###check: TO###det: True;;104.62
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001515.hoa;0;states: 54###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001524.hoa;0;states: 2175###check: NA###det: True;;11.69
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001484.hoa;0;states: 651###check: NA###det: True;;90.1
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001544.hoa;0;states: 122###check: True###det: True;;0.14
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001549.hoa;0;states: 189###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001550.hoa;0;states: 146###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001494.hoa;0;states: 3589###check: TO###det: True;;94.1
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001569.hoa;0;states: 29###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001512.hoa;0;states: 710###check: TO###det: True;;95.65
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001583.hoa;0;states: 1609###check: True###det: True;;0.45
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001587.hoa;0;states: 105###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001589.hoa;0;states: 658###check: True###det: True;;5.86
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001605.hoa;0;states: 338###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001611.hoa;0;states: 252###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001531.hoa;0;states: 6240###check: TO###det: True;;95.11
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001624.hoa;0;states: 262###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001637.hoa;0;states: 24###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001562.hoa;0;states: 1919###check: TO###det: True;;93.28
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001576.hoa;0;states: 7482###check: TO###det: True;;94.48
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001646.hoa;0;states: 609###check: True###det: True;;0.88
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001618.hoa;0;states: 8233###check: NA###det: True;;90.4
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001659.hoa;0;states: 415###check: True###det: True;;1.65
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001642.hoa;0;states: 946###check: TO###det: True;;94.6
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001690.hoa;0;states: 100###check: True###det: True;;1.21
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001691.hoa;0;states: 152###check: True###det: True;;0.33
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001644.hoa;0;states: 1993###check: TO###det: True;;94.24
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001711.hoa;0;states: 157###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001714.hoa;0;states: 87###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001715.hoa;0;states: 662###check: True###det: True;;0.2
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001657.hoa;0;states: 3187###check: TO###det: True;;98.5
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001720.hoa;0;states: 215###check: True###det: True;;3.26
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001693.hoa;0;states: 1540###check: True###det: True;;26.72
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001732.hoa;0;states: 319###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001736.hoa;0;states: 607###check: True###det: True;;3.85
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001667.hoa;0;states: 447###check: TO###det: True;;93.85
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001741.hoa;0;states: 149###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001718.hoa;0;states: 2556###check: TO###det: True;;95.38
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001730.hoa;0;states: 4139###check: NA###det: True;;91.7
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001758.hoa;0;states: 45###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001759.hoa;0;states: 3611###check: True###det: True;;1.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001760.hoa;0;states: 652###check: True###det: True;;0.37
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001763.hoa;0;states: 60###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001764.hoa;0;states: 138###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001739.hoa;0;states: 185###check: TO###det: True;;92.85
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001774.hoa;0;states: 162###check: True###det: True;;0.03
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001797.hoa;0;states: 2078###check: True###det: True;;5.94
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001803.hoa;0;states: 13###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001809.hoa;0;states: 90###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001752.hoa;0;states: 947###check: TO###det: True;;94.74
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001816.hoa;0;states: 943###check: True###det: True;;0.32
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001826.hoa;0;states: 77###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001757.hoa;0;states: 835###check: TO###det: True;;94.74
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001768.hoa;0;states: 2423###check: TO###det: True;;95.22
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001841.hoa;0;states: 133###check: True###det: True;;0.56
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001842.hoa;0;states: 824###check: True###det: True;;0.15
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001849.hoa;0;states: 57###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001856.hoa;0;states: 225###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001815.hoa;0;states: 1999###check: TO###det: True;;95.22
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001827.hoa;0;states: 3137###check: TO###det: True;;95.22
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001862.hoa;0;states: 46###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001864.hoa;0;states: 180###check: True###det: True;;0.04
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001869.hoa;0;states: 601###check: True###det: True;;0.13
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001874.hoa;0;states: 306###check: True###det: True;;0.05
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001835.hoa;0;states: 4738###check: NA###det: True;;84.64
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001886.hoa;0;states: 9###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001911.hoa;0;states: 135###check: True###det: True;;0.06
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001858.hoa;0;states: 834###check: TO###det: True;;95.16
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001916.hoa;0;states: 69###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001929.hoa;0;states: 64###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001859.hoa;0;states: 10704###check: TO###det: True;;96.12
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001878.hoa;0;states: 3233###check: NA###det: True;;82.21
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001964.hoa;0;states: 981###check: True###det: True;;0.73
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001966.hoa;0;states: 503###check: True###det: True;;0.09
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001967.hoa;0;states: 14###check: True###det: True;;0.01
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001968.hoa;0;states: 33###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001914.hoa;0;states: 12388###check: TO###det: True;;94.79
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001982.hoa;0;states: 24###check: True###det: True;;0.02
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001934.hoa;0;states: 236###check: NA###det: True;;89.63
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001940.hoa;0;states: 6303###check: NA###det: True;;83.94
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001975.hoa;0;states: 370###check: TO###det: True;;93.43
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001995.hoa;0;states: 912###check: TO###det: True;;93.64
+finished;kofola-det-check-96d6854;../automata/automata-benchmarks/omega/elevator-generalized-rabin-pair-tela/gra-00001997.hoa;0;states: 516###check: TO###det: True;;94.42
